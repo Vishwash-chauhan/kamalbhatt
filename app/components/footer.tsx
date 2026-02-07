@@ -10,7 +10,7 @@ export default function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8 mb-8">
           {/* Brand Section */}
           <div className="col-span-1">
-            <h3 className="text-2xl font-bold bg-gradient-to-r from-blue-400 to-purple-400 bg-clip-text text-transparent mb-4">
+            <h3 className="text-2xl font-bold bg-gradient-to-r from-secondary to-primary bg-clip-text text-transparent mb-4">
               Kamal Bhatt
             </h3>
             <p className="text-sm text-gray-400">
@@ -23,22 +23,22 @@ export default function Footer() {
             <h4 className="font-semibold text-white mb-4">Services</h4>
             <ul className="space-y-2 text-sm">
               <li>
-                <Link href="#" className="hover:text-blue-400 transition">
+                <Link href="#" className="hover:text-secondary transition">
                   SEO Services
                 </Link>
               </li>
               <li>
-                <Link href="#" className="hover:text-blue-400 transition">
+                <Link href="#" className="hover:text-secondary transition">
                   Social Media Marketing
                 </Link>
               </li>
               <li>
-                <Link href="#" className="hover:text-blue-400 transition">
+                <Link href="#" className="hover:text-secondary transition">
                   Content Marketing
                 </Link>
               </li>
               <li>
-                <Link href="#" className="hover:text-blue-400 transition">
+                <Link href="#" className="hover:text-secondary transition">
                   Brand Strategy
                 </Link>
               </li>
@@ -50,22 +50,22 @@ export default function Footer() {
             <h4 className="font-semibold text-white mb-4">Quick Links</h4>
             <ul className="space-y-2 text-sm">
               <li>
-                <Link href="#" className="hover:text-blue-400 transition">
+                <Link href="#" className="hover:text-secondary transition">
                   About Us
                 </Link>
               </li>
               <li>
-                <Link href="#" className="hover:text-blue-400 transition">
+                <Link href="#" className="hover:text-secondary transition">
                   Portfolio
                 </Link>
               </li>
               <li>
-                <Link href="#" className="hover:text-blue-400 transition">
+                <Link href="#" className="hover:text-secondary transition">
                   Blog
                 </Link>
               </li>
               <li>
-                <Link href="#" className="hover:text-blue-400 transition">
+                <Link href="#" className="hover:text-secondary transition">
                   Contact
                 </Link>
               </li>
