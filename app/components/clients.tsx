@@ -74,6 +74,7 @@ export default function Clients() {
     },
     {
         id: 15,
+        
         name: 'Client 15',
         logo: 'https://via.placeholder.com/200x100?text=Client+15',
     }

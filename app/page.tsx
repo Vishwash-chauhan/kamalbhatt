@@ -2,6 +2,7 @@ import Hero from './components/hero';
 import AboutSection from './components/about-section';
 import AboutMeeganMedia from './components/about-meegan-media';
 import Clients from './components/clients';
+import CTA from './components/cta';
 import { Search, TrendingUp, Share2, Code, BookOpen, ArrowRight } from 'lucide-react';
 
 export default function Home() {
@@ -163,6 +164,7 @@ export default function Home() {
       <AboutSection />
       <AboutMeeganMedia />
       <Clients />
+      <CTA />
     </>
   );
 }
