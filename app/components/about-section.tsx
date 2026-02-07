@@ -30,22 +30,22 @@ export default function AboutSection() {
 
             {/* Description */}
             <p className="text-lg text-gray-700 dark:text-gray-300 mb-6 leading-relaxed">
-              With extensive experience in digital marketing, Kamal Bhatt has helped numerous businesses in Dehradun transform their online presence and achieve remarkable growth. We specialize in creating comprehensive digital strategies that deliver measurable results.
+              Hi, I'm <span className="font-bold text-primary">Kamal Bhatt</span> - Founder & CEO of <span className="font-bold text-primary">Meegan Media</span>. I've had the privilege of helping 100+ businesses across India achieve exponential growth through strategic SEO, Google Ads, and social media marketing.
             </p>
 
             <p className="text-lg text-gray-700 dark:text-gray-300 mb-8 leading-relaxed">
-              From SEO optimization to paid advertising, social media management to web development, we offer a full spectrum of digital marketing services. Our data-driven approach ensures every strategy is tailored to your unique business goals and target audience, maximizing ROI and building sustainable growth.
+              With a passion for digital innovation and a deep understanding of the Indian market, I've developed a proven methodology that combines data-driven insights with creative excellence. Whether you're a startup looking to establish your digital presence or an established business aiming to scale, I specialize in creating customized strategies that deliver measurable results and sustainable growth. My focus is simple: your success is my success.
             </p>
 
             {/* Highlights */}
             <div className="grid grid-cols-2 gap-6 mb-8">
               <div>
-                <div className="text-3xl font-bold text-primary mb-2">500+</div>
-                <p className="text-gray-600 dark:text-gray-400">Projects Completed</p>
+                <div className="text-3xl font-bold text-primary mb-2">10+</div>
+                <p className="text-gray-600 dark:text-gray-400">Years Of Experience</p>
               </div>
               <div>
-                <div className="text-3xl font-bold text-primary mb-2">50+</div>
-                <p className="text-gray-600 dark:text-gray-400">Happy Clients</p>
+                <div className="text-3xl font-bold text-primary mb-2">7X</div>
+                <p className="text-gray-600 dark:text-gray-400">Average ROAS</p>
               </div>
             </div>
 

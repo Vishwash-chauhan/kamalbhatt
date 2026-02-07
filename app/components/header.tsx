@@ -16,9 +16,9 @@ export default function Header() {
             <Image
               src="/Meegan Media Logo.png"
               alt="Meegan Media Logo"
-              width={180}
-              height={40}
-              className="h-10 w-auto"
+              width={240}
+              height={80}
+              className="h-16 w-auto"
               priority
             />
           </Link>
