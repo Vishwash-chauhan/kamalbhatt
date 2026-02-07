@@ -1,12 +1,5 @@
 'use client';
 
-import { Swiper, SwiperSlide } from 'swiper/react';
-import { Navigation, Pagination, Autoplay } from 'swiper/modules';
-import 'swiper/css';
-import 'swiper/css/navigation';
-import 'swiper/css/pagination';
-import { ChevronLeft, ChevronRight } from 'lucide-react';
-
 export default function Clients() {
   const clients = [
     {
@@ -69,86 +62,59 @@ export default function Clients() {
       name: 'Client 12',
       logo: 'https://via.placeholder.com/200x100?text=Client+12',
     },
+    {
+        id: 13,
+        name: 'Client 13',
+        logo: 'https://via.placeholder.com/200x100?text=Client+13',
+    },
+    {
+        id: 14,
+        name: 'Client 14',
+        logo: 'https://via.placeholder.com/200x100?text=Client+14',
+    },
+    {
+        id: 15,
+        name: 'Client 15',
+        logo: 'https://via.placeholder.com/200x100?text=Client+15',
+    }
   ];
 
   return (
-    <section id="clients" className="py-20 bg-white dark:bg-gray-950">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        {/* Section Header */}
-        <div className="mb-16 text-center">
-          <h2 className="text-4xl md:text-5xl font-bold text-gray-900 dark:text-white mb-4">
-            Our Clients
-          </h2>
-          <p className="text-lg text-gray-600 dark:text-gray-400 max-w-2xl mx-auto">
-            Join hundreds of businesses that trust us to grow their digital presence
-          </p>
-        </div>
-
-        {/* Clients Carousel */}
-        <div className="relative">
-          <Swiper
-            modules={[Navigation, Pagination, Autoplay]}
-            spaceBetween={32}
-            slidesPerView={1}
-            breakpoints={{
-              640: {
-                slidesPerView: 2,
-              },
-              1024: {
-                slidesPerView: 4,
-              },
-            }}
-            navigation={{
-              prevEl: '.clients-prev',
-              nextEl: '.clients-next',
-            }}
-            pagination={{
-              el: '.clients-pagination',
-              clickable: true,
-              dynamicBullets: true,
-            }}
-            autoplay={{
-              delay: 5000,
-              disableOnInteraction: false,
-            }}
-            loop={true}
-            className="!pb-16"
-          >
-            {clients.map((client) => (
-              <SwiperSlide key={client.id}>
-                <div className="flex items-center justify-center p-6 bg-gray-50 dark:bg-gray-900 rounded-lg border border-gray-200 dark:border-gray-800 h-32">
-                  <img
-                    src={client.logo}
-                    alt={client.name}
-                    className="max-w-full h-auto max-h-16 object-contain grayscale hover:grayscale-0 transition duration-300"
-                  />
-                </div>
-              </SwiperSlide>
-            ))}
-          </Swiper>
-
-          {/* Pagination */}
-          <div className="clients-pagination flex justify-center mt-8 gap-2"></div>
-        </div>
+    <section 
+      id="clients" 
+      className="py-20 bg-gradient-to-r from-slate-800 via-blue-900 to-slate-800 relative overflow-hidden"
+    >
+      {/* Decorative background elements */}
+      <div className="absolute inset-0 opacity-10">
+        <div className="absolute top-0 left-0 w-96 h-96 bg-white rounded-full blur-3xl"></div>
+        <div className="absolute bottom-0 right-0 w-96 h-96 bg-white rounded-full blur-3xl"></div>
       </div>
 
-      {/* Custom Styles for Swiper Pagination */}
-      <style jsx>{`
-        :global(.clients-pagination .swiper-pagination-bullet) {
-          background-color: var(--primary, #1a4d8f) !important;
-          opacity: 0.5 !important;
-        }
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+        {/* Section Header */}
+        <div className="mb-16 text-center">
+          <h2 className="text-4xl md:text-5xl font-bold text-white mb-4">
+            Our Clients
+          </h2>
+          <div className="h-1 w-20 bg-white mx-auto"></div>
+        </div>
 
-        :global(.clients-pagination .swiper-pagination-bullet-active) {
-          background-color: var(--primary, #1a4d8f) !important;
-          opacity: 1 !important;
-        }
-
-        :global(.swiper-button-disabled) {
-          opacity: 0.5 !important;
-          cursor: not-allowed !important;
-        }
-      `}</style>
+        {/* Clients Grid */}
+        <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-6">
+          {clients.map((client) => (
+            <div
+              key={client.id}
+              className="flex items-center justify-center p-6 bg-white rounded-lg shadow-lg hover:shadow-2xl hover:scale-105 transition duration-300"
+            >
+              <img
+                src={client.logo}
+                alt={client.name}
+                className="max-w-full h-auto max-h-16 object-contain"
+              />
+            </div>
+          ))}
+        </div>
+      </div>
     </section>
   );
 }
