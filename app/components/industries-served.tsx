@@ -1,0 +1,97 @@
+'use client';
+
+import { CheckCircle } from 'lucide-react';
+
+export default function IndustriesServed() {
+  const industries = [
+    {
+      name: 'EdTech & Coaching Institutes',
+      tagline: 'My Specialty',
+      growth: '320%+ Enrollment Growth',
+      image: 'https://placehold.co/300x200?text=EdTech',
+    },
+    {
+      name: 'E-commerce & D2C Brands',
+      tagline: 'Scaling Sales',
+      growth: '₹2.5Cr+ Revenue Increases',
+      image: 'https://placehold.co/300x200?text=Ecommerce',
+    },
+    {
+      name: 'Healthcare & Wellness',
+      tagline: 'Patient Acquisition',
+      growth: '450% Lead Generation Boost',
+      image: 'https://placehold.co/300x200?text=Healthcare',
+    },
+    {
+      name: 'Real Estate & Property',
+      tagline: 'Property Leads',
+      growth: '250%+ Inquiry Growth',
+      image: 'https://placehold.co/300x200?text=RealEstate',
+    },
+    {
+      name: 'B2B SaaS & Professional Services',
+      tagline: 'Enterprise Growth',
+      growth: '280% Qualified Leads',
+      image: 'https://placehold.co/300x200?text=SaaS',
+    },
+  ];
+
+  return (
+    <section className="py-20 bg-gray-50 dark:bg-gray-900">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        {/* Section Header */}
+        <div className="mb-16 text-center">
+          <h2 className="text-4xl md:text-5xl font-bold text-gray-900 dark:text-white mb-4">
+            Industries I Serve
+          </h2>
+          <p className="text-lg text-gray-600 dark:text-gray-400 max-w-2xl mx-auto">
+            Proven expertise across diverse sectors
+          </p>
+        </div>
+
+        {/* Industries Grid */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          {industries.map((industry, index) => (
+            <div
+              key={index}
+              className="bg-white dark:bg-gray-800 rounded-lg overflow-hidden hover:shadow-xl transition duration-300 group"
+            >
+              {/* Image */}
+              <div className="relative overflow-hidden h-48 bg-gray-200 dark:bg-gray-700">
+                <img
+                  src={industry.image}
+                  alt={industry.name}
+                  className="w-full h-full object-cover group-hover:scale-110 transition duration-300"
+                />
+              </div>
+
+              {/* Content */}
+              <div className="p-6">
+                <div className="flex items-start gap-3 mb-3">
+                  <CheckCircle className="w-6 h-6 text-primary flex-shrink-0" />
+                  <div>
+                    <h3 className="text-xl font-bold text-gray-900 dark:text-white">
+                      {industry.name}
+                    </h3>
+                    <p className="text-sm text-secondary font-semibold">
+                      {industry.tagline}
+                    </p>
+                  </div>
+                </div>
+
+                <div className="bg-primary/10 dark:bg-primary/20 p-4 rounded-lg">
+                  <p className="text-sm text-gray-600 dark:text-gray-300 mb-2">
+                    Average Result:
+                  </p>
+                  <p className="text-lg font-bold text-primary">
+                    {industry.growth}
+                  </p>
+                </div>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+}

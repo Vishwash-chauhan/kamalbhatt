@@ -28,7 +28,7 @@ export default function Header() {
             <Link href="#services" className="text-gray-700 dark:text-gray-300 hover:text-primary dark:hover:text-secondary transition">
               Services
             </Link>
-            <Link href="#about" className="text-gray-700 dark:text-gray-300 hover:text-primary dark:hover:text-secondary transition">
+            <Link href="/about" className="text-gray-700 dark:text-gray-300 hover:text-primary dark:hover:text-secondary transition">
               About
             </Link>
             <Link href="#portfolio" className="text-gray-700 dark:text-gray-300 hover:text-primary dark:hover:text-secondary transition">
@@ -73,7 +73,7 @@ export default function Header() {
               Services
             </Link>
             <Link
-              href="#about"
+              href="/about"
               className="block px-4 py-2 text-gray-700 dark:text-gray-300 hover:text-primary dark:hover:text-secondary transition rounded"
             >
               About
