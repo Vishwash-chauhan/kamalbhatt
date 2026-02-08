@@ -6,31 +6,26 @@ export default function IndustriesServed() {
   const industries = [
     {
       name: 'EdTech & Coaching Institutes',
-      tagline: 'My Specialty',
       growth: '320%+ Enrollment Growth',
       image: 'https://placehold.co/300x200?text=EdTech',
     },
     {
       name: 'E-commerce & D2C Brands',
-      tagline: 'Scaling Sales',
       growth: '₹2.5Cr+ Revenue Increases',
       image: 'https://placehold.co/300x200?text=Ecommerce',
     },
     {
       name: 'Healthcare & Wellness',
-      tagline: 'Patient Acquisition',
       growth: '450% Lead Generation Boost',
       image: 'https://placehold.co/300x200?text=Healthcare',
     },
     {
       name: 'Real Estate & Property',
-      tagline: 'Property Leads',
       growth: '250%+ Inquiry Growth',
       image: 'https://placehold.co/300x200?text=RealEstate',
     },
     {
       name: 'B2B SaaS & Professional Services',
-      tagline: 'Enterprise Growth',
       growth: '280% Qualified Leads',
       image: 'https://placehold.co/300x200?text=SaaS',
     },
@@ -73,15 +68,12 @@ export default function IndustriesServed() {
                     <h3 className="text-xl font-bold text-gray-900 dark:text-white">
                       {industry.name}
                     </h3>
-                    <p className="text-sm text-secondary font-semibold">
-                      {industry.tagline}
-                    </p>
                   </div>
                 </div>
 
                 <div className="bg-primary/10 dark:bg-primary/20 p-4 rounded-lg">
                   <p className="text-sm text-gray-600 dark:text-gray-300 mb-2">
-                    Average Result:
+                    Results:
                   </p>
                   <p className="text-lg font-bold text-primary">
                     {industry.growth}

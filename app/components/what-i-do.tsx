@@ -1,7 +1,5 @@
 'use client';
 
-import { AlertCircle, CheckCircle2 } from 'lucide-react';
-
 export default function WhatIDo() {
   const painPoints = [
     'Frustrated with poor ROI from digital campaigns',
@@ -38,7 +36,9 @@ export default function WhatIDo() {
             <div className="space-y-4 mb-10">
               {painPoints.map((point, index) => (
                 <div key={index} className="flex items-start gap-4">
-                  <AlertCircle className="w-6 h-6 text-secondary flex-shrink-0 mt-1" />
+                  <div className="flex items-center justify-center w-8 h-8 rounded-full bg-secondary text-white font-bold text-sm flex-shrink-0 mt-1">
+                    {index + 1}
+                  </div>
                   <p className="text-gray-700 dark:text-gray-300 text-lg">{point}</p>
                 </div>
               ))}

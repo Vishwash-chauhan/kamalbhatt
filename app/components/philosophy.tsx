@@ -12,15 +12,6 @@ export default function Philosophy() {
           <p className="text-2xl md:text-3xl font-bold text-white mb-4 leading-relaxed">
             Marketing without data is just guessing. Data without action is just numbers. At Meegan Media, we turn data into strategies and strategies into measurable business growth.
           </p>
-          <div className="flex items-center gap-4 mt-8">
-            <div className="w-16 h-16 rounded-full bg-secondary flex items-center justify-center">
-              <span className="text-xl font-bold text-gray-900">KB</span>
-            </div>
-            <div>
-              <p className="text-white font-bold text-lg">Kamal Bhatt</p>
-              <p className="text-white/70">Founder & CEO, Meegan Media</p>
-            </div>
-          </div>
         </div>
 
         {/* Location Info */}

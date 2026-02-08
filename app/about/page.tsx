@@ -4,6 +4,7 @@ import TrackRecord from '@/app/components/track-record';
 import CoreExpertise from '@/app/components/core-expertise';
 import IndustriesServed from '@/app/components/industries-served';
 import Philosophy from '@/app/components/philosophy';
+import Testimonials from '@/app/components/testimonials';
 import CTA from '@/app/components/cta';
 
 export const metadata = {
@@ -26,6 +27,7 @@ export default function AboutPage() {
       <CoreExpertise />
       <IndustriesServed />
       <Philosophy />
+      <Testimonials />
       <CTA />
     </>
   );

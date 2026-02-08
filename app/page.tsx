@@ -4,6 +4,7 @@ import AboutMeeganMedia from './components/about-meegan-media';
 import Clients from './components/clients';
 import CTA from './components/cta';
 import Blog from './components/blog_snippit_home';
+import Testimonials from './components/testimonials';
 import { Search, TrendingUp, Share2, Code, BookOpen, ArrowRight } from 'lucide-react';
 
 export default function Home() {
@@ -167,6 +168,7 @@ export default function Home() {
       <Clients />
       <CTA />
       <Blog />
+      <Testimonials />
     </>
   );
 }
