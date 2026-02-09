@@ -156,7 +156,7 @@ export default function Testimonials() {
           </Swiper>
 
           {/* Navigation Buttons */}
-          <button
+          {/* <button
             className="testimonials-prev absolute left-0 top-1/3 -translate-y-1/2 -translate-x-12 md:translate-x-0 z-10 bg-primary hover:bg-primary/90 text-white p-3 rounded-full transition duration-300 flex items-center justify-center shadow-lg"
             aria-label="Previous testimonial"
           >
@@ -167,7 +167,7 @@ export default function Testimonials() {
             aria-label="Next testimonial"
           >
             <ChevronRight className="w-6 h-6" />
-          </button>
+          </button> */}
 
           {/* Pagination */}
           <div className="testimonials-pagination flex justify-center mt-8 gap-2"></div>

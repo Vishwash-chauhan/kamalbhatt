@@ -34,7 +34,7 @@ export default function Header() {
             <Link href="#portfolio" className="text-gray-700 dark:text-gray-300 hover:text-primary dark:hover:text-secondary transition">
               Portfolio
             </Link>
-            <Link href="#contact" className="text-gray-700 dark:text-gray-300 hover:text-primary dark:hover:text-secondary transition">
+            <Link href="/contact" className="text-gray-700 dark:text-gray-300 hover:text-primary dark:hover:text-secondary transition">
               Contact
             </Link>
             <button className="bg-primary hover:bg-primary/90 text-white px-6 py-2 rounded-lg transition">
@@ -85,7 +85,7 @@ export default function Header() {
               Portfolio
             </Link>
             <Link
-              href="#contact"
+              href="/contact"
               className="block px-4 py-2 text-gray-700 dark:text-gray-300 hover:text-primary dark:hover:text-secondary transition rounded"
             >
               Contact
