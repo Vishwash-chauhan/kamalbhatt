@@ -1,6 +1,6 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
-import { Search, TrendingUp, Share2, Code, BookOpen, ArrowRight } from 'lucide-react';
+import { ArrowRight } from 'lucide-react';
 import PricingPlans from '../components/pricing-plans';
 import OneTimeServices from '../components/one-time-services';
 import Clients from '../components/clients';
@@ -11,7 +11,7 @@ import CTA from '../components/cta';
 type Service = {
   title: string;
   description: string;
-  Icon: typeof Search;
+  image: string;
   tag: string;
 };
 
@@ -21,35 +21,35 @@ const services: Service[] = [
     tag: 'Visibility',
     description:
       'Boost your online visibility with our proven SEO strategies. We optimize your website to rank higher in search results and drive organic traffic to grow your business.',
-    Icon: Search,
+    image: 'https://placehold.co/560x360?text=SEO+Optimization',
   },
   {
-    title: 'Performance Paid Ads',
+    title: 'Paid Ads',
     tag: 'Growth',
     description:
       'Maximize your ROI with targeted paid advertising campaigns. We manage Google Ads, Facebook Ads, and other platforms to drive quality leads and conversions.',
-    Icon: TrendingUp,
+    image: 'https://placehold.co/560x360?text=Paid+Ads',
   },
   {
     title: 'Social Media Marketing',
     tag: 'Engagement',
     description:
       'Build a strong social presence and engage with your audience across all platforms. We create compelling content that drives engagement and builds brand loyalty.',
-    Icon: Share2,
+    image: 'https://placehold.co/560x360?text=Social+Media',
   },
   {
     title: 'Web Development & Design',
     tag: 'Experience',
     description:
       'Create stunning, responsive websites that convert visitors into customers. We design and develop custom solutions that align with your brand vision.',
-    Icon: Code,
+    image: 'https://placehold.co/560x360?text=Web+Development',
   },
   {
     title: 'Digital Marketing Training',
     tag: 'Education',
     description:
       'Master digital marketing skills with our comprehensive training programs. Learn SEO, social media, content creation, and more from industry experts.',
-    Icon: BookOpen,
+    image: 'https://placehold.co/560x360?text=Training',
   },
 ];
 
@@ -88,10 +88,13 @@ export default function ServicesPage() {
               <div className="w-full md:w-1/2">
                 <div className="relative group">
                   <div className="absolute -inset-4 bg-gray-100 dark:bg-gray-900 rounded-3xl transition-transform group-hover:scale-105" />
-                  <div className="relative h-80 md:h-[400px] w-full bg-white dark:bg-gray-900 border border-gray-100 dark:border-gray-800 rounded-2xl flex items-center justify-center shadow-xl">
-                    <div className="flex items-center justify-center h-28 w-28 rounded-3xl bg-primary/10 text-primary">
-                      <service.Icon className="w-14 h-14" />
-                    </div>
+                  <div className="relative h-80 md:h-[400px] w-full bg-white dark:bg-gray-900 border border-gray-100 dark:border-gray-800 rounded-2xl shadow-xl overflow-hidden">
+                    <img
+                      src={service.image}
+                      alt={`${service.title} preview`}
+                      className="h-full w-full object-cover"
+                      loading="lazy"
+                    />
                     {/* Decorative Element */}
                     <div className="absolute bottom-6 right-6 h-2 w-24 bg-secondary/30 rounded-full" />
                   </div>
