@@ -42,7 +42,7 @@ export default function CTA() {
           {/* Right CTA Button */}
           <div className="flex-shrink-0">
             <a
-              href="#contact"
+              href="/contact"
               className="inline-flex items-center gap-3 bg-gray-900 hover:bg-secondary text-white hover:text-gray-900 font-bold px-8 py-4 rounded-full transition duration-300 group"
             >
               <span>Contact Us</span>

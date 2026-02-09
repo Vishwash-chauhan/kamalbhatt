@@ -115,7 +115,7 @@ export default function ServicesPage() {
                     href="/contact"
                     className="inline-flex items-center gap-2 px-6 py-3 rounded-lg bg-primary text-white font-bold hover:bg-opacity-90 transition-all transform hover:-translate-y-1"
                   >
-                    Discuss Project <ArrowRight className="w-4 h-4" />
+                    Know More <ArrowRight className="w-4 h-4" />
                   </Link>
                 </div>
               </div>

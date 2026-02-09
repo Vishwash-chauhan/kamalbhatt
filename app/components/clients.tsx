@@ -1,5 +1,9 @@
 'use client';
 
+import { Swiper, SwiperSlide } from 'swiper/react';
+import { Autoplay } from 'swiper/modules';
+import 'swiper/css';
+
 export default function Clients() {
   const clients = [
     {
@@ -100,21 +104,35 @@ export default function Clients() {
           <div className="h-1 w-20 bg-white mx-auto"></div>
         </div>
 
-        {/* Clients Grid */}
-        <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-6">
+        {/* Clients Carousel */}
+        <Swiper
+          modules={[Autoplay]}
+          spaceBetween={24}
+          slidesPerView={1}
+          breakpoints={{
+            1024: {
+              slidesPerView: 4,
+            },
+          }}
+          autoplay={{
+            delay: 2000,
+            disableOnInteraction: false,
+          }}
+          loop={true}
+          className="!pb-2"
+        >
           {clients.map((client) => (
-            <div
-              key={client.id}
-              className="flex items-center justify-center p-6 bg-white rounded-lg shadow-lg hover:shadow-2xl hover:scale-105 transition duration-300"
-            >
-              <img
-                src={client.logo}
-                alt={client.name}
-                className="max-w-full h-auto max-h-16 object-contain"
-              />
-            </div>
+            <SwiperSlide key={client.id}>
+              <div className="flex items-center justify-center p-6 h-32 bg-white rounded-lg shadow-lg hover:shadow-2xl hover:scale-105 transition duration-300">
+                <img
+                  src={client.logo}
+                  alt={client.name}
+                  className="max-w-full h-auto max-h-16 object-contain"
+                />
+              </div>
+            </SwiperSlide>
           ))}
-        </div>
+        </Swiper>
       </div>
     </section>
   );

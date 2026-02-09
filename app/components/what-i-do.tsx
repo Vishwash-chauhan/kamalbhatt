@@ -24,12 +24,12 @@ export default function WhatIDo() {
           {/* Right - Content */}
           <div>
             <h2 className="text-4xl md:text-5xl font-bold text-gray-900 dark:text-white mb-4">
-              What I Do
+              What We Do
             </h2>
             <div className="h-1 w-20 bg-secondary mb-8"></div>
 
             <p className="text-lg text-gray-700 dark:text-gray-300 mb-8">
-              I help business owners and marketing leaders who are:
+              We help business owners and marketing leaders who are:
             </p>
 
             {/* Pain Points */}
@@ -47,7 +47,7 @@ export default function WhatIDo() {
             {/* Approach */}
             <div className="bg-primary/10 dark:bg-primary/20 p-6 rounded-lg border-l-4 border-secondary">
               <p className="text-gray-900 dark:text-white font-bold text-lg mb-4">
-                My approach is simple:
+                Our approach is simple:
               </p>
               <p className="text-gray-700 dark:text-gray-300">
                 <span className="font-semibold text-primary">Transparent strategies</span> + 

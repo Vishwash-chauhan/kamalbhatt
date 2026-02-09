@@ -6,6 +6,8 @@ import IndustriesServed from '@/app/components/industries-served';
 import Philosophy from '@/app/components/philosophy';
 import Testimonials from '@/app/components/testimonials';
 import CTA from '@/app/components/cta';
+import AboutSection  from '../components/about-section';
+import AboutMeeganMedia  from '../components/about-meegan-media';
 
 export const metadata = {
   title: 'About Kamal Bhatt - Founder of Meegan Media',
@@ -22,6 +24,8 @@ export default function AboutPage() {
   return (
     <>
       <AboutHero />
+      {/* <AboutSection /> */}
+      <AboutMeeganMedia />
       <WhatIDo />
       <TrackRecord />
       <CoreExpertise />
@@ -29,6 +33,7 @@ export default function AboutPage() {
       <Philosophy />
       <Testimonials />
       <CTA />
+
     </>
   );
 }

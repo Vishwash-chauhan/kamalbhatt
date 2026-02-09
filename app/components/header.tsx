@@ -25,13 +25,16 @@ export default function Header() {
 
           {/* Desktop Navigation */}
           <div className="hidden md:flex items-center space-x-8">
+            <Link href="/" className="text-gray-700 dark:text-gray-300 hover:text-primary dark:hover:text-secondary transition">
+              Home
+            </Link>
             <Link href="/services" className="text-gray-700 dark:text-gray-300 hover:text-primary dark:hover:text-secondary transition">
               Services
             </Link>
             <Link href="/about" className="text-gray-700 dark:text-gray-300 hover:text-primary dark:hover:text-secondary transition">
               About
             </Link>
-            <Link href="#portfolio" className="text-gray-700 dark:text-gray-300 hover:text-primary dark:hover:text-secondary transition">
+            <Link href="/portfolio" className="text-gray-700 dark:text-gray-300 hover:text-primary dark:hover:text-secondary transition">
               Portfolio
             </Link>
             <Link href="/contact" className="text-gray-700 dark:text-gray-300 hover:text-primary dark:hover:text-secondary transition">
