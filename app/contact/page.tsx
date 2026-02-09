@@ -1,6 +1,8 @@
 
 import ContactForm from '@/app/components/contact-form';
 import ContactInfo from '@/app/components/contact-info';
+import Testimonials from '../components/testimonials';
+import Clients from '../components/clients';
 
 export const metadata = {
   title: 'Contact Us | Meegan Media',
@@ -22,6 +24,9 @@ export default function ContactPage() {
           </div>
         </div>
       </div>
+      <Testimonials />
+      <Clients />
     </main>
+
   );
 }
