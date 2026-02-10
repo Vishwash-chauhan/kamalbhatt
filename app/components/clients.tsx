@@ -46,42 +46,6 @@ export default function Clients() {
       name: 'Client 8',
       logo: 'https://via.placeholder.com/200x100?text=Client+8',
     },
-    {
-      id: 9,
-      name: 'Client 9',
-      logo: 'https://via.placeholder.com/200x100?text=Client+9',
-    },
-    {
-      id: 10,
-      name: 'Client 10',
-      logo: 'https://via.placeholder.com/200x100?text=Client+10',
-    },
-    {
-      id: 11,
-      name: 'Client 11',
-      logo: 'https://via.placeholder.com/200x100?text=Client+11',
-    },
-    {
-      id: 12,
-      name: 'Client 12',
-      logo: 'https://via.placeholder.com/200x100?text=Client+12',
-    },
-    {
-        id: 13,
-        name: 'Client 13',
-        logo: 'https://via.placeholder.com/200x100?text=Client+13',
-    },
-    {
-        id: 14,
-        name: 'Client 14',
-        logo: 'https://via.placeholder.com/200x100?text=Client+14',
-    },
-    {
-        id: 15,
-        
-        name: 'Client 15',
-        logo: 'https://via.placeholder.com/200x100?text=Client+15',
-    }
   ];
 
   return (

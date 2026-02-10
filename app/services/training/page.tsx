@@ -1,36 +1,72 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
+import Features from '@/app/components/features';
+import CourseRoadmap from '@/app/components/course-roadmap';
+import Clients from '@/app/components/clients';
+import Testimonials from '@/app/components/testimonials';
+import CTA from '@/app/components/cta';
 
-const curriculum = [
+const modules = [
   {
-    week: 'Week 1',
-    title: 'Foundations of Digital Marketing',
-    topics: ['Customer journey mapping', 'Positioning and messaging', 'Channel selection'],
+    id: 'module-1',
+    title: 'Module 1: Introduction to Digital Marketing with AI',
+    topics: ['What is digital marketing?','Traditional Marketing vs Digital Marketing vs Modern Digital Marketing with AI','Key digital channels: SEO, SEM, SMM, Content','Understanding customer journey and funnels','Overview of tools used in modern digital marketing','AI Tools for content writing, SEO, captions, Ad Copies, Blog Outline, Topic Searches, etc.',	
+],
   },
   {
-    week: 'Week 2',
-    title: 'Search and Content',
-    topics: ['SEO essentials', 'Keyword research', 'Content briefs'],
+    id: 'module-2',
+    title: 'Module 2: Website & Landing Page Essentials',
+    topics: ['Domain & hosting basics', 'Introduction to WordPress & Elementor', 'Website structure and navigation', 'Components of a landing page', 'Importance of responsiveness and user experience'],
   },
   {
-    week: 'Week 3',
-    title: 'Paid Media Essentials',
-    topics: ['Google Ads basics', 'Meta Ads basics', 'Conversion tracking'],
+    id: 'module-3',
+    title: 'Module 3: SEO Fundamentals & Keyword Research',
+    topics: ['What is SEO and why it matters', 'On-page vs off-page SEO vs technical SEO', 'Keyword research methods', 'Optimizing content: meta tags, headers, internal & outbound links', 'Free SEO tools: Ubersuggest, Google Keyword Planner'],
   },
   {
-    week: 'Week 4',
-    title: 'Social Media Growth',
-    topics: ['Content systems', 'Community engagement', 'Analytics and reporting'],
+    id: 'module-4',
+    title: 'Module 4: Technical SEO',
+    topics: ['Website speed optimization', 'Robots.txt and XML sitemap setup', 'Crawlability and indexing', 'Structured data and schema basics'],
   },
   {
-    week: 'Week 5',
-    title: 'Growth Systems',
-    topics: ['Funnel planning', 'Landing pages', 'Lead quality optimization'],
+    id: 'module-5',
+    title: 'Module 5: Analytics & Tracking Setup',
+    topics: ['Setting up Google Analytics (GA4)', 'Setting up Google Tag Manager (GTM)', 'Verifying the website with Google Search Console (GSC)', 'Creating custom events and goals in GA4'],
   },
   {
-    week: 'Week 6',
-    title: 'Capstone and Career Prep',
-    topics: ['Portfolio project', 'Interview prep', 'Certification roadmap'],
+    id: 'module-6',
+    title: 'Module 6: Social Media Marketing',
+    topics: ['Overview: Facebook, Instagram, LinkedIn, YouTube', 'Content strategy for each platform', 'Post types: stories, reels, carousels, videos', 'Community engagement techniques', 'Post scheduling and calendar planning'],
+  },
+  {
+    id: 'module-7',
+    title: 'Module 7: Facebook & Instagram Ads',
+    topics: ['Introduction to Meta Ads', 'Campaign, Ad Set, and Ad structure', 'Audience targeting and interest selection', 'Ad creatives, formats, and CTA', 'Ad metrics: CTR, CPC, Reach'],
+  },
+  {
+    id: 'module-8',
+    title: 'Module 8: Google Ads & Campaign Types',
+    topics: ['Setting up a Google Ads account', 'Keyword match types: Broad, Phrase, Exact', 'Writing effective ad copy', 'Running Search and Performance Max campaigns', 'Basics of conversion tracking'],
+  },
+  {
+    id: 'module-9',
+    title: 'Module 9: Content Marketing Strategy',
+    topics: ['Role of content in digital marketing', 'Blog writing basics and formatting', 'Visual content: infographics, videos, guides', 'Building a monthly content calendar', 'Content distribution and promotion methods'],
+  },
+  {
+    id: 'module-10',
+    title: 'Module 10: Marketing Funnels & Strategy',
+    topics: ['Understanding basic funnel structure', 'Lead generation and nurturing flow', 'Planning a digital strategy for conversion', 'Integrating forms, automation, and follow-ups'],
+  },
+  {
+    id: 'module-11',
+    title: 'Module 11: AI In Digital Marketing',
+    topics: ['Overview of AI’s impact on marketing trends', 'Personalized targeting & predictive analytics', 'AEO, GEO & AI Mode', 'AI in SEO & content planning', 'Rise of chatbots & marketing automation', 'Voice search and the future of digital'],
+  },
+  {
+    id: 'module-12',
+    title: 'Module 12: Career Preparation & Portfolio Building',
+    topics: ['How to start freelancing', 'Creating a digital portfolio', 'Personal branding & profile optimization', 'Resume building (role-based format)', 'Tips for interviews, client pitches, and outreach'],
   },
 ];
 
@@ -47,13 +83,15 @@ const whoItsFor = [
   'Fresh graduates building a practical portfolio',
   'Early-career marketers seeking structured growth',
   'Freelancers who want a repeatable process',
-];
+];  
 
-const formatDetails = [
-  { label: 'Mode', value: 'Live + Hands-on' },
-  { label: 'Duration', value: '6 Weeks' },
-  { label: 'Sessions', value: '3 per week' },
-  { label: 'Support', value: 'Weekly reviews + feedback' },
+const courseHighlights = [
+  { value: '100%', label: 'Job Assistance' },
+  { value: '9+', label: 'Modules' },
+  { value: '5+', label: 'Tools' },
+  { value: '15', label: 'PDP Sessions' },
+  { value: '4+', label: 'Projects' },
+  { value: '1yr+', label: 'LMS Access' },
 ];
 
 export const metadata: Metadata = {
@@ -79,10 +117,10 @@ export default function TrainingPage() {
                 Training Program
               </p>
               <h1 className="text-5xl md:text-6xl font-extrabold text-gray-900 dark:text-white">
-                Digital Marketing Training for Students
+                Advanced Digital Marketing Course With Gen AI
               </h1>
               <p className="text-xl text-gray-600 dark:text-gray-400">
-                A structured, live program that takes you from fundamentals to job-ready marketing skills.
+                Our Advanced Digital Marketing Course with AI offers comprehensive training in SEO, PPC, Social Media, and Content Marketing. You'll gain the skills needed to drive traffic, optimize conversions, and thrive in the digital marketing industry.
               </p>
               <div className="flex flex-wrap gap-4">
                 <Link
@@ -99,134 +137,51 @@ export default function TrainingPage() {
                 </Link>
               </div>
             </div>
-            <div className="grid grid-cols-2 gap-4">
-              {formatDetails.map((detail) => (
-                <div
-                  key={detail.label}
-                  className="rounded-2xl border border-gray-200 dark:border-gray-800 bg-gray-50 dark:bg-gray-900 p-6"
-                >
-                  <p className="text-sm text-gray-500 dark:text-gray-400">{detail.label}</p>
-                  <p className="text-lg font-semibold text-gray-900 dark:text-white mt-2">
-                    {detail.value}
-                  </p>
-                </div>
-              ))}
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <section className="py-16 bg-gray-50 dark:bg-gray-900">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 lg:grid-cols-3 gap-10">
             <div>
-              <h2 className="text-3xl font-bold text-gray-900 dark:text-white">
-                Who this is for
-              </h2>
-              <p className="text-gray-600 dark:text-gray-400 mt-4">
-                Built for students who want practical skills and a clear path to start working in marketing.
-              </p>
-            </div>
-            <div className="lg:col-span-2 grid grid-cols-1 sm:grid-cols-2 gap-6">
-              {whoItsFor.map((item) => (
-                <div
-                  key={item}
-                  className="rounded-2xl border border-gray-200 dark:border-gray-800 bg-white dark:bg-gray-950 p-6"
-                >
-                  <p className="text-gray-700 dark:text-gray-300">{item}</p>
-                </div>
-              ))}
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <section className="py-16">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-12">
-            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 dark:text-white">
-              Curriculum roadmap
-            </h2>
-            <p className="text-lg text-gray-600 dark:text-gray-400 mt-4">
-              A week-by-week structure designed to build core skills and confidence.
-            </p>
-          </div>
-          <div className="space-y-6">
-            {curriculum.map((module) => (
-              <div
-                key={module.week}
-                className="rounded-2xl border border-gray-200 dark:border-gray-800 bg-gray-50 dark:bg-gray-900 p-8"
-              >
-                <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-4">
-                  <div>
-                    <p className="text-sm uppercase tracking-[0.2em] text-secondary font-semibold">
-                      {module.week}
-                    </p>
-                    <h3 className="text-2xl font-bold text-gray-900 dark:text-white mt-2">
-                      {module.title}
-                    </h3>
+              <div className="rounded-2xl border border-gray-200 dark:border-gray-800 overflow-hidden mb-6">
+                <img
+                  src="https://placehold.co/1280x720"
+                  alt="Digital Marketing Training"
+                  className="w-full h-auto"
+                />
+              </div>
+              <div className="flex flex-wrap gap-8">
+                <div className="flex items-center gap-3">
+                  <div className="flex items-center justify-center w-12 h-12 rounded-full bg-primary text-white">
+                    <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v4l3 2m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+                    </svg>
                   </div>
-                  <div className="flex flex-wrap gap-3">
-                    {module.topics.map((topic) => (
-                      <span
-                        key={topic}
-                        className="px-4 py-2 rounded-full bg-white dark:bg-gray-950 border border-gray-200 dark:border-gray-800 text-sm text-gray-700 dark:text-gray-300"
-                      >
-                        {topic}
-                      </span>
-                    ))}
+                  <div>
+                    <p className="text-sm text-gray-600 dark:text-gray-400">Duration</p>
+                    <p className="text-lg font-bold text-gray-900 dark:text-white">3 Months</p>
+                  </div>
+                </div>
+                <div className="flex items-center gap-3">
+                  <div className="flex items-center justify-center w-12 h-12 rounded-full bg-primary text-white">
+                    <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z" />
+                    </svg>
+                  </div>
+                  <div>
+                    <p className="text-sm text-gray-600 dark:text-gray-400">Mode</p>
+                    <p className="text-lg font-bold text-gray-900 dark:text-white">Online/Offline</p>
                   </div>
                 </div>
               </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      <section className="py-16 bg-gray-50 dark:bg-gray-900">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-10">
-            <div>
-              <h2 className="text-3xl font-bold text-gray-900 dark:text-white">
-                Outcomes you will achieve
-              </h2>
-              <p className="text-gray-600 dark:text-gray-400 mt-4">
-                You will finish the program with a portfolio-ready capstone and a repeatable growth framework.
-              </p>
-            </div>
-            <div className="space-y-4">
-              {outcomes.map((item) => (
-                <div
-                  key={item}
-                  className="flex items-start gap-3 rounded-xl border border-gray-200 dark:border-gray-800 bg-white dark:bg-gray-950 p-4"
-                >
-                  <span className="mt-2 h-2 w-2 rounded-full bg-secondary" aria-hidden="true" />
-                  <span className="text-gray-700 dark:text-gray-300">{item}</span>
-                </div>
-              ))}
             </div>
           </div>
         </div>
       </section>
+      <Features highlights={courseHighlights} />
 
-      <section className="py-16">
-        <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <div className="rounded-2xl border border-gray-200 dark:border-gray-800 bg-gray-50 dark:bg-gray-900 p-10">
-            <h2 className="text-3xl font-bold text-gray-900 dark:text-white">
-              Ready to start your marketing career?
-            </h2>
-            <p className="text-lg text-gray-600 dark:text-gray-400 mt-4">
-              Apply now to reserve a seat in the next cohort.
-            </p>
-            <Link
-              href="/contact"
-              className="mt-8 inline-flex items-center gap-2 px-6 py-3 rounded-lg bg-primary text-white font-bold hover:bg-opacity-90 transition"
-            >
-              Apply for Training
-            </Link>
-          </div>
-        </div>
-      </section>
+      <CourseRoadmap modules={modules} />
+      <Clients />
+      <Testimonials />
+      <CTA />
+
+      
     </main>
   );
 }

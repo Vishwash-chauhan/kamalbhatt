@@ -168,6 +168,69 @@ export default async function ServiceTemplate({ params }: ServicePageProps) {
         </div>
       </section>
 
+      {slug === 'seo' && (
+        <section className="py-16 bg-gray-50 dark:bg-gray-900">
+          <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="text-center mb-12">
+              <h2 className="text-3xl md:text-4xl font-bold text-gray-900 dark:text-white">
+                Local SEO Mastery
+              </h2>
+              <p className="text-lg text-gray-600 dark:text-gray-400 mt-4">
+                Dominate local search results and attract customers in your area.
+              </p>
+            </div>
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-10">
+              <div className="space-y-6">
+                <div>
+                  <h3 className="text-2xl font-bold text-gray-900 dark:text-white mb-4">
+                    What We Do
+                  </h3>
+                  <p className="text-gray-700 dark:text-gray-300 leading-relaxed">
+                    Local SEO is essential for businesses serving specific geographic areas. We optimize your Google Business Profile, local citations, location pages, and reviews to help you rank at the top of local search results.
+                  </p>
+                </div>
+                <div>
+                  <h4 className="font-semibold text-gray-900 dark:text-white mb-3">
+                    Local SEO Services:
+                  </h4>
+                  <div className="space-y-2">
+                    {[
+                      'Google Business Profile optimization',
+                      'Local citation building and management',
+                      'Review generation and management strategy',
+                      'Location page optimization',
+                      'Local structured data markup',
+                      'Multi-location management',
+                    ].map((item) => (
+                      <div key={item} className="flex items-start gap-3">
+                        <span className="h-2 w-2 rounded-full bg-primary mt-2 flex-shrink-0" />
+                        <span className="text-gray-700 dark:text-gray-300">{item}</span>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+              </div>
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                {[
+                  { label: 'Map Pack', value: 'Top 3 Rankings' },
+                  { label: 'Search Visibility', value: '+45% Local Traffic' },
+                  { label: 'Reviews', value: '4.8+ Stars' },
+                  { label: 'Conversion Rate', value: '+60% Local Leads' },
+                ].map((item) => (
+                  <div
+                    key={item.label}
+                    className="rounded-2xl border border-gray-200 dark:border-gray-800 bg-white dark:bg-gray-950 p-6"
+                  >
+                    <p className="text-sm text-gray-600 dark:text-gray-400">{item.label}</p>
+                    <p className="text-2xl font-bold text-primary mt-2">{item.value}</p>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </div>
+        </section>
+      )}
+
       <section className="py-16">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-10">
