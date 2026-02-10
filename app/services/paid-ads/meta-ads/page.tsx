@@ -4,6 +4,7 @@ import { ArrowRight, Target, Palette, Rocket, BarChart3, RefreshCw, FileText, Ed
 import CTA from '@/app/components/cta';
 import Testimonials from '@/app/components/testimonials';
 import Clients from '@/app/components/clients';
+import FAQSection from '@/app/components/faq-section';
 
 const iconMap = {
   Target,
@@ -203,49 +204,30 @@ export default function MetaAdsPage() {
       </section>
 
       {/* FAQ */}
-      <section className="py-24 bg-gray-50 dark:bg-gray-900 border-y border-gray-100 dark:border-gray-800">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-16">
-            <h2 className="text-4xl font-bold text-gray-900 dark:text-white mb-4">
-              Frequently Asked Questions
-            </h2>
-          </div>
-
-          <div className="space-y-6">
-            {[
-              {
-                question: "What's the minimum budget needed?",
-                answer: 'We recommend starting with a budget of $500-$1000/month to allow for proper testing and optimization. Smaller budgets can work but limit testing opportunities.',
-              },
-              {
-                question: 'How quickly can we scale?',
-                answer: 'Once we identify winning audiences and creatives (usually 1-2 weeks), we can scale budgets 20-40% weekly if performance metrics support the increase.',
-              },
-              {
-                question: "What's the difference between Performance Max and targeted campaigns?",
-                answer: 'Performance Max uses AI for audience targeting and placement optimization. We use targeted campaigns when you want more granular control over audiences and testing.',
-              },
-              {
-                question: 'How important is the Conversion API?',
-                answer: 'Extremely important. It provides accurate conversion tracking across devices and platforms, improving Meta\'s optimization algorithms and your reporting accuracy.',
-              },
-              {
-                question: 'Can we combine Meta Ads with other channels?',
-                answer: 'Absolutely. Many clients see best results combining Meta Ads with Google Ads or LinkedIn Ads for a multi-channel strategy that reaches customers at different stages.',
-              },
-            ].map((faq, index) => (
-              <div key={index} className="bg-white dark:bg-gray-950 rounded-xl border border-gray-200 dark:border-gray-800 p-8">
-                <h3 className="text-lg font-bold text-gray-900 dark:text-white mb-3">
-                  {faq.question}
-                </h3>
-                <p className="text-gray-600 dark:text-gray-400">
-                  {faq.answer}
-                </p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
+      <FAQSection
+        faqs={[
+          {
+            question: "What's the minimum budget needed?",
+            answer: 'We recommend starting with a budget of $500-$1000/month to allow for proper testing and optimization. Smaller budgets can work but limit testing opportunities.',
+          },
+          {
+            question: 'How quickly can we scale?',
+            answer: 'Once we identify winning audiences and creatives (usually 1-2 weeks), we can scale budgets 20-40% weekly if performance metrics support the increase.',
+          },
+          {
+            question: "What's the difference between Performance Max and targeted campaigns?",
+            answer: 'Performance Max uses AI for audience targeting and placement optimization. We use targeted campaigns when you want more granular control over audiences and testing.',
+          },
+          {
+            question: 'How important is the Conversion API?',
+            answer: 'Extremely important. It provides accurate conversion tracking across devices and platforms, improving Meta\'s optimization algorithms and your reporting accuracy.',
+          },
+          {
+            question: 'Can we combine Meta Ads with other channels?',
+            answer: 'Absolutely. Many clients see best results combining Meta Ads with Google Ads or LinkedIn Ads for a multi-channel strategy that reaches customers at different stages.',
+          },
+        ]}
+      />
 
       {/* Testimonials */}
       <Testimonials />

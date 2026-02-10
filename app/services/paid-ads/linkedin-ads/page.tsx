@@ -4,6 +4,7 @@ import { ArrowRight, Target, FileText, Newspaper, MessageCircle, Briefcase, BarC
 import CTA from '@/app/components/cta';
 import Testimonials from '@/app/components/testimonials';
 import Clients from '@/app/components/clients';
+import FAQSection from '@/app/components/faq-section';
 
 const iconMap = {
   Target,
@@ -235,49 +236,30 @@ export default function LinkedInAdsPage() {
       </section>
 
       {/* FAQ */}
-      <section className="py-24">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-16">
-            <h2 className="text-4xl font-bold text-gray-900 dark:text-white mb-4">
-              Frequently Asked Questions
-            </h2>
-          </div>
-
-          <div className="space-y-6">
-            {[
-              {
-                question: 'Is LinkedIn expensive?',
-                answer: 'LinkedIn has higher costs per click than Google or Meta, but often delivers lower cost per lead for B2B companies due to audience quality. The right targeting and strategy make it highly profitable.',
-              },
-              {
-                question: "What's the minimum budget?",
-                answer: 'We recommend starting with $1000-$2000/month for B2B campaigns. This allows sufficient budget for testing different audiences and creative variations.',
-              },
-              {
-                question: 'How long until we see leads?',
-                answer: 'Most campaigns show initial leads within 1-2 weeks. It typically takes 4-6 weeks to optimize for quality leads and lower cost per lead.',
-              },
-              {
-                question: 'What industries work best?',
-                answer: 'LinkedIn works exceptionally well for: software/SaaS, professional services, B2B consulting, enterprise sales, recruiting, manufacturing, and financial services.',
-              },
-              {
-                question: 'Can we combine LinkedIn with Google and Meta ads?',
-                answer: 'Yes! A multi-channel approach often delivers the best results. Use LinkedIn for B2B, Google for high-intent searches, and Meta for broader awareness.',
-              },
-            ].map((faq, index) => (
-              <div key={index} className="bg-gray-50 dark:bg-gray-900 rounded-xl border border-gray-200 dark:border-gray-800 p-8">
-                <h3 className="text-lg font-bold text-gray-900 dark:text-white mb-3">
-                  {faq.question}
-                </h3>
-                <p className="text-gray-600 dark:text-gray-400">
-                  {faq.answer}
-                </p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
+      <FAQSection
+        faqs={[
+          {
+            question: 'Is LinkedIn expensive?',
+            answer: 'LinkedIn has higher costs per click than Google or Meta, but often delivers lower cost per lead for B2B companies due to audience quality. The right targeting and strategy make it highly profitable.',
+          },
+          {
+            question: "What's the minimum budget?",
+            answer: 'We recommend starting with $1000-$2000/month for B2B campaigns. This allows sufficient budget for testing different audiences and creative variations.',
+          },
+          {
+            question: 'How long until we see leads?',
+            answer: 'Most campaigns show initial leads within 1-2 weeks. It typically takes 4-6 weeks to optimize for quality leads and lower cost per lead.',
+          },
+          {
+            question: 'What industries work best?',
+            answer: 'LinkedIn works exceptionally well for: software/SaaS, professional services, B2B consulting, enterprise sales, recruiting, manufacturing, and financial services.',
+          },
+          {
+            question: 'Can we combine LinkedIn with Google and Meta ads?',
+            answer: 'Yes! A multi-channel approach often delivers the best results. Use LinkedIn for B2B, Google for high-intent searches, and Meta for broader awareness.',
+          },
+        ]}
+      />
 
       {/* Testimonials */}
       <Testimonials />

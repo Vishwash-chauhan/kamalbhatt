@@ -9,14 +9,21 @@ import { ChevronDown } from 'lucide-react';
 export default function Header() {
   const [isOpen, setIsOpen] = useState(false);
   const [isServicesDropdownOpen, setIsServicesDropdownOpen] = useState(false);
+  const [isPaidAdsSubmenuOpen, setIsPaidAdsSubmenuOpen] = useState(false);
   const pathname = usePathname();
 
   const services = [
     { name: 'SEO Optimization', slug: 'seo' },
-    { name: 'Paid Ads', slug: 'paid-ads' },
+    { name: 'Paid Ads', slug: 'paid-ads', hasSubmenu: true },
     { name: 'Social Media Marketing', slug: 'social-media-marketing' },
     { name: 'Web Development & Design', slug: 'web-development-design' },
     { name: 'Digital Marketing Training', slug: 'training' },
+  ];
+
+  const paidAdsServices = [
+    { name: 'Google Ads', slug: 'google-ads' },
+    { name: 'Meta Ads', slug: 'meta-ads' },
+    { name: 'LinkedIn Ads', slug: 'linkedin-ads' },
   ];
 
   const isActive = (href: string) => {
@@ -77,17 +84,57 @@ export default function Header() {
               {isServicesDropdownOpen && (
                 <div className="absolute left-0 mt-0 w-56 bg-white dark:bg-gray-900 rounded-lg shadow-xl border border-gray-200 dark:border-gray-800 py-2 z-50">
                   {services.map((service) => (
-                    <Link
-                      key={service.slug}
-                      href={`/services/${service.slug}`}
-                      className={`block px-4 py-3 transition ${
-                        isActive(`/services/${service.slug}`)
-                          ? 'bg-primary/10 text-primary dark:text-secondary dark:bg-secondary/10 border-l-4 border-primary dark:border-secondary'
-                          : 'text-gray-700 dark:text-gray-300 hover:text-primary dark:hover:text-secondary hover:bg-gray-50 dark:hover:bg-gray-800'
-                      }`}
-                    >
-                      {service.name}
-                    </Link>
+                    <div key={service.slug}>
+                      {service.hasSubmenu ? (
+                        <div
+                          className="relative"
+                          onMouseEnter={() => setIsPaidAdsSubmenuOpen(true)}
+                          onMouseLeave={() => setIsPaidAdsSubmenuOpen(false)}
+                        >
+                          <Link
+                            href={`/services/${service.slug}`}
+                            className={`flex items-center justify-between px-4 py-3 transition ${
+                              isActive(`/services/${service.slug}`)
+                                ? 'bg-primary/10 text-primary dark:text-secondary dark:bg-secondary/10 border-l-4 border-primary dark:border-secondary'
+                                : 'text-gray-700 dark:text-gray-300 hover:text-primary dark:hover:text-secondary hover:bg-gray-50 dark:hover:bg-gray-800'
+                            }`}
+                          >
+                            <span>{service.name}</span>
+                            <ChevronDown className="w-4 h-4" />
+                          </Link>
+                          
+                          {/* Paid Ads Submenu */}
+                          {isPaidAdsSubmenuOpen && (
+                            <div className="absolute left-full top-0 ml-0 w-48 bg-white dark:bg-gray-900 rounded-lg shadow-xl border border-gray-200 dark:border-gray-800 py-2">
+                              {paidAdsServices.map((paidAdService) => (
+                                <Link
+                                  key={paidAdService.slug}
+                                  href={`/services/paid-ads/${paidAdService.slug}`}
+                                  className={`block px-4 py-3 transition ${
+                                    isActive(`/services/paid-ads/${paidAdService.slug}`)
+                                      ? 'bg-primary/10 text-primary dark:text-secondary dark:bg-secondary/10 border-l-4 border-primary dark:border-secondary'
+                                      : 'text-gray-700 dark:text-gray-300 hover:text-primary dark:hover:text-secondary hover:bg-gray-50 dark:hover:bg-gray-800'
+                                  }`}
+                                >
+                                  {paidAdService.name}
+                                </Link>
+                              ))}
+                            </div>
+                          )}
+                        </div>
+                      ) : (
+                        <Link
+                          href={`/services/${service.slug}`}
+                          className={`block px-4 py-3 transition ${
+                            isActive(`/services/${service.slug}`)
+                              ? 'bg-primary/10 text-primary dark:text-secondary dark:bg-secondary/10 border-l-4 border-primary dark:border-secondary'
+                              : 'text-gray-700 dark:text-gray-300 hover:text-primary dark:hover:text-secondary hover:bg-gray-50 dark:hover:bg-gray-800'
+                          }`}
+                        >
+                          {service.name}
+                        </Link>
+                      )}
+                    </div>
                   ))}
                 </div>
               )}
@@ -193,17 +240,62 @@ export default function Header() {
               {isServicesDropdownOpen && (
                 <div className="mt-1 ml-4 space-y-1 border-l-2 border-primary dark:border-secondary">
                   {services.map((service) => (
-                    <Link
-                      key={service.slug}
-                      href={`/services/${service.slug}`}
-                      className={`block px-4 py-2 text-sm rounded transition ${
-                        isActive(`/services/${service.slug}`)
-                          ? 'text-primary dark:text-secondary bg-primary/10 dark:bg-secondary/10'
-                          : 'text-gray-700 dark:text-gray-300 hover:text-primary dark:hover:text-secondary'
-                      }`}
-                    >
-                      {service.name}
-                    </Link>
+                    <div key={service.slug}>
+                      {service.hasSubmenu ? (
+                        <div>
+                          <div className="flex items-center justify-between">
+                            <Link
+                              href={`/services/${service.slug}`}
+                              className={`flex-1 flex items-center px-4 py-2 text-sm rounded transition ${
+                                isActive(`/services/${service.slug}`)
+                                  ? 'text-primary dark:text-secondary bg-primary/10 dark:bg-secondary/10'
+                                  : 'text-gray-700 dark:text-gray-300 hover:text-primary dark:hover:text-secondary'
+                              }`}
+                            >
+                              {service.name}
+                            </Link>
+                            <button
+                              onClick={() => setIsPaidAdsSubmenuOpen(!isPaidAdsSubmenuOpen)}
+                              className="pr-4 py-2"
+                            >
+                              <ChevronDown 
+                                className={`w-3 h-3 transition-transform text-primary dark:text-secondary ${
+                                  isPaidAdsSubmenuOpen ? 'rotate-180' : ''
+                                }`}
+                              />
+                            </button>
+                          </div>
+                          {isPaidAdsSubmenuOpen && (
+                            <div className="mt-1 ml-4 space-y-1 border-l-2 border-primary dark:border-secondary">
+                              {paidAdsServices.map((paidAdService) => (
+                                <Link
+                                  key={paidAdService.slug}
+                                  href={`/services/paid-ads/${paidAdService.slug}`}
+                                  className={`block px-4 py-2 text-sm rounded transition ${
+                                    isActive(`/services/paid-ads/${paidAdService.slug}`)
+                                      ? 'text-primary dark:text-secondary bg-primary/10 dark:bg-secondary/10'
+                                      : 'text-gray-700 dark:text-gray-300 hover:text-primary dark:hover:text-secondary'
+                                  }`}
+                                >
+                                  {paidAdService.name}
+                                </Link>
+                              ))}
+                            </div>
+                          )}
+                        </div>
+                      ) : (
+                        <Link
+                          href={`/services/${service.slug}`}
+                          className={`block px-4 py-2 text-sm rounded transition ${
+                            isActive(`/services/${service.slug}`)
+                              ? 'text-primary dark:text-secondary bg-primary/10 dark:bg-secondary/10'
+                              : 'text-gray-700 dark:text-gray-300 hover:text-primary dark:hover:text-secondary'
+                          }`}
+                        >
+                          {service.name}
+                        </Link>
+                      )}
+                    </div>
                   ))}
                 </div>
               )}

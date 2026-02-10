@@ -3,7 +3,8 @@ import type { Metadata } from 'next';
 import { getServiceBySlug } from '../service_data';
 import Testimonials from '@/app/components/testimonials';
 import CTA from '@/app/components/cta';
-import Clients  from '@/app/components/clients';
+import Clients from '@/app/components/clients';
+import FAQSection from '@/app/components/faq-section';
 
 type ServicePageProps = {
   params: Promise<{ slug: string }>;
@@ -262,34 +263,11 @@ export default async function ServiceTemplate({ params }: ServicePageProps) {
         </div>
       </section>
 
-      {/* <section className="py-16">
-        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="rounded-2xl border border-gray-200 dark:border-gray-800 bg-white dark:bg-gray-950 p-10 shadow-lg">
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-10">
-              <div>
-                <h2 className="text-3xl font-bold text-gray-900 dark:text-white">
-                  FAQ
-                </h2>
-                <p className="text-gray-600 dark:text-gray-400 mt-4">
-                  Quick answers to common questions before we start.
-                </p>
-              </div>
-              <div className="space-y-6">
-                {service.faqs.map((faq) => (
-                  <div key={faq.question}>
-                    <h3 className="text-lg font-semibold text-gray-900 dark:text-white">
-                      {faq.question}
-                    </h3>
-                    <p className="text-gray-600 dark:text-gray-400 mt-2">
-                      {faq.answer}
-                    </p>
-                  </div>
-                ))}
-              </div>
-            </div>
-          </div>
-        </div>
-      </section> */}
+      {/* FAQ Section */}
+      {service.faqs?.length ? (
+        <FAQSection faqs={service.faqs} />
+      ) : null}
+
       <CTA />
       <Clients />
       <Testimonials />

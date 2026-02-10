@@ -4,6 +4,7 @@ import { ArrowRight, Building2, Key, PenTool, Target, FileText, DollarSign, User
 import CTA from '@/app/components/cta';
 import Testimonials from '@/app/components/testimonials';
 import Clients from '@/app/components/clients';
+import FAQSection from '@/app/components/faq-section';
 
 const iconMap = {
   Building2,
@@ -203,49 +204,30 @@ export default function GoogleAdsPage() {
       </section>
 
       {/* FAQ */}
-      <section className="py-24 bg-gray-50 dark:bg-gray-900 border-y border-gray-100 dark:border-gray-800">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-16">
-            <h2 className="text-4xl font-bold text-gray-900 dark:text-white mb-4">
-              Frequently Asked Questions
-            </h2>
-          </div>
-
-          <div className="space-y-6">
-            {[
-              {
-                question: 'How long until we see results?',
-                answer: 'Most businesses see measurable improvements within 1-2 weeks of launching optimized campaigns. Significant ROI growth typically follows within 4-6 weeks as we scale winning keywords and audiences.',
-              },
-              {
-                question: 'What budget do we need to get started?',
-                answer: 'We work with budgets of all sizes. To see meaningful results, we recommend a minimum daily budget that allows for proper testing and optimization across your core keyword groups.',
-              },
-              {
-                question: 'How do you track conversions?',
-                answer: 'We implement Google Tags on your website to track page views, form submissions, purchases, and custom events. We also set up conversion tracking in Google Ads and connect it with Google Analytics for complete attribution.',
-              },
-              {
-                question: 'What about Quality Score?',
-                answer: 'Quality Score directly impacts your ad costs. We optimize landing page experience, ad relevance, and CTR to improve your scores, which lowers your cost-per-click and improves visibility.',
-              },
-              {
-                question: 'Do you handle other ad channels too?',
-                answer: 'Yes! We also manage Meta Ads and LinkedIn Ads. Many clients benefit from a multi-channel strategy that reaches customers across different platforms.',
-              },
-            ].map((faq, index) => (
-              <div key={index} className="bg-white dark:bg-gray-950 rounded-xl border border-gray-200 dark:border-gray-800 p-8">
-                <h3 className="text-lg font-bold text-gray-900 dark:text-white mb-3">
-                  {faq.question}
-                </h3>
-                <p className="text-gray-600 dark:text-gray-400">
-                  {faq.answer}
-                </p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
+      <FAQSection
+        faqs={[
+          {
+            question: 'How long until we see results?',
+            answer: 'Most businesses see measurable improvements within 1-2 weeks of launching optimized campaigns. Significant ROI growth typically follows within 4-6 weeks as we scale winning keywords and audiences.',
+          },
+          {
+            question: 'What budget do we need to get started?',
+            answer: 'We work with budgets of all sizes. To see meaningful results, we recommend a minimum daily budget that allows for proper testing and optimization across your core keyword groups.',
+          },
+          {
+            question: 'How do you track conversions?',
+            answer: 'We implement Google Tags on your website to track page views, form submissions, purchases, and custom events. We also set up conversion tracking in Google Ads and connect it with Google Analytics for complete attribution.',
+          },
+          {
+            question: 'What about Quality Score?',
+            answer: 'Quality Score directly impacts your ad costs. We optimize landing page experience, ad relevance, and CTR to improve your scores, which lowers your cost-per-click and improves visibility.',
+          },
+          {
+            question: 'Do you handle other ad channels too?',
+            answer: 'Yes! We also manage Meta Ads and LinkedIn Ads. Many clients benefit from a multi-channel strategy that reaches customers across different platforms.',
+          },
+        ]}
+      />
 
       {/* Testimonials */}
       <Testimonials />
