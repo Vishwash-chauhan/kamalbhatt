@@ -47,7 +47,7 @@ export default function Home() {
               <p className="text-gray-600 dark:text-gray-400 mb-6 leading-relaxed">
                 Boost your online visibility with our proven SEO strategies. We optimize your website to rank higher in search results and drive organic traffic to grow your business.
               </p>
-              <a href="#" className="inline-flex items-center text-primary hover:text-secondary transition font-semibold">
+              <a href="/services/seo" className="inline-flex items-center text-primary hover:text-secondary transition font-semibold">
                 Know More <span className="ml-2">→</span>
               </a>
             </div>
@@ -70,7 +70,7 @@ export default function Home() {
               <p className="text-gray-600 dark:text-gray-400 mb-6 leading-relaxed">
                 Maximize your ROI with targeted paid advertising campaigns. We manage Google Ads, Facebook Ads, and other platforms to drive quality leads and conversions.
               </p>
-              <a href="#" className="inline-flex items-center text-primary hover:text-secondary transition font-semibold">
+              <a href="/services/paid-ads" className="inline-flex items-center text-primary hover:text-secondary transition font-semibold">
                 Know More <span className="ml-2">→</span>
               </a>
             </div>
@@ -93,7 +93,7 @@ export default function Home() {
               <p className="text-gray-600 dark:text-gray-400 mb-6 leading-relaxed">
                 Build a strong social presence and engage with your audience across all platforms. We create compelling content that drives engagement and builds brand loyalty.
               </p>
-              <a href="#" className="inline-flex items-center text-primary hover:text-secondary transition font-semibold">
+              <a href="/services/social-media-marketing" className="inline-flex items-center text-primary hover:text-secondary transition font-semibold">
                 Know More <span className="ml-2">→</span>
               </a>
             </div>
@@ -116,7 +116,7 @@ export default function Home() {
               <p className="text-gray-600 dark:text-gray-400 mb-6 leading-relaxed">
                 Create stunning, responsive websites that convert visitors into customers. We design and develop custom solutions that align with your brand vision.
               </p>
-              <a href="#" className="inline-flex items-center text-primary hover:text-secondary transition font-semibold">
+              <a href="/services/web-development-design" className="inline-flex items-center text-primary hover:text-secondary transition font-semibold">
                 Know More <span className="ml-2">→</span>
               </a>
             </div>
@@ -139,7 +139,7 @@ export default function Home() {
               <p className="text-gray-600 dark:text-gray-400 mb-6 leading-relaxed">
                 Master digital marketing skills with our comprehensive training programs. Learn SEO, social media, content creation, and more from industry experts.
               </p>
-              <a href="#" className="inline-flex items-center text-primary hover:text-secondary transition font-semibold">
+              <a href="/services/training" className="inline-flex items-center text-primary hover:text-secondary transition font-semibold">
                 Know More <span className="ml-2">→</span>
               </a>
             </div>

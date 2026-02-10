@@ -18,6 +18,8 @@ export const services = [
       'Local SEO and Google Business Profile growth',
       'Content brief + internal linking strategy',
     ],
+    processHeading: 'Our SEO Process',
+    processDescription: 'Structured sprints to improve visibility, traffic quality, and conversions.',
     process: [
       {
         title: 'Discovery & Audit',
@@ -77,6 +79,8 @@ export const services = [
       'Creative testing roadmap and ad copy variants',
       'Landing page and funnel optimization',
     ],
+    processHeading: 'Our Paid Ads Strategy',
+    processDescription: 'Data-driven campaigns optimized for maximum ROI and lead quality.',
     process: [
       {
         title: 'Audit & Strategy',
@@ -133,6 +137,8 @@ export const services = [
       'Community management and engagement playbook',
       'Performance tracking and iteration',
     ],
+    processHeading: 'Our Social Media Strategy',
+    processDescription: 'Build a consistent presence that grows your audience and converts followers into customers.',
     process: [
       {
         title: 'Brand & Audience Discovery',
@@ -189,6 +195,8 @@ export const services = [
       'SEO-ready architecture and clean code',
       'Analytics + conversion tracking setup',
     ],
+    processHeading: 'Our Web Development Process',
+    processDescription: 'End-to-end design and development that prioritizes speed, clarity, and conversions.',
     process: [
       {
         title: 'Discovery & Structure',
@@ -249,6 +257,64 @@ export const services = [
     ],
     cta: {
       label: 'Start My Website Project',
+      href: '/contact',
+    },
+  },
+  {
+    slug: 'digital-marketing-training',
+    title: 'Digital Marketing Training',
+    tagline: 'Master digital marketing skills from industry experts.',
+    summary:
+      'Comprehensive training programs designed to upskill your team in SEO, paid ads, social media, and analytics.',
+    description:
+      'Our training programs are hands-on, practical, and tailored to your team. We cover strategy, tactics, and tools so your team can execute and measure results independently.',
+    stats: [
+      { value: '4-8', label: 'Weeks per training program' },
+      { value: '90%', label: 'Post-training implementation rate' },
+      { value: '15+', label: 'Topics covered per program' },
+    ],
+    highlights: [
+      'Customized curriculum based on skill level',
+      'Hands-on workshops and real-world projects',
+      'Access to tools, templates, and resources',
+      'Post-training support and group sessions',
+    ],
+    processHeading: 'Our Training Framework',
+    processDescription: 'Build your team\'s digital marketing capabilities through structured learning and practice.',
+    process: [
+      {
+        title: 'Assessment & Planning',
+        details: 'Evaluate your team\'s current skills and define learning objectives aligned with business goals.',
+      },
+      {
+        title: 'Curriculum & Delivery',
+        details: 'Deliver hands-on training with real examples, case studies, and interactive activities.',
+      },
+      {
+        title: 'Implementation & Support',
+        details: 'Support your team as they apply new skills to live campaigns and projects.',
+      },
+      {
+        title: 'Measure & Optimize',
+        details: 'Track skill development, campaign results, and refine training based on outcomes.',
+      },
+    ],
+    faqs: [
+      {
+        question: 'What\'s the ideal team size?',
+        answer: 'We train groups of 3-10 people for maximum engagement and personalized feedback.',
+      },
+      {
+        question: 'How long is the training?',
+        answer: 'Programs typically run 4-8 weeks depending on depth and complexity of topics.',
+      },
+      {
+        question: 'Do you provide certifications?',
+        answer: 'Yes. We provide completion certificates and ongoing access to training materials.',
+      },
+    ],
+    cta: {
+      label: 'Schedule Training Consultation',
       href: '/contact',
     },
   },

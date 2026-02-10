@@ -2,6 +2,7 @@
 
 import { useState } from 'react';
 import Link from 'next/link';
+import { useCurrencyDetection } from '@/app/hooks/useCurrencyDetection';
 
 const plans = [
   {
@@ -65,7 +66,7 @@ const pricingByCurrency = {
 } as const;
 
 export default function PricingPlans() {
-  const [currency, setCurrency] = useState<'inr' | 'usd'>('inr');
+  const { currency, setCurrency, isLoading } = useCurrencyDetection();
   const currencyConfig = pricingByCurrency[currency];
 
   return (

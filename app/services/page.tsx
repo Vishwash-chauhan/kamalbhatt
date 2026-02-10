@@ -13,8 +13,8 @@ type Service = {
   description: string;
   image: string;
   tag: string;
+  link: string;
 };
-
 const services: Service[] = [
   {
     title: 'SEO Optimization',
@@ -22,6 +22,7 @@ const services: Service[] = [
     description:
       'Boost your online visibility with our proven SEO strategies. We optimize your website to rank higher in search results and drive organic traffic to grow your business.',
     image: 'https://placehold.co/560x360?text=SEO+Optimization',
+    link: '/services/seo',
   },
   {
     title: 'Paid Ads',
@@ -29,6 +30,7 @@ const services: Service[] = [
     description:
       'Maximize your ROI with targeted paid advertising campaigns. We manage Google Ads, Facebook Ads, and other platforms to drive quality leads and conversions.',
     image: 'https://placehold.co/560x360?text=Paid+Ads',
+    link: '/services/paid-ads',
   },
   {
     title: 'Social Media Marketing',
@@ -36,6 +38,7 @@ const services: Service[] = [
     description:
       'Build a strong social presence and engage with your audience across all platforms. We create compelling content that drives engagement and builds brand loyalty.',
     image: 'https://placehold.co/560x360?text=Social+Media',
+    link: '/services/social-media-marketing',
   },
   {
     title: 'Web Development & Design',
@@ -43,6 +46,7 @@ const services: Service[] = [
     description:
       'Create stunning, responsive websites that convert visitors into customers. We design and develop custom solutions that align with your brand vision.',
     image: 'https://placehold.co/560x360?text=Web+Development',
+    link: '/services/web-development-design',
   },
   {
     title: 'Digital Marketing Training',
@@ -50,6 +54,7 @@ const services: Service[] = [
     description:
       'Master digital marketing skills with our comprehensive training programs. Learn SEO, social media, content creation, and more from industry experts.',
     image: 'https://placehold.co/560x360?text=Training',
+    link: '/services/training',
   },
 ];
 
@@ -115,7 +120,7 @@ export default function ServicesPage() {
                 </p>
                 <div className="pt-4">
                   <Link
-                    href="/contact"
+                    href={service.link}
                     className="inline-flex items-center gap-2 px-6 py-3 rounded-lg bg-primary text-white font-bold hover:bg-opacity-90 transition-all transform hover:-translate-y-1"
                   >
                     Know More <ArrowRight className="w-4 h-4" />

@@ -2,6 +2,7 @@
 
 import { useState } from 'react';
 import Link from 'next/link';
+import { useCurrencyDetection } from '@/app/hooks/useCurrencyDetection';
 
 const services = [
   {
@@ -55,7 +56,7 @@ const services = [
 ];
 
 export default function OneTimeServices() {
-  const [currency, setCurrency] = useState<'inr' | 'usd'>('inr');
+  const { currency, setCurrency, isLoading } = useCurrencyDetection();
 
   return (
     <section className="py-20 bg-gray-50 dark:bg-gray-900">
