@@ -102,15 +102,31 @@ export const services = [
     faqs: [
       {
         question: 'Which platforms do you manage?',
-        answer: 'We manage Google Ads, Meta Ads, and YouTube, and can add LinkedIn or TikTok if needed.',
+        answer: 'We manage Google Ads, Meta Ads, LinkedIn Ads, YouTube, and can expand to TikTok or other platforms as needed for your strategy.',
+      },
+      {
+        question: "How long until we see results?",
+        answer: "Most campaigns show early optimization data within 2-4 weeks. Meaningful scaling typically happens after month 2-3 once we've refined targeting and creative.",
       },
       {
         question: 'Do you handle creatives and landing pages?',
-        answer: 'Yes. We provide creative direction and optimize landing pages to improve conversion rates.',
+        answer: 'Yes. We manage creative testing, ad copy variants, and landing page optimization to maximize conversion rates and reduce wasted spend.',
+      },
+      {
+        question: 'What\'s your reporting and optimization frequency?',
+        answer: 'We conduct daily monitoring with optimization adjustments, weekly performance reviews, and monthly strategic deep dives with you.',
       },
       {
         question: 'What budget do we need to start?',
-        answer: 'We typically recommend a minimum monthly ad spend based on your goals and industry competitiveness.',
+        answer: 'We typically recommend $2,000-5,000/month minimum to gather enough data for effective optimization, though we can work with different budgets based on goals.',
+      },
+      {
+        question: 'How do you handle underperforming campaigns?',
+        answer: 'We pause or consolidate underperforming campaigns quickly, reallocate budget to top performers, and test new audience/creative combinations.',
+      },
+      {
+        question: 'Do you guarantee specific ROAS or lead numbers?',
+        answer: 'We don\'t guarantee results, but we commit to transparent reporting and continuous optimization toward your target CPA or ROAS based on industry benchmarks.',
       },
     ],
     cta: {

@@ -63,11 +63,6 @@ const modules = [
     title: 'Module 11: AI In Digital Marketing',
     topics: ['Overview of AI’s impact on marketing trends', 'Personalized targeting & predictive analytics', 'AEO, GEO & AI Mode', 'AI in SEO & content planning', 'Rise of chatbots & marketing automation', 'Voice search and the future of digital'],
   },
-  {
-    id: 'module-12',
-    title: 'Module 12: Career Preparation & Portfolio Building',
-    topics: ['How to start freelancing', 'Creating a digital portfolio', 'Personal branding & profile optimization', 'Resume building (role-based format)', 'Tips for interviews, client pitches, and outreach'],
-  },
 ];
 
 const outcomes = [
