@@ -4,6 +4,8 @@ import { ArrowRight } from 'lucide-react';
 import CTA from '@/app/components/cta';
 import Clients from '@/app/components/clients';
 import Testimonials from '@/app/components/testimonials';
+import AboutService from '@/app/components/about-service';
+import ProcessSection from '@/app/components/process-section';
 
 export const metadata: Metadata = {
   title: 'Paid Ads Services | Google Ads, Meta Ads, LinkedIn Ads | Kamal Bhatt',
@@ -104,9 +106,15 @@ export default function PaidAdsPage() {
         </div>
       </section>
 
+      <AboutService 
+        slug="paid-ads"
+        title="Performance Paid Ads"
+        description="Our paid media programs are built to reduce wasted spend and increase lead quality."
+      />
+
       {/* Services Grid */}
       <section className="py-24">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
             <h2 className="text-4xl font-bold text-gray-900 dark:text-white mb-4">
               Our Ad Platforms
@@ -166,115 +174,28 @@ export default function PaidAdsPage() {
         </div>
       </section>
 
-      {/* Key Benefits */}
-      <section className="py-24 bg-gray-50 dark:bg-gray-900 border-y border-gray-100 dark:border-gray-800">
-        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-16">
-            <h2 className="text-4xl font-bold text-gray-900 dark:text-white mb-4">
-              Why Choose Our Paid Ads Services
-            </h2>
-            <p className="text-xl text-gray-600 dark:text-gray-400">
-              We deliver results-driven campaigns across all major platforms.
-            </p>
-          </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-            {[
-              {
-                icon: '🎯',
-                title: 'Targeted Audience Reach',
-                description: 'Precision audience targeting to find your ideal customers on each platform.',
-              },
-              {
-                icon: '📊',
-                title: 'Data-Driven Optimization',
-                description: 'Continuous testing and refinement based on real-time performance metrics.',
-              },
-              {
-                icon: '💰',
-                title: 'Budget Efficiency',
-                description: 'Maximize ROI with smart bid strategies and continuous cost optimization.',
-              },
-              {
-                icon: '🔍',
-                title: 'Conversion Tracking',
-                description: 'Complete setup and monitoring of conversion pixels across all platforms.',
-              },
-              {
-                icon: '📈',
-                title: 'Creative Testing',
-                description: 'A/B testing of ad creatives, copy, and landing pages for optimal performance.',
-              },
-              {
-                icon: '📱',
-                title: 'Multi-Channel Strategy',
-                description: 'Coordinate campaigns across Google, Meta, and LinkedIn for maximum impact.',
-              },
-            ].map((benefit) => (
-              <div key={benefit.title} className="bg-white dark:bg-gray-950 rounded-xl border border-gray-200 dark:border-gray-800 p-8">
-                <div className="text-4xl mb-4">{benefit.icon}</div>
-                <h3 className="text-xl font-bold text-gray-900 dark:text-white mb-2">
-                  {benefit.title}
-                </h3>
-                <p className="text-gray-600 dark:text-gray-400">
-                  {benefit.description}
-                </p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Process */}
-      <section className="py-24">
-        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-16">
-            <h2 className="text-4xl font-bold text-gray-900 dark:text-white mb-4">
-              Our Paid Ads Strategy
-            </h2>
-            <p className="text-xl text-gray-600 dark:text-gray-400">
-              Data-driven campaigns optimized for maximum ROI and lead quality.
-            </p>
-          </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
-            {[
-              {
-                title: 'Audit & Strategy',
-                details: 'Review current account health, competitors, and offer positioning to define the target CPA/ROAS.',
-                step: '01',
-              },
-              {
-                title: 'Build & Launch',
-                details: 'Ship a structured campaign build with clean tracking, pixel setup, and conversion goals.',
-                step: '02',
-              },
-              {
-                title: 'Test & Optimize',
-                details: 'Run creative and audience tests to improve CTR, CVR, and cost efficiency.',
-                step: '03',
-              },
-              {
-                title: 'Scale & Refine',
-                details: 'Reinvest into top performers, expand audiences, and optimize landing pages for lift.',
-                step: '04',
-              },
-            ].map((step) => (
-              <div key={step.title} className="relative">
-                <div className="bg-gray-50 dark:bg-gray-900 rounded-xl border border-gray-200 dark:border-gray-800 p-8 h-full">
-                  <div className="text-4xl font-bold text-primary mb-4">{step.step}</div>
-                  <h3 className="text-xl font-bold text-gray-900 dark:text-white mb-3">
-                    {step.title}
-                  </h3>
-                  <p className="text-gray-600 dark:text-gray-400">
-                    {step.details}
-                  </p>
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
+      <ProcessSection
+        heading="Our Paid Ads Strategy"
+        description="Data-driven campaigns optimized for maximum ROI and lead quality."
+        steps={[
+          {
+            title: 'Audit & Strategy',
+            details: 'Review current account health, competitors, and offer positioning to define the target CPA/ROAS.',
+          },
+          {
+            title: 'Build & Launch',
+            details: 'Ship a structured campaign build with clean tracking, pixel setup, and conversion goals.',
+          },
+          {
+            title: 'Test & Optimize',
+            details: 'Run creative and audience tests to improve CTR, CVR, and cost efficiency.',
+          },
+          {
+            title: 'Scale & Refine',
+            details: 'Reinvest into top performers, expand audiences, and optimize landing pages for lift.',
+          },
+        ]}
+      />
 
       {/* Testimonials */}
       <Testimonials />

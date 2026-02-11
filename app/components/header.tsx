@@ -65,7 +65,8 @@ export default function Header() {
               onMouseEnter={() => setIsServicesDropdownOpen(true)}
               onMouseLeave={() => setIsServicesDropdownOpen(false)}
             >
-              <button 
+              <Link 
+                href="/services"
                 className={`flex items-center gap-1 transition ${
                   isActive('/services')
                     ? 'text-primary dark:text-secondary font-semibold border-b-2 border-primary dark:border-secondary pb-1'
@@ -78,7 +79,7 @@ export default function Header() {
                     isServicesDropdownOpen ? 'rotate-180' : ''
                   }`}
                 />
-              </button>
+              </Link>
 
               {/* Dropdown Menu */}
               {isServicesDropdownOpen && (
@@ -222,21 +223,28 @@ export default function Header() {
 
             {/* Mobile Services Dropdown */}
             <div>
-              <button
-                onClick={() => setIsServicesDropdownOpen(!isServicesDropdownOpen)}
-                className={`w-full flex items-center justify-between px-4 py-2 rounded transition ${
-                  isActive('/services')
-                    ? 'text-primary dark:text-secondary bg-primary/10 dark:bg-secondary/10 font-semibold'
-                    : 'text-gray-700 dark:text-gray-300 hover:text-primary dark:hover:text-secondary'
-                }`}
-              >
-                Services
-                <ChevronDown 
-                  className={`w-4 h-4 transition-transform ${
-                    isServicesDropdownOpen ? 'rotate-180' : ''
+              <div className="flex items-center justify-between">
+                <Link
+                  href="/services"
+                  className={`flex-1 px-4 py-2 rounded transition ${
+                    isActive('/services')
+                      ? 'text-primary dark:text-secondary bg-primary/10 dark:bg-secondary/10 font-semibold'
+                      : 'text-gray-700 dark:text-gray-300 hover:text-primary dark:hover:text-secondary'
                   }`}
-                />
-              </button>
+                >
+                  Services
+                </Link>
+                <button
+                  onClick={() => setIsServicesDropdownOpen(!isServicesDropdownOpen)}
+                  className="pr-4 py-2"
+                >
+                  <ChevronDown 
+                    className={`w-4 h-4 transition-transform text-primary dark:text-secondary ${
+                      isServicesDropdownOpen ? 'rotate-180' : ''
+                    }`}
+                  />
+                </button>
+              </div>
               {isServicesDropdownOpen && (
                 <div className="mt-1 ml-4 space-y-1 border-l-2 border-primary dark:border-secondary">
                   {services.map((service) => (

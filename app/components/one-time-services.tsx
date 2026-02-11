@@ -72,7 +72,7 @@ export default function OneTimeServices() {
             Ideal for brands that need a quick setup or a strategic reset without a monthly retainer.
           </p>
           <div className="mt-8 inline-flex rounded-full border border-gray-200 dark:border-gray-800 bg-white dark:bg-gray-950 p-1">
-            <button
+            {/* <button
               type="button"
               onClick={() => setCurrency('inr')}
               aria-pressed={currency === 'inr'}
@@ -83,8 +83,8 @@ export default function OneTimeServices() {
               }`}
             >
               India (INR)
-            </button>
-            <button
+            </button> */}
+            {/* <button
               type="button"
               onClick={() => setCurrency('usd')}
               aria-pressed={currency === 'usd'}
@@ -95,7 +95,7 @@ export default function OneTimeServices() {
               }`}
             >
               Global (USD)
-            </button>
+            </button> */}
           </div>
         </header>
 

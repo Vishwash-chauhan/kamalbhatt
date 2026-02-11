@@ -22,20 +22,28 @@ export const services = [
     processDescription: 'Structured sprints to improve visibility, traffic quality, and conversions.',
     process: [
       {
-        title: 'Discovery & Audit',
-        details: 'Review technical health, competitors, and current rankings to identify fast wins and structural gaps.',
+        title: 'SEO Audit',
+        details: 'Comprehensive technical audit covering site health, content quality, backlink profile, and competitive analysis to identify all optimization opportunities.',
       },
       {
-        title: 'Roadmap & Fixes',
-        details: 'Ship critical technical fixes, optimize priority pages, and align on keyword clusters.',
+        title: 'Strategy Development',
+        details: 'Custom SEO roadmap combining technical fixes, content strategy, link building plan, and AEO tactics aligned with your business goals.',
       },
       {
-        title: 'Content & Authority',
-        details: 'Build content that answers buyer intent and strengthen local authority signals.',
+        title: 'Technical Optimization',
+        details: 'Fix critical issues: site speed, mobile usability, crawlability, schema markup, Core Web Vitals, and indexation problems.',
       },
       {
-        title: 'Track & Scale',
-        details: 'Monthly reporting, conversion insights, and ongoing optimization sprints.',
+        title: 'Content Optimization',
+        details: 'Optimize existing pages for target keywords, create new content for gaps, implement AEO best practices, and build topic authority.',
+      },
+      {
+        title: 'Authority Building',
+        details: 'Strategic link building, digital PR, brand mentions, and E-E-A-T signals to increase domain authority and trustworthiness.',
+      },
+      {
+        title: 'Monitor & Improve',
+        details: 'Continuous tracking, testing, and optimization based on ranking changes, traffic patterns, and algorithm updates.',
       },
     ],
     faqs: [
@@ -60,80 +68,7 @@ export const services = [
       href: '/contact',
     },
   },
-  {
-    slug: 'paid-ads',
-    title: 'Performance Paid Ads',
-    tagline: 'Turn ad spend into predictable revenue growth.',
-    summary:
-      'High-intent campaigns built for profitability across Google and Meta. We focus on clean tracking, creative testing, and scalable account structure.',
-    description:
-      'Our paid media programs are built to reduce wasted spend and increase lead quality. From account audits to landing page optimization, we align every click to your business goals.',
-    stats: [
-      { value: '2-4', label: 'Weeks to optimize core campaigns' },
-      { value: '25+', label: 'Conversion signals tracked' },
-      { value: '3x', label: 'Average ROAS target range' },
-    ],
-    highlights: [
-      'Campaign architecture for scale and control',
-      'Conversion tracking + attribution setup',
-      'Creative testing roadmap and ad copy variants',
-      'Landing page and funnel optimization',
-    ],
-    processHeading: 'Our Paid Ads Strategy',
-    processDescription: 'Data-driven campaigns optimized for maximum ROI and lead quality.',
-    process: [
-      {
-        title: 'Audit & Strategy',
-        details: 'Review current account health, competitors, and offer positioning to define the target CPA/ROAS.',
-      },
-      {
-        title: 'Build & Launch',
-        details: 'Ship a structured campaign build with clean tracking, pixel setup, and conversion goals.',
-      },
-      {
-        title: 'Test & Optimize',
-        details: 'Run creative and audience tests to improve CTR, CVR, and cost efficiency.',
-      },
-      {
-        title: 'Scale & Refine',
-        details: 'Reinvest into top performers, expand audiences, and optimize landing pages for lift.',
-      },
-    ],
-    faqs: [
-      {
-        question: 'Which platforms do you manage?',
-        answer: 'We manage Google Ads, Meta Ads, LinkedIn Ads, YouTube, and can expand to TikTok or other platforms as needed for your strategy.',
-      },
-      {
-        question: "How long until we see results?",
-        answer: "Most campaigns show early optimization data within 2-4 weeks. Meaningful scaling typically happens after month 2-3 once we've refined targeting and creative.",
-      },
-      {
-        question: 'Do you handle creatives and landing pages?',
-        answer: 'Yes. We manage creative testing, ad copy variants, and landing page optimization to maximize conversion rates and reduce wasted spend.',
-      },
-      {
-        question: 'What\'s your reporting and optimization frequency?',
-        answer: 'We conduct daily monitoring with optimization adjustments, weekly performance reviews, and monthly strategic deep dives with you.',
-      },
-      {
-        question: 'What budget do we need to start?',
-        answer: 'We typically recommend $2,000-5,000/month minimum to gather enough data for effective optimization, though we can work with different budgets based on goals.',
-      },
-      {
-        question: 'How do you handle underperforming campaigns?',
-        answer: 'We pause or consolidate underperforming campaigns quickly, reallocate budget to top performers, and test new audience/creative combinations.',
-      },
-      {
-        question: 'Do you guarantee specific ROAS or lead numbers?',
-        answer: 'We don\'t guarantee results, but we commit to transparent reporting and continuous optimization toward your target CPA or ROAS based on industry benchmarks.',
-      },
-    ],
-    cta: {
-      label: 'Launch a Paid Ads Audit',
-      href: '/contact',
-    },
-  },
+
   {
     slug: 'social-media-marketing',
     title: 'Social Media Marketing',
