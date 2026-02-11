@@ -207,27 +207,27 @@ faqs: [
     tools: [
       {
         name: 'React',
-        logo: 'https://placehold.co/120x80?text=React',
+        logo: 'https://cdn.jsdelivr.net/npm/simple-icons@latest/icons/react.svg',
       },
       {
         name: 'Next.js',
-        logo: 'https://placehold.co/120x80?text=Next.js',
+        logo: 'https://cdn.jsdelivr.net/npm/simple-icons@latest/icons/nextdotjs.svg',
       },
       {
         name: 'Node.js',
-        logo: 'https://placehold.co/120x80?text=Node.js',
+        logo: 'https://cdn.jsdelivr.net/npm/simple-icons@latest/icons/nodedotjs.svg',
       },
       {
         name: 'WordPress',
-        logo: 'https://placehold.co/120x80?text=WordPress',
+        logo: 'https://cdn.jsdelivr.net/npm/simple-icons@latest/icons/wordpress.svg',
       },
       {
         name: 'Webflow',
-        logo: 'https://placehold.co/120x80?text=Webflow',
+        logo: 'https://cdn.jsdelivr.net/npm/simple-icons@latest/icons/webflow.svg',
       },
       {
         name: 'Shopify',
-        logo: 'https://placehold.co/120x80?text=Shopify',
+        logo: 'https://cdn.jsdelivr.net/npm/simple-icons@latest/icons/shopify.svg',
       },
     ],
 
