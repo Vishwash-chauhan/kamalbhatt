@@ -2,6 +2,7 @@ import type { Metadata } from 'next';
 import Link from 'next/link';
 import Features from '@/app/components/features';
 import CourseRoadmap from '@/app/components/course-roadmap';
+import TrainingToolsSection from '@/app/components/training-tools-section';
 import Clients from '@/app/components/clients';
 import Testimonials from '@/app/components/testimonials';
 import CTA from '@/app/components/cta';
@@ -172,6 +173,7 @@ export default function TrainingPage() {
       <Features highlights={courseHighlights} />
 
       <CourseRoadmap modules={modules} />
+      <TrainingToolsSection />
       <Clients />
       <Testimonials />
       <CTA />
