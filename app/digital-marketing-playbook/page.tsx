@@ -56,7 +56,7 @@ export default function DigitalMarketingPlaybookPage() {
 
               <div className="flex flex-wrap gap-4 pt-4">
                 <Link
-                  href=""
+                  href="https://www.amazon.in/dp/9356055386?ref=cm_sw_r_apan_dp_T013NSTNTGJPGJTMXRRC&ref_=cm_sw_r_apan_dp_T013NSTNTGJPGJTMXRRC&social_share=cm_sw_r_apan_dp_T013NSTNTGJPGJTMXRRC&language=en-IN"
                   className="inline-flex items-center gap-2 px-6 py-3 rounded-lg bg-primary text-white font-bold hover:bg-opacity-90 transition"
                 >
                   Get Your Copy

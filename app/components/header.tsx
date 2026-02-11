@@ -30,6 +30,12 @@ export default function Header() {
     return pathname === href || pathname.startsWith(href + '/');
   };
 
+  const closeMobileNav = () => {
+    setIsOpen(false);
+    setIsServicesDropdownOpen(false);
+    setIsPaidAdsSubmenuOpen(false);
+  };
+
   return (
     <header className="sticky top-0 z-50 bg-white dark:bg-gray-950 shadow-md">
       <nav className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -169,7 +175,7 @@ export default function Header() {
                   : 'text-gray-700 dark:text-gray-300 hover:text-primary dark:hover:text-secondary'
               }`}
             >
-              Playbook
+              Book
             </Link>
             <Link 
               href="/contact" 
@@ -181,9 +187,12 @@ export default function Header() {
             >
               Contact
             </Link>
-            <button className="bg-primary hover:bg-primary/90 text-white px-6 py-2 rounded-lg transition">
+            <Link
+              href="/contact"
+              className="bg-primary hover:bg-primary/90 text-white px-6 py-2 rounded-lg transition"
+            >
               Get Started
-            </button>
+            </Link>
           </div>
 
           {/* Mobile Menu Button */}
@@ -212,6 +221,7 @@ export default function Header() {
           <div className="md:hidden pb-4 space-y-2">
             <Link
               href="/"
+              onClick={closeMobileNav}
               className={`block px-4 py-2 rounded transition ${
                 isActive('/') && pathname === '/'
                   ? 'text-primary dark:text-secondary bg-primary/10 dark:bg-secondary/10 font-semibold'
@@ -226,6 +236,7 @@ export default function Header() {
               <div className="flex items-center justify-between">
                 <Link
                   href="/services"
+                  onClick={closeMobileNav}
                   className={`flex-1 px-4 py-2 rounded transition ${
                     isActive('/services')
                       ? 'text-primary dark:text-secondary bg-primary/10 dark:bg-secondary/10 font-semibold'
@@ -254,6 +265,7 @@ export default function Header() {
                           <div className="flex items-center justify-between">
                             <Link
                               href={`/services/${service.slug}`}
+                              onClick={closeMobileNav}
                               className={`flex-1 flex items-center px-4 py-2 text-sm rounded transition ${
                                 isActive(`/services/${service.slug}`)
                                   ? 'text-primary dark:text-secondary bg-primary/10 dark:bg-secondary/10'
@@ -279,6 +291,7 @@ export default function Header() {
                                 <Link
                                   key={paidAdService.slug}
                                   href={`/services/paid-ads/${paidAdService.slug}`}
+                                  onClick={closeMobileNav}
                                   className={`block px-4 py-2 text-sm rounded transition ${
                                     isActive(`/services/paid-ads/${paidAdService.slug}`)
                                       ? 'text-primary dark:text-secondary bg-primary/10 dark:bg-secondary/10'
@@ -294,6 +307,7 @@ export default function Header() {
                       ) : (
                         <Link
                           href={`/services/${service.slug}`}
+                          onClick={closeMobileNav}
                           className={`block px-4 py-2 text-sm rounded transition ${
                             isActive(`/services/${service.slug}`)
                               ? 'text-primary dark:text-secondary bg-primary/10 dark:bg-secondary/10'
@@ -311,6 +325,7 @@ export default function Header() {
 
             <Link
               href="/about"
+              onClick={closeMobileNav}
               className={`block px-4 py-2 rounded transition ${
                 isActive('/about')
                   ? 'text-primary dark:text-secondary bg-primary/10 dark:bg-secondary/10 font-semibold'
@@ -321,6 +336,7 @@ export default function Header() {
             </Link>
             <Link
               href="/portfolio"
+              onClick={closeMobileNav}
               className={`block px-4 py-2 rounded transition ${
                 isActive('/portfolio')
                   ? 'text-primary dark:text-secondary bg-primary/10 dark:bg-secondary/10 font-semibold'
@@ -331,6 +347,7 @@ export default function Header() {
             </Link>
             <Link
               href="/digital-marketing-playbook"
+              onClick={closeMobileNav}
               className={`block px-4 py-2 rounded transition ${
                 isActive('/digital-marketing-playbook')
                   ? 'text-primary dark:text-secondary bg-primary/10 dark:bg-secondary/10 font-semibold'
@@ -341,6 +358,7 @@ export default function Header() {
             </Link>
             <Link
               href="/contact"
+              onClick={closeMobileNav}
               className={`block px-4 py-2 rounded transition ${
                 isActive('/contact')
                   ? 'text-primary dark:text-secondary bg-primary/10 dark:bg-secondary/10 font-semibold'
@@ -349,9 +367,13 @@ export default function Header() {
             >
               Contact
             </Link>
-            <button className="w-full bg-primary hover:bg-primary/90 text-white px-4 py-2 rounded-lg transition">
+            <Link
+              href="/contact"
+              onClick={closeMobileNav}
+              className="w-full bg-primary hover:bg-primary/90 text-white px-4 py-2 rounded-lg transition"
+            >
               Get Started
-            </button>
+            </Link>
           </div>
         )}
       </nav>
