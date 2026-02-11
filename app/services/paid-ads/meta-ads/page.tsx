@@ -5,6 +5,7 @@ import CTA from '@/app/components/cta';
 import Testimonials from '@/app/components/testimonials';
 import Clients from '@/app/components/clients';
 import FAQSection from '@/app/components/faq-section';
+import AboutService from '@/app/components/about-service';
 
 const iconMap = {
   Target,
@@ -79,6 +80,12 @@ export default function MetaAdsPage() {
           </div>
         </div>
       </section>
+
+      <AboutService
+        slug="meta-ads"
+        title="Meta Ads"
+        description="Facebook and Instagram ads designed to reach your ideal audience and drive engagement."
+      />
 
       {/* What We Do */}
       <section className="py-24 bg-gray-50 dark:bg-gray-900 border-y border-gray-100 dark:border-gray-800">

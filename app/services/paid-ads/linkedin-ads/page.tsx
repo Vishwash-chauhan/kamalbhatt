@@ -5,6 +5,7 @@ import CTA from '@/app/components/cta';
 import Testimonials from '@/app/components/testimonials';
 import Clients from '@/app/components/clients';
 import FAQSection from '@/app/components/faq-section';
+import AboutService from '@/app/components/about-service';
 
 const iconMap = {
   Target,
@@ -79,6 +80,12 @@ export default function LinkedInAdsPage() {
           </div>
         </div>
       </section>
+
+      <AboutService
+        slug="linkedin-ads"
+        title="LinkedIn Ads"
+        description="B2B advertising campaigns that connect with professionals and decision-makers."
+      />
 
       {/* What We Do */}
       <section className="py-24 bg-gray-50 dark:bg-gray-900 border-y border-gray-100 dark:border-gray-800">
@@ -202,7 +209,11 @@ export default function LinkedInAdsPage() {
           </div>
         </div>
       </section>
-
+      <AboutService
+        slug="linkedin-ads"
+        title="LinkedIn Ads"
+        description="B2B advertising campaigns that connect with professionals and decision-makers."
+      />
       {/* Why LinkedIn */}
       <section className="py-24 bg-gray-50 dark:bg-gray-900 border-y border-gray-100 dark:border-gray-800">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">

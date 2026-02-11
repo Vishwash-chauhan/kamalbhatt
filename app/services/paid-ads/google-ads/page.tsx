@@ -5,6 +5,7 @@ import CTA from '@/app/components/cta';
 import Testimonials from '@/app/components/testimonials';
 import Clients from '@/app/components/clients';
 import FAQSection from '@/app/components/faq-section';
+import AboutService from '@/app/components/about-service';
 
 const iconMap = {
   Building2,
@@ -79,6 +80,12 @@ export default function GoogleAdsPage() {
           </div>
         </div>
       </section>
+
+      <AboutService
+        slug="google-ads"
+        title="Google Ads"
+        description="High-intent search and display campaigns optimized for conversions and ROI."
+      />
 
       {/* What We Do */}
       <section className="py-24 bg-gray-50 dark:bg-gray-900 border-y border-gray-100 dark:border-gray-800">
