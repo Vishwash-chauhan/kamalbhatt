@@ -6,6 +6,7 @@ import Testimonials from '@/app/components/testimonials';
 import Clients from '@/app/components/clients';
 import FAQSection from '@/app/components/faq-section';
 import AboutService from '@/app/components/about-service';
+import ProcessSection from '@/app/components/process-section';
 
 const iconMap = {
   Target,
@@ -159,56 +160,28 @@ export default function MetaAdsPage() {
         </div>
       </section>
 
-      {/* Process */}
-      <section className="py-24">
-        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-16">
-            <h2 className="text-4xl font-bold text-gray-900 dark:text-white mb-4">
-              Our Meta Ads Process
-            </h2>
-            <p className="text-xl text-gray-600 dark:text-gray-400">
-              Strategic approach to maximize your ROAS and lead quality.
-            </p>
-          </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
-            {[
-              {
-                title: 'Discovery & Setup',
-                details: 'Understand your business, goals, and audience. Set up pixel tracking, Conversion API, and event tracking for accurate measurement.',
-                step: '01',
-              },
-              {
-                title: 'Audience & Creative',
-                details: 'Build target audience segments and create multiple ad variations. Test different messaging, visuals, and formats.',
-                step: '02',
-              },
-              {
-                title: 'Campaign Launch',
-                details: 'Launch campaigns with proper budget allocation and bid strategies. Monitor daily for quick wins and adjustments.',
-                step: '03',
-              },
-              {
-                title: 'Optimize & Scale',
-                details: 'Pause underperforming ads. Scale winners. Test new audiences and creatives. Refine based on conversion data.',
-                step: '04',
-              },
-            ].map((step) => (
-              <div key={step.title} className="relative">
-                <div className="bg-gray-50 dark:bg-gray-900 rounded-xl border border-gray-200 dark:border-gray-800 p-8 h-full">
-                  <div className="text-4xl font-bold text-primary mb-4">{step.step}</div>
-                  <h3 className="text-xl font-bold text-gray-900 dark:text-white mb-3">
-                    {step.title}
-                  </h3>
-                  <p className="text-gray-600 dark:text-gray-400">
-                    {step.details}
-                  </p>
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
+      <ProcessSection
+        heading="Our Meta Ads Process"
+        description="Strategic approach to maximize your ROAS and lead quality."
+        steps={[
+          {
+            title: 'Discovery & Setup',
+            details: 'Understand your business, goals, and audience. Set up pixel tracking, Conversion API, and event tracking for accurate measurement.',
+          },
+          {
+            title: 'Audience & Creative',
+            details: 'Build target audience segments and create multiple ad variations. Test different messaging, visuals, and formats.',
+          },
+          {
+            title: 'Campaign Launch',
+            details: 'Launch campaigns with proper budget allocation and bid strategies. Monitor daily for quick wins and adjustments.',
+          },
+          {
+            title: 'Optimize & Scale',
+            details: 'Pause underperforming ads. Scale winners. Test new audiences and creatives. Refine based on conversion data.',
+          },
+        ]}
+      />
 
       {/* FAQ */}
       <FAQSection

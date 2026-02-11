@@ -6,6 +6,7 @@ import Testimonials from '@/app/components/testimonials';
 import Clients from '@/app/components/clients';
 import FAQSection from '@/app/components/faq-section';
 import AboutService from '@/app/components/about-service';
+import ProcessSection from '@/app/components/process-section';
 
 const iconMap = {
   Building2,
@@ -159,56 +160,28 @@ export default function GoogleAdsPage() {
         </div>
       </section>
 
-      {/* Process */}
-      <section className="py-24">
-        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-16">
-            <h2 className="text-4xl font-bold text-gray-900 dark:text-white mb-4">
-              Our Google Ads Process
-            </h2>
-            <p className="text-xl text-gray-600 dark:text-gray-400">
-              From audit to scale, we optimize every aspect of your campaigns.
-            </p>
-          </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
-            {[
-              {
-                title: 'Account Audit',
-                details: 'Review your current Google Ads account structure, quality scores, spending patterns, and identify missed opportunities.',
-                step: '01',
-              },
-              {
-                title: 'Strategy & Setup',
-                details: 'Build a customized campaign structure with keyword groups, ad copy variations, and conversion tracking implementation.',
-                step: '02',
-              },
-              {
-                title: 'Launch & Monitor',
-                details: 'Deploy optimized campaigns and monitor initial performance. Make real-time adjustments to improve CTR and conversion rates.',
-                step: '03',
-              },
-              {
-                title: 'Optimize & Scale',
-                details: 'Continuous optimization based on data. Scale best-performing keywords and audiences while cutting underperformers.',
-                step: '04',
-              },
-            ].map((step) => (
-              <div key={step.title} className="relative">
-                <div className="bg-gray-50 dark:bg-gray-900 rounded-xl border border-gray-200 dark:border-gray-800 p-8 h-full">
-                  <div className="text-4xl font-bold text-primary mb-4">{step.step}</div>
-                  <h3 className="text-xl font-bold text-gray-900 dark:text-white mb-3">
-                    {step.title}
-                  </h3>
-                  <p className="text-gray-600 dark:text-gray-400">
-                    {step.details}
-                  </p>
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
+      <ProcessSection
+        heading="Our Google Ads Process"
+        description="From audit to scale, we optimize every aspect of your campaigns."
+        steps={[
+          {
+            title: 'Account Audit',
+            details: 'Review your current Google Ads account structure, quality scores, spending patterns, and identify missed opportunities.',
+          },
+          {
+            title: 'Strategy & Setup',
+            details: 'Build a customized campaign structure with keyword groups, ad copy variations, and conversion tracking implementation.',
+          },
+          {
+            title: 'Launch & Monitor',
+            details: 'Deploy optimized campaigns and monitor initial performance. Make real-time adjustments to improve CTR and conversion rates.',
+          },
+          {
+            title: 'Optimize & Scale',
+            details: 'Continuous optimization based on data. Scale best-performing keywords and audiences while cutting underperformers.',
+          },
+        ]}
+      />
 
       {/* FAQ */}
       <FAQSection

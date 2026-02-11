@@ -6,6 +6,7 @@ import Testimonials from '@/app/components/testimonials';
 import Clients from '@/app/components/clients';
 import FAQSection from '@/app/components/faq-section';
 import AboutService from '@/app/components/about-service';
+import ProcessSection from '@/app/components/process-section';
 
 const iconMap = {
   Target,
@@ -159,56 +160,28 @@ export default function LinkedInAdsPage() {
         </div>
       </section>
 
-      {/* Process */}
-      <section className="py-24">
-        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-16">
-            <h2 className="text-4xl font-bold text-gray-900 dark:text-white mb-4">
-              Our LinkedIn Ads Process
-            </h2>
-            <p className="text-xl text-gray-600 dark:text-gray-400">
-              Strategic B2B approach to maximize lead quality and sales velocity.
-            </p>
-          </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
-            {[
-              {
-                title: 'Strategy & Targeting',
-                details: 'Define your ideal customer profile (ICP). Set up account lists, audience segments, and campaign goals aligned with your sales pipeline.',
-                step: '01',
-              },
-              {
-                title: 'Campaign Setup',
-                details: 'Create targeted campaigns with lead gen forms, sponsored content, or InMail. Set conversion tracking and lead routing.',
-                step: '02',
-              },
-              {
-                title: 'Launch & Optimize',
-                details: 'Deploy campaigns and monitor daily performance. Adjust audience targeting and budgets based on early data.',
-                step: '03',
-              },
-              {
-                title: 'Scale & Refine',
-                details: 'Increase budgets to winning campaigns. Test new audiences and creative variations. Optimize for sales-qualified leads.',
-                step: '04',
-              },
-            ].map((step) => (
-              <div key={step.title} className="relative">
-                <div className="bg-gray-50 dark:bg-gray-900 rounded-xl border border-gray-200 dark:border-gray-800 p-8 h-full">
-                  <div className="text-4xl font-bold text-primary mb-4">{step.step}</div>
-                  <h3 className="text-xl font-bold text-gray-900 dark:text-white mb-3">
-                    {step.title}
-                  </h3>
-                  <p className="text-gray-600 dark:text-gray-400">
-                    {step.details}
-                  </p>
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
+      <ProcessSection
+        heading="Our LinkedIn Ads Process"
+        description="Strategic B2B approach to maximize lead quality and sales velocity."
+        steps={[
+          {
+            title: 'Strategy & Targeting',
+            details: 'Define your ideal customer profile (ICP). Set up account lists, audience segments, and campaign goals aligned with your sales pipeline.',
+          },
+          {
+            title: 'Campaign Setup',
+            details: 'Create targeted campaigns with lead gen forms, sponsored content, or InMail. Set conversion tracking and lead routing.',
+          },
+          {
+            title: 'Launch & Optimize',
+            details: 'Deploy campaigns and monitor daily performance. Adjust audience targeting and budgets based on early data.',
+          },
+          {
+            title: 'Scale & Refine',
+            details: 'Increase budgets to winning campaigns. Test new audiences and creative variations. Optimize for sales-qualified leads.',
+          },
+        ]}
+      />
       <AboutService
         slug="linkedin-ads"
         title="LinkedIn Ads"
