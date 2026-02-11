@@ -7,6 +7,7 @@ import Clients from '@/app/components/clients';
 import FAQSection from '@/app/components/faq-section';
 import AboutService from '@/app/components/about-service';
 import ProcessSection from '@/app/components/process-section';
+import ServicesSection from '@/app/components/services-section';
 
 type ServicePageProps = {
   params: Promise<{ slug: string }>;
@@ -115,6 +116,7 @@ export default async function ServiceTemplate({ params }: ServicePageProps) {
         title={service.title}
         description={service.description}
       />
+     <ServicesSection />
 
       {service.tools?.length ? (
         <section className="py-16">

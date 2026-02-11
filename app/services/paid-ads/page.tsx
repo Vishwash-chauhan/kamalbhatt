@@ -6,6 +6,7 @@ import Clients from '@/app/components/clients';
 import Testimonials from '@/app/components/testimonials';
 import AboutService from '@/app/components/about-service';
 import ProcessSection from '@/app/components/process-section';
+import ServicesSection from '@/app/components/services-section';
 
 export const metadata: Metadata = {
   title: 'Paid Ads Services | Google Ads, Meta Ads, LinkedIn Ads | Kamal Bhatt',
@@ -111,6 +112,7 @@ export default function PaidAdsPage() {
         title="Performance Paid Ads"
         description="Our paid media programs are built to reduce wasted spend and increase lead quality."
       />
+     <ServicesSection />
 
       {/* Services Grid */}
       <section className="py-24">

@@ -7,6 +7,7 @@ import Clients from '@/app/components/clients';
 import FAQSection from '@/app/components/faq-section';
 import AboutService from '@/app/components/about-service';
 import ProcessSection from '@/app/components/process-section';
+import ServicesSection from '@/app/components/services-section';
 
 const iconMap = {
   Target,
@@ -87,6 +88,7 @@ export default function MetaAdsPage() {
         title="Meta Ads"
         description="Facebook and Instagram ads designed to reach your ideal audience and drive engagement."
       />
+     <ServicesSection />
 
       {/* What We Do */}
       <section className="py-24 bg-gray-50 dark:bg-gray-900 border-y border-gray-100 dark:border-gray-800">
