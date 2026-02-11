@@ -13,7 +13,7 @@ const services = [
     icon: 'Search',
     title: 'SEO',
     description: 'Boost your online visibility with our proven SEO strategies. We optimize your website to rank higher in search results and drive organic traffic to grow your business.',
-    href: '/services/seo',
+    href: '/services/seo-optimisation',
   },
   {
     icon: 'TrendingUp',
@@ -37,7 +37,7 @@ const services = [
     icon: 'BookOpen',
     title: 'Digital Marketing Training',
     description: 'Master digital marketing skills with our comprehensive training programs. Learn SEO, social media, content creation, and more from industry experts.',
-    href: '/services/training',
+    href: '/services/digital-marketing-training',
   },
 ];
 

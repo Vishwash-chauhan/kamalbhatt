@@ -22,7 +22,7 @@ const services: Service[] = [
     description:
       'Boost your online visibility with our proven SEO strategies. We optimize your website to rank higher in search results and drive organic traffic to grow your business.',
     image: 'https://placehold.co/560x360?text=SEO+Optimization',
-    link: '/services/seo',
+    link: '/services/seo-optimisation',
   },
   {
     title: 'Paid Ads',
@@ -54,7 +54,7 @@ const services: Service[] = [
     description:
       'Master digital marketing skills with our comprehensive training programs. Learn SEO, social media, content creation, and more from industry experts.',
     image: 'https://placehold.co/560x360?text=Training',
-    link: '/services/training',
+    link: '/services/digital-marketing-training',
   },
 ];
 

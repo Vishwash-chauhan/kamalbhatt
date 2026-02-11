@@ -207,6 +207,40 @@ export default function PaidAdsPage() {
       <Clients />
       <Testimonials />
       {/* FAQ Section */}
+      <FAQSection
+        faqs={[
+          {
+            question: 'Which ad platform is best for my business?',
+            answer:
+              'If you want high-intent traffic, start with Google Ads. For visual products and scalable prospecting, Meta Ads perform best. For B2B decision-makers, LinkedIn Ads is usually the top performer.',
+          },
+          {
+            question: 'Should I run ads on multiple platforms?',
+            answer:
+              'Yes, if your budget allows. Multi-platform campaigns typically improve reach and lower overall acquisition costs by capturing users at different stages of the funnel.',
+          },
+          {
+            question: 'What budget do I need to see results?',
+            answer:
+              'For a single platform, we recommend ₹15,000–₹25,000/month to gather enough data. E-commerce brands often need ₹30,000–₹50,000/month for consistent ROAS.',
+          },
+          {
+            question: 'How long does it take to optimize campaigns?',
+            answer:
+              'Most accounts need 2–4 weeks to stabilize and optimize. Performance improves as we test creatives, audiences, and landing pages.',
+          },
+          {
+            question: 'Do you provide ad creatives and copy?',
+            answer:
+              'Yes. Creative production and copywriting are included in Professional and Advanced packages, with add-ons available for Starter.',
+          },
+          {
+            question: 'How do you measure success?',
+            answer:
+              'We track ROAS, CPA, conversion rates, and lead quality. You’ll receive clear reporting and optimization insights each month.',
+          },
+        ]}
+      />
 
     </main>
   );

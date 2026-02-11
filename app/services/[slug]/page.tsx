@@ -181,7 +181,7 @@ export default async function ServiceTemplate({ params }: ServicePageProps) {
         </div>
       </section>
 
-      {slug === 'seo' && (
+      {slug === 'seo-optimisation' && (
         <section className="py-16 bg-gray-50 dark:bg-gray-900">
           <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="text-center mb-12">

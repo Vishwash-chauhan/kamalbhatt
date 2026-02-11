@@ -13,11 +13,11 @@ export default function Header() {
   const pathname = usePathname();
 
   const services = [
-    { name: 'SEO Optimization', slug: 'seo' },
+    { name: 'SEO Optimization', slug: 'seo-optimisation' },
     { name: 'Paid Ads', slug: 'paid-ads', hasSubmenu: true },
     { name: 'Social Media Marketing', slug: 'social-media-marketing' },
     { name: 'Web Development & Design', slug: 'web-development-design' },
-    { name: 'Digital Marketing Training', slug: 'training' },
+    { name: 'Digital Marketing Training', slug: 'digital-marketing-training' },
   ];
 
   const paidAdsServices = [

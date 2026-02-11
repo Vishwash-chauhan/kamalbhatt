@@ -1,6 +1,6 @@
 export const services = [
   {
-    slug: 'seo',
+    slug: 'seo-optimisation',
     title: 'SEO Optimization',
     tagline: 'Build search visibility that compounds every month.',
     summary:
@@ -101,7 +101,7 @@ faqs: [
     summary:
       'We create a consistent social presence that grows your audience, strengthens brand authority, and drives qualified inbound leads.',
     description:
-      'Our social strategy blends content planning, community engagement, and platform-specific best practices. Expect clearer positioning, stronger engagement, and steady growth across key channels.',
+      'Our social strategy blends contenttt planning, community engagement, and platform-specific best practices. Expect clearer positioning, stronger engagement, and steady growth across key channels.',
     stats: [
       { value: '2-3', label: 'Weeks to launch a content system' },
       { value: '12+', label: 'Content formats mapped to intent' },
@@ -135,16 +135,29 @@ faqs: [
     ],
     faqs: [
       {
-        question: 'Which platforms do you specialize in?',
-        answer: 'We focus on Instagram, Facebook, LinkedIn, and YouTube based on your audience.',
+        question: 'Which platforms will you prioritize for my business?',
+        answer:
+          'We choose 2–3 platforms based on your audience and offer. For example: B2B typically performs best on LinkedIn + YouTube, while local services often win on Instagram + Facebook.',
       },
       {
-        question: 'Do you provide content creation?',
-        answer: 'Yes. We handle copy, creative direction, and asset coordination as needed.',
+        question: 'What content formats will you produce?',
+        answer:
+          'You’ll get a mix of Reels/shorts, carousels, static posts, and story prompts mapped to awareness, trust, and conversion stages.',
       },
       {
-        question: 'How often do you post?',
-        answer: 'We recommend a cadence based on your goals and capacity, typically 3-5 posts per week.',
+        question: 'How do you define measurable success?',
+        answer:
+          'We track engagement quality, saves/shares, profile actions, and lead intent. Monthly reports include content winners, audience growth, and next‑month priorities.',
+      },
+      {
+        question: 'Do you handle scheduling and community management?',
+        answer:
+          'Yes. We schedule posts, monitor comments/DMs, and provide response guidelines so your brand voice stays consistent and timely.',
+      },
+      {
+        question: 'How long before we see traction?',
+        answer:
+          'Expect early signals in 3–6 weeks and stronger momentum around 8–12 weeks as content patterns and audience feedback compound.',
       },
     ],
     cta: {
@@ -217,20 +230,35 @@ faqs: [
         logo: 'https://placehold.co/120x80?text=Shopify',
       },
     ],
+
     faqs: [
       {
-        question: 'Can you redesign my existing site?',
-        answer: 'Yes. We can refresh the UX, update content, and rebuild for performance.',
+        question: 'What is your typical timeline for a new website?',
+        answer:
+          'Most marketing sites launch in 2–6 weeks depending on page count, content readiness, and review cycles.',
       },
       {
-        question: 'Will the site be editable?',
-        answer: 'Absolutely. We build on platforms that allow easy updates and content changes.',
+        question: 'Do you help with copywriting and messaging?',
+        answer:
+          'Yes. We can refine existing copy or create new messaging focused on clarity, positioning, and conversion.',
       },
       {
-        question: 'Do you also handle hosting?',
-        answer: 'We can recommend hosting options and help with setup based on your stack.',
+        question: 'Will the site be fast and SEO‑ready at launch?',
+        answer:
+          'Yes. We build with performance, accessibility, and technical SEO best practices from day one.',
+      },
+      {
+        question: 'Can you integrate forms, analytics, and lead tracking?',
+        answer:
+          'Absolutely. We set up forms, event tracking, and analytics so you can measure leads and page performance.',
+      },
+      {
+        question: 'Can you redesign or rebuild an existing site?',
+        answer:
+          'Yes. We can improve UX, restructure content, and rebuild for speed, clarity, and modern design.',
       },
     ],
+
     cta: {
       label: 'Start My Website Project',
       href: '/contact',
@@ -298,3 +326,54 @@ faqs: [
 
 export const getServiceBySlug = (slug) =>
   services.find((service) => service.slug === slug);
+
+export const aboutServiceContent = {
+  'seo-optimisation': {
+    title: 'Professional Google Business Profile Optimization',
+    text: `Did you know that 76% of people who search for something nearby visit a business within 24 hours? And 46% of all Google searches have local intent. If your Google Business Profile isn't optimized, you're losing customers to competitors in the Map Pack.
+
+With 60% of Google searches now resulting in zero clicks due to AI Overviews and featured snippets, traditional SEO alone isn't enough. You need a comprehensive strategy that positions your content as the definitive answer across all search platforms. My SEO services combine proven ranking strategies with next-generation AEO techniques to ensure maximum visibility in 2026 and beyond.
+
+From complete profile setup and category optimization to strategic review generation and ongoing management, We handle everything needed to make your business the obvious choice for local customers. Explore my complete digital marketing services.`,
+  },
+  'paid-ads': {
+    title: 'Performance Paid Ads That Drive Qualified Leads',
+    text: `Tired of wasting money on ads that don't convert? Most businesses run inefficient campaigns with poor tracking, misaligned budgets, and creative that doesn't resonate with their audience.
+
+I build high-performance paid advertising campaigns designed to reduce wasted spend and maximize ROI across Google Ads, Meta, and LinkedIn. From comprehensive account audits to creative testing and landing page optimization, I align every campaign element to your specific business goals.
+
+Whether you're a B2B company looking for qualified leads, an e-commerce brand driving sales, or a service business filling your pipeline, I deliver results: 2-4 weeks to optimize core campaigns, consistent 3x+ ROAS targets, and predictable lead generation that scales with your business. Let's turn your ad spend into revenue.`,
+  },
+  'google-ads': {
+    title: 'Professional Google Ads Management for Maximum ROI',
+    text: `Are you struggling to get results from your Google Ads campaigns? Wasting budget on clicks that don't convert? As a certified Google Ads expert specializing in Performance Max, AI Max for Search, and advanced PPC management, I help businesses achieve measurable results through data-driven campaign optimization.
+
+With over 10+ years of experience managing Google Ads campaigns across multiple industries, I've developed proven strategies that consistently deliver 14-27% more conversions while reducing cost-per-acquisition by 30-40%. Whether you're a startup looking to generate your first leads or an established business scaling your advertising, my Google Ads management services are designed to maximize your return on ad spend.
+
+Looking for organic growth? Combine Google Ads with my SEO services for a complete digital marketing strategy.`,
+  },
+  'meta-ads': {
+    title: 'Professional Meta Ads Management for Maximum ROI',
+    text: `Reach your ideal customers where they spend their time—on Facebook and Instagram. With 3 billion active users across Meta platforms and advanced AI-powered targeting, Meta Ads (formerly Facebook Ads) offer unparalleled opportunities to connect with your audience, generate leads, and drive sales.
+
+As a Meta Ads expert, I leverage Advantage+ campaigns, precise audience targeting, compelling creative strategies, and conversion optimization to deliver 5-8x ROAS for e-commerce brands, service businesses, and B2B companies. From strategy development to campaign execution and ongoing optimization, I manage every aspect of your Meta advertising to maximize results.
+
+Whether you're launching your first campaign or scaling existing ads, my Meta Ads management services combine platform expertise with creative excellence to turn ad spend into revenue. Explore my complete digital marketing services for integrated strategies.`,
+  },
+  'linkedin-ads': {
+    title: 'B2B LinkedIn Ads That Generate Qualified Business Leads',
+    text: `LinkedIn is where your B2B customers make buying decisions. But most B2B companies waste money on LinkedIn ads because they're either targeting too broadly or telling the wrong story to the wrong people.
+
+I build LinkedIn Ads campaigns designed specifically for complex B2B sales cycles where decision-makers research solutions, compare competitors, and evaluate ROI before buying. That means precision targeting by job title and company size, messaging that speaks to business problems (not features), and funnel optimization to qualify leads before they reach your sales team.
+
+From account-based marketing campaigns targeting specific high-value prospects to demand generation programs building awareness across your ideal buyer personas, I structure your LinkedIn ads to support your full sales cycle. Expect qualified leads with longer decision windows, higher average deal values, and better conversion rates. Let's turn LinkedIn from a "nice-to-have" channel into predictable pipeline generation.`,
+  },
+  'social-media-marketing': {
+    title: 'Social Media Marketing That Builds Trust and Drives Leads',
+    text: `Social media isn’t just about posting—it’s about building a brand that people trust and want to buy from. I create social strategies that turn followers into customers through consistent storytelling, content planning, and data-backed growth.
+
+From content calendars and creative production to community management and performance tracking, every step is designed to boost engagement and move people through your funnel. Whether you’re a local service business or a growing brand, I help you build visibility, authority, and pipeline across platforms.
+
+Expect clear strategy, on-brand creatives, and measurable results: higher engagement, steady audience growth, and leads that convert.`,
+  },
+};
