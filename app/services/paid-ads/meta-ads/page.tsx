@@ -165,20 +165,28 @@ export default function MetaAdsPage() {
         description="Strategic approach to maximize your ROAS and lead quality."
         steps={[
           {
-            title: 'Discovery & Setup',
-            details: 'Understand your business, goals, and audience. Set up pixel tracking, Conversion API, and event tracking for accurate measurement.',
+            title: 'Strategy & Research',
+            details: 'Business analysis, competitor research, audience identification, and campaign goal setting.',
           },
           {
-            title: 'Audience & Creative',
-            details: 'Build target audience segments and create multiple ad variations. Test different messaging, visuals, and formats.',
+            title: 'Account Setup',
+            details: 'Business Manager configuration, pixel installation, conversion tracking, and catalog setup.',
+          },
+          {
+            title: 'Creative Development',
+            details: 'Ad creative design, copywriting, video production, and Reels content creation.',
           },
           {
             title: 'Campaign Launch',
-            details: 'Launch campaigns with proper budget allocation and bid strategies. Monitor daily for quick wins and adjustments.',
+            details: 'Audience targeting, budget allocation, bid strategy, and campaign deployment.',
           },
           {
-            title: 'Optimize & Scale',
-            details: 'Pause underperforming ads. Scale winners. Test new audiences and creatives. Refine based on conversion data.',
+            title: 'Monitor & Optimize',
+            details: 'Performance tracking, A/B testing, audience refinement, and creative refresh.',
+          },
+          {
+            title: 'Scale & Report',
+            details: 'Winning campaign scaling, budget expansion, and comprehensive ROI reporting.',
           },
         ]}
       />

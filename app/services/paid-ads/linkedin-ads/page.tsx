@@ -182,42 +182,6 @@ export default function LinkedInAdsPage() {
           },
         ]}
       />
-      <AboutService
-        slug="linkedin-ads"
-        title="LinkedIn Ads"
-        description="B2B advertising campaigns that connect with professionals and decision-makers."
-      />
-      {/* Why LinkedIn */}
-      <section className="py-24 bg-gray-50 dark:bg-gray-900 border-y border-gray-100 dark:border-gray-800">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-16">
-            <h2 className="text-4xl font-bold text-gray-900 dark:text-white mb-4">
-              Why LinkedIn for B2B
-            </h2>
-            <p className="text-xl text-gray-600 dark:text-gray-400">
-              LinkedIn is the preferred platform for B2B marketing and sales.
-            </p>
-          </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-            {[
-              'Reach qualified decision-makers in your industry',
-              'Lower competition and cost per lead vs Google/Meta',
-              'Native lead generation forms boost conversion rates',
-              'Account-based marketing capabilities for enterprise deals',
-              'Brand credibility through thought leadership content',
-              'Superior audience data for precise targeting',
-              'Direct access to professionals during business hours',
-              '45% higher engagement than other platforms for B2B',
-            ].map((benefit) => (
-              <div key={benefit} className="flex items-start gap-4">
-                <span className="text-primary font-bold text-lg mt-1">✓</span>
-                <span className="text-gray-700 dark:text-gray-300">{benefit}</span>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
 
       {/* FAQ */}
       <FAQSection
