@@ -15,7 +15,7 @@ export default function WhatIDo() {
           {/* Left - Image */}
           <div className="relative">
             <img
-              src="https://placehold.co/500x500?text=What+I+Do"
+              src="https://res.cloudinary.com/dwffrfajl/image/upload/v1770807890/Heading_rxogym.png"
               alt="What I Do"
               className="rounded-lg shadow-xl w-full h-auto object-cover"
             />

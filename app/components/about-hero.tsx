@@ -27,7 +27,7 @@ export default function AboutHero() {
           {/* Right - Image */}
           <div className="relative">
             <img
-              src="https://placehold.co/500x500?text=Kamal+Bhatt"
+              src="https://res.cloudinary.com/dwffrfajl/image/upload/v1770806634/WhatsApp_Image_2026-02-09_at_6.28.13_PM_qufyav.jpg"
               alt="Kamal Bhatt"
               className="rounded-lg shadow-2xl w-full h-auto object-cover"
             />

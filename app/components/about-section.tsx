@@ -10,7 +10,7 @@ export default function AboutSection() {
           {/* Left Side - Image */}
           <div className="relative">
             <img
-              src="https://images.unsplash.com/photo-1552664730-d307ca884978?w=600&h=500&fit=crop"
+              src="https://res.cloudinary.com/dwffrfajl/image/upload/v1770806634/WhatsApp_Image_2026-02-09_at_6.28.13_PM_qufyav.jpg"
               alt="Team working together"
               className="rounded-lg shadow-xl w-full h-auto object-cover"
             />

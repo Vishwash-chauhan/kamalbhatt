@@ -7,27 +7,27 @@ export default function IndustriesServed() {
     {
       name: 'EdTech & Coaching Institutes',
       growth: '320%+ Enrollment Growth',
-      image: 'https://placehold.co/300x200?text=EdTech',
+      image: 'https://res.cloudinary.com/dwffrfajl/image/upload/v1770808204/1_ozep0p.svg',
     },
     {
       name: 'E-commerce & D2C Brands',
       growth: '₹2.5Cr+ Revenue Increases',
-      image: 'https://placehold.co/300x200?text=Ecommerce',
+      image: 'https://res.cloudinary.com/dwffrfajl/image/upload/v1770808205/2_aslzx0.svg',
     },
     {
       name: 'Healthcare & Wellness',
       growth: '450% Lead Generation Boost',
-      image: 'https://placehold.co/300x200?text=Healthcare',
+      image: 'https://res.cloudinary.com/dwffrfajl/image/upload/v1770808205/3_yr1npj.svg',
     },
     {
       name: 'Real Estate & Property',
       growth: '250%+ Inquiry Growth',
-      image: 'https://placehold.co/300x200?text=RealEstate',
+      image: 'https://res.cloudinary.com/dwffrfajl/image/upload/v1770808208/4_weh92p.svg',
     },
     {
-      name: 'B2B SaaS & Professional Services',
+      name: 'SaaS & Professional Services',
       growth: '280% Qualified Leads',
-      image: 'https://placehold.co/300x200?text=SaaS',
+      image: 'https://res.cloudinary.com/dwffrfajl/image/upload/v1770808206/5_vawhkt.svg',
     },
   ];
 

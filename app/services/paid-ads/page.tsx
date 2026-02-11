@@ -27,7 +27,7 @@ const paidAdServices = [
       'Display and remarketing',
       'Conversion tracking setup',
     ],
-    image: 'https://placehold.co/560x360?text=Google+Ads',
+    image: 'https://res.cloudinary.com/dwffrfajl/image/upload/v1770807121/1_iwepbu.svg',
     color: 'from-blue-500 to-blue-600',
   },
   {
@@ -40,7 +40,7 @@ const paidAdServices = [
       'Conversion API setup',
       'Funnel optimization',
     ],
-    image: 'https://placehold.co/560x360?text=Meta+Ads',
+    image: 'https://res.cloudinary.com/dwffrfajl/image/upload/v1770807121/2_zdcabq.svg',
     color: 'from-purple-500 to-pink-600',
   },
   {
@@ -53,7 +53,7 @@ const paidAdServices = [
       'Sponsored content optimization',
       'Conversion tracking and ROI',
     ],
-    image: 'https://placehold.co/560x360?text=LinkedIn+Ads',
+    image: 'https://res.cloudinary.com/dwffrfajl/image/upload/v1770807121/3_almzdi.svg',
     color: 'from-blue-600 to-cyan-500',
   },
 ];
