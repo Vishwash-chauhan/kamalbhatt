@@ -21,7 +21,7 @@ const services: Service[] = [
     tag: 'Visibility',
     description:
       'Boost your online visibility with our proven SEO strategies. We optimize your website to rank higher in search results and drive organic traffic to grow your business.',
-    image: 'https://placehold.co/560x360?text=SEO+Optimization',
+    image: 'https://res.cloudinary.com/dwffrfajl/image/upload/v1770815811/1_yopluk.svg',
     link: '/services/seo-optimisation',
   },
   {
@@ -29,7 +29,7 @@ const services: Service[] = [
     tag: 'Growth',
     description:
       'Maximize your ROI with targeted paid advertising campaigns. We manage Google Ads, Facebook Ads, and other platforms to drive quality leads and conversions.',
-    image: 'https://placehold.co/560x360?text=Paid+Ads',
+    image: 'https://res.cloudinary.com/dwffrfajl/image/upload/v1770815811/2_dc01bi.svg',
     link: '/services/paid-ads',
   },
   {
@@ -37,7 +37,7 @@ const services: Service[] = [
     tag: 'Engagement',
     description:
       'Build a strong social presence and engage with your audience across all platforms. We create compelling content that drives engagement and builds brand loyalty.',
-    image: 'https://placehold.co/560x360?text=Social+Media',
+    image: 'https://res.cloudinary.com/dwffrfajl/image/upload/v1770815811/3_zzwl08.svg',
     link: '/services/social-media-marketing',
   },
   {
@@ -45,7 +45,7 @@ const services: Service[] = [
     tag: 'Experience',
     description:
       'Create stunning, responsive websites that convert visitors into customers. We design and develop custom solutions that align with your brand vision.',
-    image: 'https://placehold.co/560x360?text=Web+Development',
+    image: 'https://res.cloudinary.com/dwffrfajl/image/upload/v1770808206/5_vawhkt.svg',
     link: '/services/web-development-design',
   },
   {
@@ -53,7 +53,7 @@ const services: Service[] = [
     tag: 'Education',
     description:
       'Master digital marketing skills with our comprehensive training programs. Learn SEO, social media, content creation, and more from industry experts.',
-    image: 'https://placehold.co/560x360?text=Training',
+    image: 'https://res.cloudinary.com/dwffrfajl/image/upload/v1770815810/5_ofefnv.svg',
     link: '/services/digital-marketing-training',
   },
 ];
