@@ -195,28 +195,38 @@ export default function MetaAdsPage() {
 
       {/* FAQ */}
       <FAQSection
-        faqs={[
-          {
-            question: "What's the minimum budget needed?",
-            answer: 'We recommend starting with a budget of $500-$1000/month to allow for proper testing and optimization. Smaller budgets can work but limit testing opportunities.',
-          },
-          {
-            question: 'How quickly can we scale?',
-            answer: 'Once we identify winning audiences and creatives (usually 1-2 weeks), we can scale budgets 20-40% weekly if performance metrics support the increase.',
-          },
-          {
-            question: "What's the difference between Performance Max and targeted campaigns?",
-            answer: 'Performance Max uses AI for audience targeting and placement optimization. We use targeted campaigns when you want more granular control over audiences and testing.',
-          },
-          {
-            question: 'How important is the Conversion API?',
-            answer: 'Extremely important. It provides accurate conversion tracking across devices and platforms, improving Meta\'s optimization algorithms and your reporting accuracy.',
-          },
-          {
-            question: 'Can we combine Meta Ads with other channels?',
-            answer: 'Absolutely. Many clients see best results combining Meta Ads with Google Ads or LinkedIn Ads for a multi-channel strategy that reaches customers at different stages.',
-          },
-        ]}
+       faqs={[
+         {
+           question: "What's the difference between Meta Ads and Facebook Ads?",
+           answer:
+             "Meta Ads is the new name for Facebook Ads. Meta (formerly Facebook Inc.) manages both Facebook and Instagram advertising through the same platform—Meta Business Suite and Ads Manager. When you run 'Meta Ads,' you're advertising on Facebook, Instagram, Messenger, and Audience Network.",
+         },
+         {
+           question: "How much should I spend on Meta Ads?",
+           answer:
+             "Minimum recommended ad spend is ₹15,000-₹25,000/month ($500-$1,000) to generate meaningful data and results. For e-commerce, budget at least ₹30,000-₹50,000/month. B2B companies can start lower (₹15K-₹20K) focusing on lead generation. My management fees are separate from ad spend.",
+         },
+         {
+           question: "What results can I expect from Meta Ads?",
+           answer:
+             "Most clients achieve 5-8x ROAS within 2-3 months of optimization. E-commerce brands see 3-5% conversion rates, while lead generation campaigns deliver ₹200-₹500 cost per lead depending on industry. Results vary by product, offer, and market competition.",
+         },
+         {
+           question: "Do you create ad creatives?",
+           answer:
+             "Yes! Creative development is included in Professional and Advanced packages. I create images, videos, Reels ads, carousel designs, and write compelling ad copy. For Starter package, creative services available as add-on (₹15,000/month or $750).",
+         },
+         {
+           question: "Can Meta Ads work for B2B businesses?",
+           answer:
+             "Absolutely! Meta Ads for B2B are highly effective for lead generation, webinar registrations, and brand awareness. LinkedIn may have more business users, but Facebook offers better targeting at lower costs. I've helped B2B companies generate qualified leads at ₹300-₹800 per lead.",
+         },
+         {
+           question: "What's Advantage+ and should I use it?",
+           answer:
+             "Advantage+ Shopping is Meta's AI-powered campaign type that automates targeting, creative, and placements. It typically delivers 14-20% better performance than manual campaigns for e-commerce. I implement Advantage+ for most e-commerce clients alongside manual campaigns for testing.",
+         },
+       ]}
       />
 
       {/* Testimonials */}

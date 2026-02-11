@@ -24,20 +24,20 @@ I build high-performance paid advertising campaigns designed to reduce wasted sp
 Whether you're a B2B company looking for qualified leads, an e-commerce brand driving sales, or a service business filling your pipeline, I deliver results: 2-4 weeks to optimize core campaigns, consistent 3x+ ROAS targets, and predictable lead generation that scales with your business. Let's turn your ad spend into revenue.`,
     },
     'google-ads': {
-      title: 'Strategic Google Ads That Reach Ready-to-Buy Customers',
-      text: `Your ideal customers are searching for you right now on Google. But if your Google Ads campaigns aren't optimized, you're either paying too much per click or missing high-intent prospects entirely.
+      title: 'Professional Google Ads Management for Maximum ROI',
+      text: `Are you struggling to get results from your Google Ads campaigns? Wasting budget on clicks that don't convert? As a certified Google Ads expert specializing in Performance Max, AI Max for Search, and advanced PPC management, I help businesses achieve measurable results through data-driven campaign optimization.
 
-I build and manage Google Ads campaigns designed to reach customers at the exact moment they're searching for solutions you provide. Through meticulous keyword strategy, smart bid management, and continuous A/B testing, I ensure every dollar of your ad budget generates measurable ROI—not wasted impressions.
+With over 10+ years of experience managing Google Ads campaigns across multiple industries, I've developed proven strategies that consistently deliver 14-27% more conversions while reducing cost-per-acquisition by 30-40%. Whether you're a startup looking to generate your first leads or an established business scaling your advertising, my Google Ads management services are designed to maximize your return on ad spend.
 
-From search campaigns capturing high-intent keywords to display and remarketing campaigns that pull back window shoppers, I structure your account for both immediate conversions and long-term scale. You'll get weekly optimization reports, full transparency into campaign performance, and strategic recommendations to keep improving results. Whether you're a B2B company generating leads or an e-commerce store driving sales, expect faster results: 1-2 weeks to optimize core campaigns and 4-6 months to consistent 3x+ ROAS.`,
+Looking for organic growth? Combine Google Ads with my SEO services for a complete digital marketing strategy.`,
     },
     'meta-ads': {
-      title: 'High-Converting Meta Ads That Turn Scrollers into Customers',
-      text: `Facebook and Instagram were built for one thing: capturing attention in the feed. But most businesses fail at Meta ads because they're not telling a story—they're just throwing products at people.
+      title: 'Professional Meta Ads Management for Maximum ROI',
+      text: `Reach your ideal customers where they spend their time—on Facebook and Instagram. With 3 billion active users across Meta platforms and advanced AI-powered targeting, Meta Ads (formerly Facebook Ads) offer unparalleled opportunities to connect with your audience, generate leads, and drive sales.
 
-I create Meta Ads campaigns that speak directly to your ideal customer's pain points, then guide them through a conversion journey that actually works. From audience targeting and lookalike strategies to creative testing and funnel optimization, I treat Meta like what it actually is: a premium direct-response channel.
+As a Meta Ads expert, I leverage Advantage+ campaigns, precise audience targeting, compelling creative strategies, and conversion optimization to deliver 5-8x ROAS for e-commerce brands, service businesses, and B2B companies. From strategy development to campaign execution and ongoing optimization, I manage every aspect of your Meta advertising to maximize results.
 
-Every campaign gets custom audience segmentation, high-performing creative tested against your competitors, and conversion tracking built into your sales funnel. You'll know exactly which audiences convert best, which creatives outperform, and where to reinvest your budget. The result: predictable lead generation and sales growth from platforms your customers are already on daily.`,
+Whether you're launching your first campaign or scaling existing ads, my Meta Ads management services combine platform expertise with creative excellence to turn ad spend into revenue. Explore my complete digital marketing services for integrated strategies.`,
     },
     'linkedin-ads': {
       title: 'B2B LinkedIn Ads That Generate Qualified Business Leads',

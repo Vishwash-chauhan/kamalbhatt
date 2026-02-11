@@ -46,23 +46,48 @@ export const services = [
         details: 'Continuous tracking, testing, and optimization based on ranking changes, traffic patterns, and algorithm updates.',
       },
     ],
-    faqs: [
-      {
-        question: 'How long until we see results?',
-        answer:
-          'Most businesses see measurable movement within 4-8 weeks, with stronger compounding gains after month 3.',
-      },
-      {
-        question: 'Do you handle local and national SEO?',
-        answer:
-          'Yes. We tailor the strategy to your market, whether you serve a local area or compete nationally.',
-      },
-      {
-        question: 'Will you optimize existing content or create new pages?',
-        answer:
-          'Both. We improve existing high-value pages first, then create new content where gaps exist.',
-      },
-    ],
+faqs: [
+  {
+    question: 'What is Answer Engine Optimization (AEO)?',
+    answer:
+      'Answer Engine Optimization (AEO) is the practice of optimizing content to appear in AI-powered search results like ChatGPT, Google AI Overviews, Gemini, and Perplexity. Unlike traditional SEO that focuses on rankings, AEO ensures your content becomes the definitive answer that AI engines cite and display to users. With 60% of Google searches resulting in zero clicks, AEO is critical for 2026 visibility.',
+  },
+  {
+    question: 'How much do SEO services cost?',
+    answer:
+      'Professional SEO services typically cost between $1,000-$5,000 per month depending on project scope, competition, and business size. Pricing includes technical audits, content optimization, link building, and reporting. Small businesses can start with local SEO packages from $800/month, while enterprise SEO for competitive industries ranges $3,000-$10,000/month. Contact me for a customized quote.',
+  },
+  {
+    question: 'How long does it take to see SEO results?',
+    answer:
+      'Initial SEO improvements appear in 3-6 months with consistent effort. Significant ranking gains and traffic increases typically occur at 6-12 months. SEO is a long-term investment—unlike paid ads, organic rankings compound over time. Technical fixes show faster results (1-2 months), while competitive keywords require 6-12+ months of sustained optimization.',
+  },
+  {
+    question: "What's the difference between SEO and AEO?",
+    answer:
+      'Traditional SEO optimizes for ranking in search engine results pages (SERPs) to drive clicks. Answer Engine Optimization (AEO) optimizes for being the direct answer in AI platforms—ChatGPT, Google AI Overviews, voice assistants. AEO requires concise, question-focused content with schema markup and E-E-A-T signals. Both are complementary: strong SEO foundations enable effective AEO.',
+  },
+  {
+    question: 'Do you guarantee #1 rankings on Google?',
+    answer:
+      'No ethical SEO professional can guarantee #1 rankings—Google uses 200+ ranking factors, and results depend on competition, algorithm updates, and content quality. However, I guarantee transparent reporting, white-hat strategies, and measurable improvements in organic traffic, keyword rankings, and domain authority within agreed timelines.',
+  },
+  {
+    question: 'What is E-E-A-T and why does it matter?',
+    answer:
+      "E-E-A-T stands for Experience, Expertise, Authoritativeness, and Trustworthiness—Google's quality signals. Strong E-E-A-T means: demonstrating first-hand experience, showcasing subject expertise, building authoritative citations and backlinks, and establishing trust through transparency. E-E-A-T is critical for YMYL (Your Money Your Life) topics and increasingly important for AI search visibility.",
+  },
+  {
+    question: 'Can you help with local SEO and Google Business Profile?',
+    answer:
+      'Yes! Local SEO services include complete Google Business Profile optimization, local citation building, review generation strategy, "near me" search targeting, and local link building. Local SEO is essential for businesses with physical locations or serving specific geographic areas. Results typically appear faster (2-4 months) than national SEO.',
+  },
+  {
+    question: 'Do you provide SEO for e-commerce websites?',
+    answer:
+      'Absolutely! E-commerce SEO includes product page optimization, category page strategies, technical fixes for large catalogs, schema markup for products, internal linking optimization, and conversion-focused content. I work with Shopify, WooCommerce, Magento, and custom platforms to improve organic visibility and sales.',
+  },
+],
     cta: {
       label: 'Book an SEO Strategy Call',
       href: '/contact',

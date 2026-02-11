@@ -8,6 +8,8 @@ import FAQSection from '@/app/components/faq-section';
 import AboutService from '@/app/components/about-service';
 import ProcessSection from '@/app/components/process-section';
 import ServicesSection from '@/app/components/services-section';
+import PricingPlans from '@/app/components/pricing-plans';
+import OneTimeServices from '@/app/components/one-time-services';
 
 type ServicePageProps = {
   params: Promise<{ slug: string }>;
@@ -248,14 +250,17 @@ export default async function ServiceTemplate({ params }: ServicePageProps) {
         steps={service.process}
       />
 
+
+
+      <PricingPlans />
+      <OneTimeServices />
+      <Clients />
+      <Testimonials />
       {/* FAQ Section */}
       {service.faqs?.length ? (
         <FAQSection faqs={service.faqs} />
       ) : null}
-
-      <CTA />
-      <Clients />
-      <Testimonials />
+        
     </main>
   );
 }

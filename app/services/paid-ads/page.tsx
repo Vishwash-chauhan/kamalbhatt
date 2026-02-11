@@ -7,6 +7,9 @@ import Testimonials from '@/app/components/testimonials';
 import AboutService from '@/app/components/about-service';
 import ProcessSection from '@/app/components/process-section';
 import ServicesSection from '@/app/components/services-section';
+import FAQSection from '@/app/components/faq-section';
+import OneTimeServices from '@/app/components/one-time-services';
+import PricingPlans from '@/app/components/pricing-plans';
 
 export const metadata: Metadata = {
   title: 'Paid Ads Services | Google Ads, Meta Ads, LinkedIn Ads | Kamal Bhatt',
@@ -199,14 +202,12 @@ export default function PaidAdsPage() {
         ]}
       />
 
-      {/* Testimonials */}
-      <Testimonials />
-
-      {/* Clients */}
+      <PricingPlans />
+      <OneTimeServices />
       <Clients />
+      <Testimonials />
+      {/* FAQ Section */}
 
-      {/* CTA */}
-      <CTA />
     </main>
   );
 }
