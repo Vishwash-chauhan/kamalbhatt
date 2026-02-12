@@ -7,6 +7,7 @@ import TrainingToolsSection from '@/app/components/training-tools-section';
 import Clients from '@/app/components/clients';
 import Testimonials from '@/app/components/testimonials';
 import CTA from '@/app/components/cta';
+import FAQSection from '@/app/components/faq-section';
 
 const modules = [
   {
@@ -89,6 +90,49 @@ const courseHighlights = [
   { value: '15', label: 'PDP Sessions' },
   { value: '4+', label: 'Projects' },
   { value: '1yr+', label: 'LMS Access' },
+];
+
+const faqs = [
+  {
+    question: 'What will I learn in the Digital Marketing Training?',
+    answer:
+      "You'll master all core digital marketing channels including Search Engine Optimization (SEO), Google Ads (PPC), Meta Ads (Facebook & Instagram), social media marketing, content marketing, email marketing, analytics, e-commerce marketing, and modern AI marketing tools. The program includes 50+ assignments, live campaigns, portfolio projects, and hands-on experience with industry tools like Google Analytics, Ads Manager, WordPress, and more.",
+  },
+  {
+    question: 'Do I need prior marketing or technical experience?',
+    answer:
+      "No prior experience required! The course is designed for complete beginners to intermediate learners. We start with fundamentals and progress systematically. Whether you're a student, professional switching careers, business owner, or freelancer-you'll learn everything from scratch through practical, step-by-step guidance. Basic computer skills and internet knowledge are all you need.",
+  },
+  {
+    question: 'Is this training available online or offline?',
+    answer:
+      "We offer flexible training options: live online sessions via Zoom with interactive workshops, self-paced online learning with recorded modules and lifetime access, in-person training in Dehradun and surrounding areas, and corporate on-site training for teams. Choose the format that best suits your schedule and learning style.",
+  },
+  {
+    question: 'Will I get a certificate after completion?',
+    answer:
+      "Yes! Upon successful completion, you'll receive a Professional Digital Marketing Certification from Kamal Bhatt Digital. The certificate validates your expertise across SEO, PPC, social media, content marketing, analytics, and all major digital marketing channels-valuable for job applications, freelancing, and professional credibility.",
+  },
+  {
+    question: 'What tools and software will I learn?',
+    answer:
+      "You'll get hands-on experience with industry-standard tools including Google Analytics 4, Google Ads, Facebook Ads Manager, Google Search Console, WordPress, Mailchimp/email platforms, Canva, SEMrush/Ahrefs (SEO tools), Hootsuite/Buffer (social media), and modern AI tools like ChatGPT for content creation. Most tools have free versions or trial periods for learning.",
+  },
+  {
+    question: 'How long does the training take?',
+    answer:
+      'The complete program is structured as a 12-week intensive course for live training (3 sessions per week, 2 hours each). Self-paced learners can complete at their own speed-most finish within 3-4 months with 6-8 hours of weekly study. The training includes 80+ hours of content covering 12 comprehensive modules from basics to advanced strategies.',
+  },
+  {
+    question: 'Do you provide job placement assistance?',
+    answer:
+      "While we don't guarantee job placement, we provide career support including: resume optimization, portfolio building guidance, interview preparation for marketing roles, freelancing strategies and client acquisition, and access to our network of hiring partners. Many graduates have successfully transitioned to digital marketing roles. Contact us for career guidance.",
+  },
+  {
+    question: "Can I get a refund if I'm not satisfied?",
+    answer:
+      "Yes, we offer a 7-day money-back guarantee for all courses. If you're not satisfied within the first week, request a full refund-no questions asked. For live training, refunds are available before the 3rd session. We're confident in the value we provide and stand behind our training quality.",
+  },
 ];
 
 export const metadata: Metadata = {
@@ -177,8 +221,7 @@ export default function TrainingPage() {
       <TrainingToolsSection />
       <TrainingInstructorSection />
       <CourseRoadmap modules={modules} />
-
-
+      <FAQSection faqs={faqs} />
       <Testimonials />
       <CTA />
 

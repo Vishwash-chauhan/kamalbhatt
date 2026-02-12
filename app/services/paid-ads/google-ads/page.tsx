@@ -186,30 +186,38 @@ export default function GoogleAdsPage() {
       />
 
       {/* FAQ */}
-      <FAQSection
-        faqs={[
-          {
-            question: 'How long until we see results?',
-            answer: 'Most businesses see measurable improvements within 1-2 weeks of launching optimized campaigns. Significant ROI growth typically follows within 4-6 weeks as we scale winning keywords and audiences.',
-          },
-          {
-            question: 'What budget do we need to get started?',
-            answer: 'We work with budgets of all sizes. To see meaningful results, we recommend a minimum daily budget that allows for proper testing and optimization across your core keyword groups.',
-          },
-          {
-            question: 'How do you track conversions?',
-            answer: 'We implement Google Tags on your website to track page views, form submissions, purchases, and custom events. We also set up conversion tracking in Google Ads and connect it with Google Analytics for complete attribution.',
-          },
-          {
-            question: 'What about Quality Score?',
-            answer: 'Quality Score directly impacts your ad costs. We optimize landing page experience, ad relevance, and CTR to improve your scores, which lowers your cost-per-click and improves visibility.',
-          },
-          {
-            question: 'Do you handle other ad channels too?',
-            answer: 'Yes! We also manage Meta Ads and LinkedIn Ads. Many clients benefit from a multi-channel strategy that reaches customers across different platforms.',
-          },
-        ]}
-      />
+        <FAQSection
+          faqs={[
+            {
+          question: 'What is included in your Google Ads management services?',
+          answer: 'My Google Ads management services include comprehensive campaign strategy, keyword research, ad copywriting, landing page optimization, bid management, A/B testing, conversion tracking setup, monthly reporting, and continuous optimization. I manage all campaign types: Search, Performance Max, AI Max, Shopping, Display, Video, and Local Services Ads.',
+            },
+            {
+          question: 'How much do Google Ads management services cost?',
+          answer: 'Google Ads management fees typically range from 15-25% of monthly ad spend or a flat monthly retainer starting from $1,500. Pricing depends on campaign complexity, ad spend volume, and services required. I offer custom packages tailored to your budget and goals. Contact me for a personalized quote.',
+            },
+            {
+          question: 'What results can I expect from your Google Ads management?',
+          answer: 'Most clients see 20-50% improvement in conversion rates within 3 months, 30-40% reduction in cost-per-acquisition, and 2-3x return on ad spend (ROAS). Results vary by industry, competition, and budget. I focus on continuous optimization using AI Max and Performance Max to deliver 14-27% more conversions at similar CPA.',
+            },
+            {
+          question: 'Do you manage Performance Max and AI Max campaigns?',
+          answer: 'Yes, I specialize in advanced Google Ads campaign types including Performance Max and AI Max for Search. I implement the Power Pack strategy combining Performance Max for broad reach, AI Max for search visibility with control, and Demand Gen for awareness—ensuring comprehensive coverage across all Google channels.',
+            },
+            {
+          question: 'How long does it take to see results from Google Ads?',
+          answer: 'Initial results appear within 2-4 weeks as campaigns enter the learning phase. Significant optimization occurs at 6-8 weeks with sufficient conversion data. Maximum performance typically achieved at 3 months with continuous testing and refinement. PPC delivers faster results than SEO, making it ideal for immediate lead generation.',
+            },
+            {
+          question: 'What industries do you work with?',
+          answer: 'I\'ve managed Google Ads campaigns across diverse industries including B2B SaaS, e-commerce, professional services (legal, accounting, consulting), healthcare, education, real estate, home services, and more. My cross-industry experience allows me to apply proven strategies while customizing approaches for your specific market.',
+            },
+            {
+          question: 'Do you provide Google Ads training?',
+          answer: 'Yes! In addition to Google Ads management, I offer comprehensive PPC training for businesses and marketing teams who want to manage campaigns in-house. Training covers campaign strategy, setup, optimization, and the latest AI-powered features. Learn more about my AI-Driven Digital Marketing Training programs.',
+            },
+          ]}
+        />
 
       {/* Testimonials */}
       <Testimonials />
