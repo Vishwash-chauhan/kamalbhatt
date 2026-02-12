@@ -1,72 +1,45 @@
 'use client';
-
-import { useState } from 'react';
 import Link from 'next/link';
 import { useCurrencyDetection } from '@/app/hooks/useCurrencyDetection';
 
-const plans = [
-  {
-    name: 'Starter',
-    tagline: 'For small businesses',
-    features: [
-      'Local SEO optimization',
-      'Google Business Profile setup',
-      'Basic on-page SEO (10 pages)',
-      'Monthly reporting',
-      'Email support',
-    ],
-    ctaLabel: 'Get Started',
-    featured: false,
-  },
-  {
-    name: 'Professional',
-    tagline: 'For growing businesses',
-    badge: 'Most Popular',
-    features: [
-      'Everything in Starter',
-      'Comprehensive SEO (25 pages)',
-      'Google Ads or Meta Ads',
-      'Content creation (4 articles/month)',
-      'Social media management (2 platforms)',
-      'Monthly strategy calls',
-      'Advanced reporting',
-    ],
-    ctaLabel: 'Get Started',
-    featured: true,
-  },
-  {
-    name: 'Enterprise',
-    tagline: 'For established brands',
-    features: [
-      'Everything in Professional',
-      'Full-service digital marketing',
-      'Multi-platform ad management',
-      'Advanced SEO (unlimited pages)',
-      'Social media (all platforms)',
-      'Dedicated account manager',
-      'Priority support',
-      'Quarterly strategy reviews',
-    ],
-    ctaLabel: 'Get Started',
-    featured: false,
-  },
-];
+type PricingPlan = {
+  name: string;
+  tagline: string;
+  features: string[];
+  ctaLabel: string;
+  featured: boolean;
+  badge?: string;
+};
 
-const pricingByCurrency = {
+type PricingByCurrency = {
   inr: {
-    label: 'India Pricing (INR)',
-    symbol: '₹',
-    prices: ['25,000', '50,000', '95,000'],
-  },
+    label: string;
+    symbol: string;
+    prices: string[];
+  };
   usd: {
-    label: 'Global Pricing (USD)',
-    symbol: '$',
-    prices: ['1,200', '2,500', '5,000'],
-  },
-} as const;
+    label: string;
+    symbol: string;
+    prices: string[];
+  };
+};
 
-export default function PricingPlans() {
-  const { currency, setCurrency, isLoading } = useCurrencyDetection();
+type PricingPlansProps = {
+  plans: PricingPlan[];
+  pricingByCurrency: PricingByCurrency;
+  eyebrow: string;
+  title: string;
+  description: string;
+};
+
+export default function PricingPlans({
+  plans,
+  pricingByCurrency,
+  eyebrow,
+  title,
+  description,
+}: PricingPlansProps) {
+  const { currency } = useCurrencyDetection();
   const currencyConfig = pricingByCurrency[currency];
 
   return (
@@ -74,13 +47,13 @@ export default function PricingPlans() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <header className="text-center mb-12">
           <p className="text-sm uppercase tracking-[0.2em] text-secondary font-semibold">
-            {currencyConfig.label}
+            {eyebrow}
           </p>
           <h2 className="text-4xl md:text-5xl font-bold mt-4 text-gray-900 dark:text-white">
-            Choose the plan for your growth
+            {title}
           </h2>
           <p className="text-lg text-gray-600 dark:text-gray-400 max-w-2xl mx-auto mt-4">
-            Transparent monthly retainers built for predictable results and scalable performance.
+            {description}
           </p>
           <div className="mt-8 inline-flex rounded-full border border-gray-200 dark:border-gray-800 bg-gray-50 dark:bg-gray-900 p-1">
             {/* <button

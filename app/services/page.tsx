@@ -64,6 +64,118 @@ export const metadata: Metadata = {
 };
 
 export default function ServicesPage() {
+  const pricingPlans = [
+    {
+      name: 'Starter',
+      tagline: 'For small businesses',
+      features: [
+        'Local SEO optimization',
+        'Google Business Profile setup',
+        'Basic on-page SEO (10 pages)',
+        'Monthly reporting',
+        'Email support',
+      ],
+      ctaLabel: 'Get Started',
+      featured: false,
+    },
+    {
+      name: 'Professional',
+      tagline: 'For growing businesses',
+      badge: 'Most Popular',
+      features: [
+        'Everything in Starter',
+        'Comprehensive SEO (25 pages)',
+        'Google Ads or Meta Ads',
+        'Content creation (4 articles/month)',
+        'Social media management (2 platforms)',
+        'Monthly strategy calls',
+        'Advanced reporting',
+      ],
+      ctaLabel: 'Get Started',
+      featured: true,
+    },
+    {
+      name: 'Enterprise',
+      tagline: 'For established brands',
+      features: [
+        'Everything in Professional',
+        'Full-service digital marketing',
+        'Multi-platform ad management',
+        'Advanced SEO (unlimited pages)',
+        'Social media (all platforms)',
+        'Dedicated account manager',
+        'Priority support',
+        'Quarterly strategy reviews',
+      ],
+      ctaLabel: 'Get Started',
+      featured: false,
+    },
+  ];
+
+  const pricingByCurrency = {
+    inr: {
+      label: 'India Pricing (INR)',
+      symbol: '₹',
+      prices: ['25,000', '50,000', '95,000'],
+    },
+    usd: {
+      label: 'Global Pricing (USD)',
+      symbol: '$',
+      prices: ['1,200', '2,500', '5,000'],
+    },
+  };
+
+  const oneTimeServices = [
+    {
+      title: 'Website Development',
+      description: 'Professional website design and development',
+      prices: {
+        inr: '₹ 45,000',
+        usd: '$2,250',
+      },
+    },
+    {
+      title: 'Digital Marketing Audit',
+      description: 'Complete digital presence analysis',
+      prices: {
+        inr: '₹ 15,000',
+        usd: '$750',
+      },
+    },
+    {
+      title: 'Social Media Setup',
+      description: 'Complete profile optimization (all platforms)',
+      prices: {
+        inr: '₹ 12,000',
+        usd: '$600',
+      },
+    },
+    {
+      title: 'Brand Identity Package',
+      description: 'Logo, colors, typography, brand guidelines',
+      prices: {
+        inr: '₹ 35,000',
+        usd: '$1,750',
+      },
+    },
+    {
+      title: 'Campaign Setup',
+      description: 'Google Ads or Meta Ads campaign setup',
+      prices: {
+        inr: '₹ 18,000',
+        usd: '$900',
+      },
+    },
+    {
+      title: 'Content Strategy',
+      description: '3-month content calendar + keyword strategy',
+      prices: {
+        inr: '₹ 20,000',
+        usd: '$1,000',
+      },
+    },
+  ];
+
   return (
     <main className="bg-white dark:bg-gray-950">
       {/* Hero Section */}
@@ -132,8 +244,19 @@ export default function ServicesPage() {
         </div>
       </section>
       
-      <PricingPlans />
-      <OneTimeServices />
+      <PricingPlans
+        plans={pricingPlans}
+        pricingByCurrency={pricingByCurrency}
+        eyebrow={pricingByCurrency.inr.label}
+        title="Choose the plan for your growth"
+        description="Transparent monthly retainers built for predictable results and scalable performance."
+      />
+      <OneTimeServices
+        services={oneTimeServices}
+        eyebrow="One-Time Services"
+        title="Launch faster with focused, fixed-scope work"
+        description="Ideal for brands that need a quick setup or a strategic reset without a monthly retainer."
+      />
       <Clients />
       <Testimonials />
       <CTA />

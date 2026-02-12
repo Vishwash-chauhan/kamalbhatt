@@ -1,75 +1,43 @@
 'use client';
-
-import { useState } from 'react';
 import Link from 'next/link';
 import { useCurrencyDetection } from '@/app/hooks/useCurrencyDetection';
 
-const services = [
-  {
-    title: 'Website Development',
-    description: 'Professional website design and development',
-    prices: {
-      inr: '₹ 45,000',
-      usd: '$2,250',
-    },
-  },
-  {
-    title: 'Digital Marketing Audit',
-    description: 'Complete digital presence analysis',
-    prices: {
-      inr: '₹ 15,000',
-      usd: '$750',
-    },
-  },
-  {
-    title: 'Social Media Setup',
-    description: 'Complete profile optimization (all platforms)',
-    prices: {
-      inr: '₹ 12,000',
-      usd: '$600',
-    },
-  },
-  {
-    title: 'Brand Identity Package',
-    description: 'Logo, colors, typography, brand guidelines',
-    prices: {
-      inr: '₹ 35,000',
-      usd: '$1,750',
-    },
-  },
-  {
-    title: 'Campaign Setup',
-    description: 'Google Ads or Meta Ads campaign setup',
-    prices: {
-      inr: '₹ 18,000',
-      usd: '$900',
-    },
-  },
-  {
-    title: 'Content Strategy',
-    description: '3-month content calendar + keyword strategy',
-    prices: {
-      inr: '₹ 20,000',
-      usd: '$1,000',
-    },
-  },
-];
+type OneTimeService = {
+  title: string;
+  description: string;
+  prices: {
+    inr: string;
+    usd: string;
+  };
+};
 
-export default function OneTimeServices() {
-  const { currency, setCurrency, isLoading } = useCurrencyDetection();
+type OneTimeServicesProps = {
+  services: OneTimeService[];
+  eyebrow: string;
+  title: string;
+  description: string;
+};
+
+export default function OneTimeServices({
+  services,
+  eyebrow,
+  title,
+  description,
+}: OneTimeServicesProps) {
+  const { currency } = useCurrencyDetection();
 
   return (
     <section className="py-20 bg-gray-50 dark:bg-gray-900">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <header className="text-center mb-12">
           <p className="text-sm uppercase tracking-[0.2em] text-secondary font-semibold">
-            One-Time Services
+            {eyebrow}
           </p>
           <h2 className="text-4xl md:text-5xl font-bold mt-4 text-gray-900 dark:text-white">
-            Launch faster with focused, fixed-scope work
+            {title}
           </h2>
           <p className="text-lg text-gray-600 dark:text-gray-400 max-w-2xl mx-auto mt-4">
-            Ideal for brands that need a quick setup or a strategic reset without a monthly retainer.
+            {description}
           </p>
           <div className="mt-8 inline-flex rounded-full border border-gray-200 dark:border-gray-800 bg-white dark:bg-gray-950 p-1">
             {/* <button
