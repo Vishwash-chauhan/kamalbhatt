@@ -85,7 +85,7 @@ export default function GoogleAdsPage() {
       symbol: '$',
       prices: ['600', '1,500', '3,000'],
     },
-  } as const;
+  };
 
   const oneTimeServices = [
     {

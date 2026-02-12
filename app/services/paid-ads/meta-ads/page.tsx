@@ -8,6 +8,8 @@ import FAQSection from '@/app/components/faq-section';
 import AboutService from '@/app/components/about-service';
 import ProcessSection from '@/app/components/process-section';
 import ServicesSection from '@/app/components/services-section';
+import PricingPlans from '@/app/components/pricing-plans';
+import OneTimeServices from '@/app/components/one-time-services';
 
 const iconMap = {
   Target,
@@ -26,6 +28,117 @@ export const metadata: Metadata = {
 };
 
 export default function MetaAdsPage() {
+  const pricingPlans = [
+    {
+      name: 'Starter',
+      tagline: 'For small businesses',
+      features: [
+        '1-2 campaign types',
+        'Up to ₹25k ad spend',
+        'Basic audience targeting',
+        'Monthly optimization',
+        'Performance reporting',
+      ],
+      ctaLabel: 'Get Started',
+      featured: false,
+    },
+    {
+      name: 'Professional',
+      tagline: 'For growing businesses',
+      badge: 'Most Popular',
+      features: [
+        'Everything in Starter',
+        'Up to ₹1L ad spend',
+        'Advantage+ campaigns',
+        'Advanced targeting & retargeting',
+        'Creative development (4-6 ads/month)',
+        'Weekly optimization',
+        'A/B testing',
+      ],
+      ctaLabel: 'Get Started',
+      featured: true,
+    },
+    {
+      name: 'Advanced',
+      tagline: 'For scaling businesses',
+      features: [
+        'Everything in Professional',
+        'Unlimited ad spend',
+        'All campaign types',
+        'Premium creative (10+ ads/month)',
+        'Daily monitoring',
+        'Dedicated account manager',
+        'Bi-weekly strategy calls',
+      ],
+      ctaLabel: 'Get Started',
+      featured: false,
+    },
+  ];
+
+  const pricingByCurrency = {
+    inr: {
+      label: 'India Pricing (INR)',
+      symbol: '₹',
+      prices: ['10,000', '25,000', '50,000'],
+    },
+    usd: {
+      label: 'Global Pricing (USD)',
+      symbol: '$',
+      prices: ['500', '1,500', '3,000'],
+    },
+  };
+
+  const oneTimeServices = [
+    {
+      title: 'Account Setup & Audit',
+      description: 'Complete account structure + pixel setup + conversion tracking',
+      prices: {
+        inr: '₹ 8,000',
+        usd: '$400',
+      },
+    },
+    {
+      title: 'Creative Package',
+      description: '10 ad creatives (image/video) + copywriting',
+      prices: {
+        inr: '₹ 15,000',
+        usd: '$750',
+      },
+    },
+    {
+      title: 'Landing Page Design',
+      description: 'Conversion-optimized landing page for Meta Ads',
+      prices: {
+        inr: '₹ 18,000',
+        usd: '$900',
+      },
+    },
+    {
+      title: 'Catalog Setup',
+      description: 'Product catalog setup for dynamic ads (up to 50 products)',
+      prices: {
+        inr: '₹ 10,000',
+        usd: '$500',
+      },
+    },
+    {
+      title: 'Campaign Rescue',
+      description: 'Fix underperforming campaigns + optimization strategy',
+      prices: {
+        inr: '₹ 12,000',
+        usd: '$600',
+      },
+    },
+    {
+      title: 'Strategy Consultation',
+      description: '1-hour strategy call + automation plan',
+      prices: {
+        inr: '₹ 5,000',
+        usd: '$250',
+      },
+    },
+  ];
+
   return (
     <main className="bg-white dark:bg-gray-950">
       {/* Hero Section */}
@@ -191,6 +304,21 @@ export default function MetaAdsPage() {
             details: 'Winning campaign scaling, budget expansion, and comprehensive ROI reporting.',
           },
         ]}
+      />
+
+      <PricingPlans
+        plans={pricingPlans}
+        pricingByCurrency={pricingByCurrency}
+        eyebrow={pricingByCurrency.inr.label}
+        title="Meta Ads Management Pricing"
+        description="Transparent pricing for Facebook & Instagram advertising management."
+      />
+
+      <OneTimeServices
+        services={oneTimeServices}
+        eyebrow="One-Time Meta Ads Services"
+        title="One-Time Meta Ads Services"
+        description="Professional campaign setup and optimization services (one-time fees)"
       />
 
       {/* FAQ */}
