@@ -1,6 +1,6 @@
 import Link from 'next/link';
 import type { Metadata } from 'next';
-import { getServiceBySlug } from '../service_data';
+import { getServiceBySlug, oneTimeServicesProps } from '../service_data';
 import Testimonials from '@/app/components/testimonials';
 import CTA from '@/app/components/cta';
 import Clients from '@/app/components/clients';
@@ -252,8 +252,21 @@ export default async function ServiceTemplate({ params }: ServicePageProps) {
 
 
 
-      <PricingPlans />
-      <OneTimeServices />
+      {service.pricingSection ? (
+        <PricingPlans
+          plans={service.pricingSection.plans}
+          pricingByCurrency={service.pricingSection.pricingByCurrency}
+          eyebrow={service.pricingSection.eyebrow}
+          title={service.pricingSection.title}
+          description={service.pricingSection.description}
+        />
+      ) : null}
+      <OneTimeServices
+        services={oneTimeServicesProps.services}
+        eyebrow={oneTimeServicesProps.eyebrow}
+        title={oneTimeServicesProps.title}
+        description={oneTimeServicesProps.description}
+      />
       <Clients />
       <Testimonials />
       {/* FAQ Section */}

@@ -8,6 +8,8 @@ import FAQSection from '@/app/components/faq-section';
 import AboutService from '@/app/components/about-service';
 import ProcessSection from '@/app/components/process-section';
 import ServicesSection from '@/app/components/services-section';
+import PricingPlans from '@/app/components/pricing-plans';
+import OneTimeServices from '@/app/components/one-time-services';
 
 const iconMap = {
   Building2,
@@ -26,6 +28,116 @@ export const metadata: Metadata = {
 };
 
 export default function GoogleAdsPage() {
+  const pricingPlans = [
+    {
+      name: 'Starter',
+      tagline: 'Perfect for small businesses',
+      features: [
+        '1 Campaign Type (Search OR Performance Max)',
+        'Up to ₹30,000 ad spend',
+        'Monthly optimization',
+        'Basic monthly reporting',
+        'Email support',
+      ],
+      ctaLabel: 'Get Started',
+      featured: false,
+    },
+    {
+      name: 'Professional',
+      tagline: 'For growing businesses',
+      badge: 'Most Popular',
+      features: [
+        '2-3 Campaign Types',
+        'Up to ₹1,00,000 ad spend',
+        'Weekly optimization',
+        'Detailed reporting + monthly call',
+        'Priority email & phone support',
+        'A/B testing included',
+      ],
+      ctaLabel: 'Get Started',
+      featured: true,
+    },
+    {
+      name: 'Advanced',
+      tagline: 'For established brands',
+      features: [
+        'All Campaign Types',
+        'Unlimited ad spend',
+        'Daily monitoring & optimization',
+        'Advanced reporting + bi-weekly calls',
+        'Dedicated account manager',
+        'Advanced A/B testing & experiments',
+        'Landing page optimization',
+      ],
+      ctaLabel: 'Get Started',
+      featured: false,
+    },
+  ];
+
+  const pricingByCurrency = {
+    inr: {
+      label: 'India Pricing (INR)',
+      symbol: '₹',
+      prices: ['12,000', '28,000', '55,000'],
+    },
+    usd: {
+      label: 'Global Pricing (USD)',
+      symbol: '$',
+      prices: ['600', '1,500', '3,000'],
+    },
+  } as const;
+
+  const oneTimeServices = [
+    {
+      title: 'Performance Max Setup',
+      description: 'Complete Performance Max campaign setup with asset optimization',
+      prices: {
+        inr: '₹ 8,000',
+        usd: '$400',
+      },
+    },
+    {
+      title: 'AI Max Campaign Setup',
+      description: 'AI Max campaign with search term optimization',
+      prices: {
+        inr: '₹ 10,000',
+        usd: '$500',
+      },
+    },
+    {
+      title: 'Shopping Feed Setup',
+      description: 'Complete product feed optimization & Shopping campaign setup',
+      prices: {
+        inr: '₹ 12,000',
+        usd: '$600',
+      },
+    },
+    {
+      title: 'Landing Page Optimization',
+      description: 'Conversion rate optimization for landing pages',
+      prices: {
+        inr: '₹ 15,000',
+        usd: '$750',
+      },
+    },
+    {
+      title: 'Conversion Tracking Setup',
+      description: 'Google Tag Manager & Analytics 4 setup with conversion tracking',
+      prices: {
+        inr: '₹ 5,000',
+        usd: '$250',
+      },
+    },
+    {
+      title: 'Campaign Audit & Strategy',
+      description: 'Comprehensive audit of existing campaigns with recommendations',
+      prices: {
+        inr: '₹ 7,000',
+        usd: '$350',
+      },
+    },
+  ];
+
   return (
     <main className="bg-white dark:bg-gray-950">
       {/* Hero Section */}
@@ -183,6 +295,21 @@ export default function GoogleAdsPage() {
             details: 'Continuous optimization based on data. Scale best-performing keywords and audiences while cutting underperformers.',
           },
         ]}
+      />
+
+      <PricingPlans
+        plans={pricingPlans}
+        pricingByCurrency={pricingByCurrency}
+        eyebrow={pricingByCurrency.inr.label}
+        title="Google Ads Management Pricing"
+        description="Transparent pricing for businesses of all sizes. Choose from monthly packages or percentage-based management fees."
+      />
+
+      <OneTimeServices
+        services={oneTimeServices}
+        eyebrow="One-Time Setup Services"
+        title="One-Time Setup Services"
+        description="Professional campaign setup and optimization services (one-time fees)"
       />
 
       {/* FAQ */}

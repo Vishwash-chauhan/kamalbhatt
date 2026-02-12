@@ -46,6 +46,71 @@ export const services = [
         details: 'Continuous tracking, testing, and optimization based on ranking changes, traffic patterns, and algorithm updates.',
       },
     ],
+    pricingSection: {
+      eyebrow: 'India Pricing (INR)',
+      title: 'SEO Services Pricing',
+      description:
+        'Transparent SEO pricing designed for sustainable growth. Choose from monthly packages or project-based services.',
+      plans: [
+        {
+          name: 'Local SEO',
+          tagline: 'Perfect for local businesses',
+          features: [
+            'Google Business Profile optimization',
+            'Local citation building (15 citations)',
+            'On-page SEO (up to 10 pages)',
+            'Monthly reporting & ranking tracking',
+            'Review generation strategy',
+          ],
+          ctaLabel: 'Get Started',
+          featured: false,
+        },
+        {
+          name: 'Growth SEO',
+          tagline: 'For growing businesses',
+          badge: 'Most Popular',
+          features: [
+            'Everything in Local SEO',
+            'National keyword targeting (10-15 keywords)',
+            'Content optimization (up to 25 pages)',
+            'Technical SEO (site speed, mobile, schema)',
+            'Link building (5 quality backlinks/month)',
+            'Answer Engine Optimization (AEO)',
+            'Monthly strategy call',
+          ],
+          ctaLabel: 'Get Started',
+          featured: true,
+        },
+        {
+          name: 'Enterprise SEO',
+          tagline: 'For competitive markets',
+          features: [
+            'Everything in Growth SEO',
+            'Competitive keyword targeting (25+ keywords)',
+            'Unlimited page optimization',
+            'Advanced technical SEO & audits',
+            'Aggressive link building (10+ quality backlinks)',
+            'Content strategy & creation (4 articles/month)',
+            'Dedicated account manager',
+            'Bi-weekly strategy calls',
+          ],
+          ctaLabel: 'Get Started',
+          featured: false,
+        },
+      ],
+      pricingByCurrency: {
+        inr: {
+          label: 'India Pricing (INR)',
+          symbol: '₹',
+          prices: ['15,000', '35,000', '65,000'],
+        },
+        usd: {
+          label: 'Global Pricing (USD)',
+          symbol: '$',
+          prices: ['800', '2,000', '4,000'],
+        },
+      },
+    },
 faqs: [
   {
     question: 'What is Answer Engine Optimization (AEO)?',
@@ -326,6 +391,62 @@ faqs: [
 
 export const getServiceBySlug = (slug) =>
   services.find((service) => service.slug === slug);
+
+export const oneTimeServicesProps = {
+  services: [
+    {
+      title: 'Complete SEO Audit',
+      description: '200+ point technical audit with actionable recommendations',
+      prices: {
+        inr: '₹ 12,000',
+        usd: '$600',
+      },
+    },
+    {
+      title: 'Website Speed Optimization',
+      description: 'Core Web Vitals optimization for perfect PageSpeed scores',
+      prices: {
+        inr: '₹ 18,000',
+        usd: '$900',
+      },
+    },
+    {
+      title: 'Schema Markup Setup',
+      description: 'Complete schema implementation for all page types',
+      prices: {
+        inr: '₹ 8,000',
+        usd: '$400',
+      },
+    },
+    {
+      title: 'Content SEO Package',
+      description: 'Keyword research + 10 pages optimized + content strategy',
+      prices: {
+        inr: '₹ 25,000',
+        usd: '$1,250',
+      },
+    },
+    {
+      title: 'Link Building Campaign',
+      description: '10 high-quality backlinks from authority domains (DA 40+)',
+      prices: {
+        inr: '₹ 30,000',
+        usd: '$1,500',
+      },
+    },
+    {
+      title: 'AEO Implementation',
+      description: 'Answer Engine Optimization setup for AI search visibility',
+      prices: {
+        inr: '₹ 15,000',
+        usd: '$750',
+      },
+    },
+  ],
+  eyebrow: 'One-Time SEO Services',
+  title: 'One-Time SEO Services',
+  description: 'Professional SEO audits and optimization services (one-time fees)',
+};
 
 export const aboutServiceContent = {
   'seo-optimisation': {
