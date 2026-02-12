@@ -8,6 +8,7 @@ import Clients from '@/app/components/clients';
 import Testimonials from '@/app/components/testimonials';
 import CTA from '@/app/components/cta';
 import FAQSection from '@/app/components/faq-section';
+import PricingPlans from '@/app/components/pricing-plans';
 
 const modules = [
   {
@@ -135,6 +136,67 @@ const faqs = [
   },
 ];
 
+const trainingPackages = [
+  {
+    name: 'Self-Paced Online',
+    tagline: 'Learn on your schedule',
+    features: [
+      'Lifetime access to all 12 modules',
+      '80+ hours of video content',
+      '50+ assignments and projects',
+      'Private community access',
+      'Certificate of completion',
+      'Email support',
+    ],
+    ctaLabel: 'Enroll Now',
+    featured: false,
+  },
+  {
+    name: 'Live Online Training',
+    tagline: 'Instructor-led cohorts',
+    badge: 'Most Popular',
+    features: [
+      '12-week live sessions (3x per week)',
+      'Interactive workshops and Q&A',
+      '1-on-1 mentorship sessions (5x)',
+      'All self-paced content included',
+      'Priority support',
+      'Project review and feedback',
+      'Certification exam',
+    ],
+    ctaLabel: 'Enroll Now',
+    featured: true,
+  },
+  {
+    name: 'Corporate Training',
+    tagline: 'Custom for teams',
+    features: [
+      'Customized curriculum for your team',
+      'On-site or virtual training',
+      'Flexible scheduling',
+      'Industry-specific case studies',
+      'Team licenses for AI tools',
+      'Ongoing consultation (3 months)',
+      'Team certifications',
+    ],
+    ctaLabel: 'Get Quote',
+    featured: false,
+  },
+];
+
+const trainingPricingByCurrency = {
+  inr: {
+    label: 'India Pricing (INR)',
+    symbol: '₹',
+    prices: ['24,999', '44,999', 'Custom'],
+  },
+  usd: {
+    label: 'Global Pricing (USD)',
+    symbol: '$',
+    prices: ['100', '200', '300'],
+  },
+};
+
 export const metadata: Metadata = {
   title: 'Digital Marketing Training | Kamal Bhatt',
   description:
@@ -221,6 +283,13 @@ export default function TrainingPage() {
       <TrainingToolsSection />
       <TrainingInstructorSection />
       <CourseRoadmap modules={modules} />
+      <PricingPlans
+        plans={trainingPackages}
+        pricingByCurrency={trainingPricingByCurrency}
+        eyebrow={trainingPricingByCurrency.inr.label}
+        title="Training Packages"
+        description="Choose the learning format that fits your goals and schedule."
+      />
       <FAQSection faqs={faqs} />
       <Testimonials />
       <CTA />

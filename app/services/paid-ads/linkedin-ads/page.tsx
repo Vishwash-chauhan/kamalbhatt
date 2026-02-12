@@ -8,6 +8,7 @@ import FAQSection from '@/app/components/faq-section';
 import AboutService from '@/app/components/about-service';
 import ProcessSection from '@/app/components/process-section';
 import ServicesSection from '@/app/components/services-section';
+import PricingPlans from '@/app/components/pricing-plans';
 
 const iconMap = {
   Target,
@@ -18,6 +19,78 @@ const iconMap = {
   BarChart3,
   Star,
   TrendingUp,
+};
+
+const linkedinAdPlans = [
+  {
+    name: 'Basic',
+    tagline: 'Foundation campaigns for steady lead flow',
+    features: [
+      'Number of posts/month: 5',
+      'Reels/videos: 1',
+      'Articles & newsletters/month: 1',
+      'Lead generation outreach: 10/day',
+      'Connection requests/day: 15/week',
+      'Performance reporting: Monthly',
+    ],
+    ctaLabel: 'Get Started',
+    featured: false,
+  },
+  {
+    name: 'Standard',
+    tagline: 'Balanced performance and volume',
+    features: [
+      'Number of posts/month: 8',
+      'Reels/videos: 2',
+      'Articles & newsletters/month: 1',
+      'Lead generation outreach: 20/day',
+      'Connection requests/day: 10-20',
+      'Performance reporting: Bi-weekly',
+    ],
+    ctaLabel: 'Get Started',
+    featured: true,
+  },
+  {
+    name: 'Premium',
+    tagline: 'Scale campaigns with advanced targeting',
+    features: [
+      'Number of posts/month: 12',
+      'Reels/videos: 4',
+      'Articles & newsletters/month: 3',
+      'Lead generation outreach: 30/day',
+      'Connection requests/day: 15-30',
+      'Performance reporting: Weekly',
+    ],
+    ctaLabel: 'Get Started',
+    featured: false,
+  },
+  {
+    name: 'Enterprise',
+    tagline: 'Custom plans for aggressive growth',
+    features: [
+      'Number of posts/month: 20',
+      'Reels/videos: 6',
+      'Articles & newsletters/month: 7',
+      'Lead generation outreach: 100/day',
+      'Connection requests/day: 30-50',
+      'Performance reporting: Alternate days',
+    ],
+    ctaLabel: 'Get Started',
+    featured: false,
+  },
+];
+
+const linkedinPricingByCurrency = {
+  inr: {
+    label: 'India Pricing (INR)',
+    symbol: '₹',
+    prices: ['10,000', '15,000', '20,000', '30,000+'],
+  },
+  usd: {
+    label: 'Global Pricing (USD)',
+    symbol: '$',
+    prices: ['200', '300', '400', '500+'],
+  },
 };
 
 export const metadata: Metadata = {
@@ -183,6 +256,14 @@ export default function LinkedInAdsPage() {
             details: 'Increase budgets to winning campaigns. Test new audiences and creative variations. Optimize for sales-qualified leads.',
           },
         ]}
+      />
+
+      <PricingPlans
+        plans={linkedinAdPlans}
+        pricingByCurrency={linkedinPricingByCurrency}
+        eyebrow={linkedinPricingByCurrency.inr.label}
+        title="LinkedIn Ads Service Plans"
+        description="Pick a plan that matches your outreach goals and reporting cadence."
       />
 
       {/* FAQ */}
