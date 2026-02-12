@@ -261,12 +261,14 @@ export default async function ServiceTemplate({ params }: ServicePageProps) {
           description={service.pricingSection.description}
         />
       ) : null}
-      <OneTimeServices
-        services={oneTimeServicesProps.services}
-        eyebrow={oneTimeServicesProps.eyebrow}
-        title={oneTimeServicesProps.title}
-        description={oneTimeServicesProps.description}
-      />
+      {slug === 'seo-optimisation' ? (
+        <OneTimeServices
+          services={oneTimeServicesProps.services}
+          eyebrow={oneTimeServicesProps.eyebrow}
+          title={oneTimeServicesProps.title}
+          description={oneTimeServicesProps.description}
+        />
+      ) : null}
       <Clients />
       <Testimonials />
       {/* FAQ Section */}
