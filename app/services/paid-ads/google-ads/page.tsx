@@ -350,7 +350,7 @@ export default function GoogleAdsPage() {
       <Testimonials />
 
       {/* Clients */}
-      <Clients />
+      {/* <Clients /> */}
 
       {/* CTA */}
       <CTA />
