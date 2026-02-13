@@ -157,7 +157,7 @@ export default function Header() {
             >
               About
             </Link>
-            <Link 
+            {/* <Link 
               href="/portfolio" 
               className={`transition ${
                 isActive('/portfolio')
@@ -166,7 +166,7 @@ export default function Header() {
               }`}
             >
               Portfolio
-            </Link>
+            </Link> */}
             <Link 
               href="/digital-marketing-playbook" 
               className={`transition ${
@@ -334,7 +334,7 @@ export default function Header() {
             >
               About
             </Link>
-            <Link
+            {/* <Link
               href="/portfolio"
               onClick={closeMobileNav}
               className={`block px-4 py-2 rounded transition ${
@@ -344,7 +344,7 @@ export default function Header() {
               }`}
             >
               Portfolio
-            </Link>
+            </Link> */}
             <Link
               href="/digital-marketing-playbook"
               onClick={closeMobileNav}
