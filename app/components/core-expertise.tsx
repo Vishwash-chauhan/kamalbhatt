@@ -70,7 +70,7 @@ export default function CoreExpertise() {
     'Zap': Zap,
   };
 
-  const getIcon = (index) => {
+  const getIcon = (index: number) => {
     const icons = [Search, TrendingUp, Target, Users, MapPin, Zap];
     return icons[index];
   };
