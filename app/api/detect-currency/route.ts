@@ -2,13 +2,25 @@ import { NextRequest, NextResponse } from 'next/server';
 
 export async function GET(request: NextRequest) {
   try {
-    // Get client IP from headers
-    const ip = request.headers.get('x-forwarded-for') || 
-               request.headers.get('x-real-ip') || 
-               'unknown';
+    // Prefer CDN-provided country headers when available (more reliable than IP lookup).
+    const countryHeader =
+      request.headers.get('x-vercel-ip-country') ||
+      request.headers.get('cf-ipcountry') ||
+      request.headers.get('x-country-code');
+
+    if (countryHeader) {
+      const currency = countryHeader.toUpperCase() === 'IN' ? 'inr' : 'usd';
+      return NextResponse.json({ currency, countryCode: countryHeader });
+    }
+
+    // Fall back to IP-based lookup when country headers are missing.
+    const forwardedFor = request.headers.get('x-forwarded-for');
+    const ipFromForwarded = forwardedFor ? forwardedFor.split(',')[0]?.trim() : null;
+    const ip = ipFromForwarded || request.headers.get('x-real-ip') || '';
 
     // Use ipapi.co for geolocation (free, no key required)
-    const geoResponse = await fetch(`https://ipapi.co/${ip}/json/`);
+    const geoUrl = ip ? `https://ipapi.co/${ip}/json/` : 'https://ipapi.co/json/';
+    const geoResponse = await fetch(geoUrl);
     
     if (!geoResponse.ok) {
       return NextResponse.json({ currency: 'usd' }, { status: 200 });
