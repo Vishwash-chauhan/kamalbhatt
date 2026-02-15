@@ -32,7 +32,7 @@ export default function HeroSection() {
         {/* Location Badge */}
         <div className="flex items-center justify-center mb-8">
           <span className="inline-block bg-primary/30 backdrop-blur-md border border-secondary/50 text-white px-6 py-2 rounded-full text-sm font-semibold">
-            📍 Global Digital Marketing Agency | Based in Uttarakhand, India
+            🌍 Global Digital Marketing Agency | Based in Uttarakhand, India
           </span>
         </div>
 
@@ -46,8 +46,7 @@ export default function HeroSection() {
 
         {/* Subheading */}
         <p className="text-lg md:text-2xl text-gray-200 mb-8 max-w-2xl mx-auto">
-          Expert digital marketing services for businesses worldwide. 
-SEO, Google Ads, Social Media Management, and Web Development to transform your brand and drive real results.
+          Professional digital marketing services for businesses worldwide. Expert SEO, Google Ads, Social Media Marketing, and Web Development delivering 7X average ROAS. Trusted by 100+ International Clients.
         </p>
 
 
