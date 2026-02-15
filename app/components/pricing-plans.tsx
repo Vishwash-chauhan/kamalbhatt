@@ -39,7 +39,7 @@ export default function PricingPlans({
   title,
   description,
 }: PricingPlansProps) {
-  const { currency } = useCurrencyDetection();
+  const { currency, setCurrency } = useCurrencyDetection();
   const currencyConfig = pricingByCurrency[currency];
 
   return (
@@ -56,7 +56,7 @@ export default function PricingPlans({
             {description}
           </p>
           <div className="mt-8 inline-flex rounded-full border border-gray-200 dark:border-gray-800 bg-gray-50 dark:bg-gray-900 p-1">
-            {/* <button
+            <button
               type="button"
               onClick={() => setCurrency('inr')}
               aria-pressed={currency === 'inr'}
@@ -67,8 +67,8 @@ export default function PricingPlans({
               }`}
             >
               India (INR)
-            </button> */}
-            {/* <button
+            </button>
+            <button
               type="button"
               onClick={() => setCurrency('usd')}
               aria-pressed={currency === 'usd'}
@@ -79,7 +79,7 @@ export default function PricingPlans({
               }`}
             >
               Global (USD)
-            </button> */}
+            </button>
           </div>
         </header>
 
