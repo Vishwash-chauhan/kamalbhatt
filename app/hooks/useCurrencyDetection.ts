@@ -10,7 +10,7 @@ export function useCurrencyDetection() {
   useEffect(() => {
     const detectCurrency = async () => {
       try {
-        const response = await fetch('/api/detect-currency');
+        const response = await fetch('/api/detect-currency', { cache: 'no-store' });
         const data = await response.json();
         setCurrency(data.currency);
       } catch (error) {
