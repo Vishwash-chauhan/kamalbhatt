@@ -4,9 +4,14 @@ export async function GET(request: NextRequest) {
   try {
     const { searchParams } = new URL(request.url);
     const override = searchParams.get('currency');
+    const debug = searchParams.get('debug') === '1';
     if (override === 'inr' || override === 'usd') {
       return NextResponse.json(
-        { currency: override, countryCode: 'override' },
+        {
+          currency: override,
+          countryCode: 'override',
+          ...(debug ? { debug: { source: 'override' } } : {}),
+        },
         { headers: { 'Cache-Control': 'no-store, max-age=0' } }
       );
     }
@@ -14,7 +19,11 @@ export async function GET(request: NextRequest) {
     const envDefault = process.env.DEFAULT_CURRENCY;
     if (envDefault === 'inr' || envDefault === 'usd') {
       return NextResponse.json(
-        { currency: envDefault, countryCode: 'env' },
+        {
+          currency: envDefault,
+          countryCode: 'env',
+          ...(debug ? { debug: { source: 'env' } } : {}),
+        },
         { headers: { 'Cache-Control': 'no-store, max-age=0' } }
       );
     }
@@ -28,7 +37,11 @@ export async function GET(request: NextRequest) {
     if (countryHeader) {
       const currency = countryHeader.toUpperCase() === 'IN' ? 'inr' : 'usd';
       return NextResponse.json(
-        { currency, countryCode: countryHeader },
+        {
+          currency,
+          countryCode: countryHeader,
+          ...(debug ? { debug: { source: 'header' } } : {}),
+        },
         { headers: { 'Cache-Control': 'no-store, max-age=0' } }
       );
     }
@@ -49,7 +62,11 @@ export async function GET(request: NextRequest) {
       const currency = countryCode === 'IN' ? 'inr' : 'usd';
 
       return NextResponse.json(
-        { currency, countryCode },
+        {
+          currency,
+          countryCode,
+          ...(debug ? { debug: { source: 'ipapi', ip, countryCode } } : {}),
+        },
         { headers: { 'Cache-Control': 'no-store, max-age=0' } }
       );
     }
@@ -60,7 +77,10 @@ export async function GET(request: NextRequest) {
 
     if (!fallbackResponse.ok) {
       return NextResponse.json(
-        { currency: 'usd' },
+        {
+          currency: 'usd',
+          ...(debug ? { debug: { source: 'fallback_error', ip } } : {}),
+        },
         { status: 200, headers: { 'Cache-Control': 'no-store, max-age=0' } }
       );
     }
@@ -70,14 +90,20 @@ export async function GET(request: NextRequest) {
     const fallbackCurrency = fallbackCountry === 'IN' ? 'inr' : 'usd';
 
     return NextResponse.json(
-      { currency: fallbackCurrency, countryCode: fallbackCountry },
+      {
+        currency: fallbackCurrency,
+        countryCode: fallbackCountry,
+        ...(debug ? { debug: { source: 'ipwho', ip, countryCode: fallbackCountry } } : {}),
+      },
       { headers: { 'Cache-Control': 'no-store, max-age=0' } }
     );
   } catch (error) {
     console.error('Geolocation error:', error);
     // Default to USD on error
     return NextResponse.json(
-      { currency: 'usd' },
+      { currency: 'usd', ...(new URL(request.url).searchParams.get('debug') === '1'
+          ? { debug: { source: 'catch' } }
+          : {}) },
       { status: 200, headers: { 'Cache-Control': 'no-store, max-age=0' } }
     );
   }
