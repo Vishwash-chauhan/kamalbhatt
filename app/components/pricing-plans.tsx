@@ -55,9 +55,9 @@ export default function PricingPlans({
           <p className="text-lg text-gray-600 dark:text-gray-400 max-w-2xl mx-auto mt-4">
             {description}
           </p>
-          {/* <p className="mt-2 text-xs text-gray-500 dark:text-gray-400">
+          <p className="mt-2 text-xs text-gray-500 dark:text-gray-400">
             Detected: {countryCode ?? 'unknown'} · {currency.toUpperCase()}
-          </p> */}
+          </p>
           {/* Manual currency toggle (commented out; detection is default)
           <div className="mt-8 inline-flex rounded-full border border-gray-200 dark:border-gray-800 bg-gray-50 dark:bg-gray-900 p-1">
             <button
