@@ -42,51 +42,39 @@ export default function Clients() {
   ];
 
   return (
-    <section 
-      id="clients" 
-      className="py-20 bg-gradient-to-r from-slate-800 via-blue-900 to-slate-800 relative overflow-hidden"
-    >
-      {/* Decorative background elements */}
-      <div className="absolute inset-0 opacity-10">
-        <div className="absolute top-0 left-0 w-96 h-96 bg-white rounded-full blur-3xl"></div>
-        <div className="absolute bottom-0 right-0 w-96 h-96 bg-white rounded-full blur-3xl"></div>
-      </div>
-
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-        {/* Section Header */}
-        <div className="mb-16 text-center">
-          <h2 className="text-4xl md:text-5xl font-bold text-white mb-4">
+    <section id="clients" className="py-12 bg-white">
+      <div className="max-w-7xl mx-auto px-4">
+        <div className="mb-10 text-center">
+          <h2 className="text-3xl md:text-4xl font-bold text-slate-900 mb-2">
             Our Clients
           </h2>
-          <div className="h-1 w-20 bg-white mx-auto"></div>
+          <div className="h-1 w-12 bg-blue-600 mx-auto"></div>
         </div>
 
-        {/* Clients Carousel */}
         <Swiper
           modules={[Autoplay]}
-          spaceBetween={24}
-          slidesPerView={1}
+          spaceBetween={40} // Increased gap between logos
+          slidesPerView={2}
           breakpoints={{
-            1024: {
-              slidesPerView: 4,
-            },
+            640: { slidesPerView: 3 },
+            1024: { slidesPerView: 5 }, // Fewer slides per view = bigger logos
           }}
           autoplay={{
             delay: 2000,
             disableOnInteraction: false,
           }}
           loop={true}
-          className="!pb-2"
+          className="flex items-center"
         >
           {clients.map((client) => (
             <SwiperSlide key={client.id}>
-              <div className="flex items-center justify-center p-6 h-32 bg-white rounded-lg shadow-lg hover:shadow-2xl hover:scale-105 transition duration-300">
+              <div className="flex items-center justify-center p-2">
                 <Image
                   src={client.logo}
                   alt={client.name}
-                  width={112}
-                  height={112}
-                  className="w-20 h-20 md:w-24 md:h-24 lg:w-28 lg:h-28 object-contain"
+                  width={200} // Increased base width
+                  height={100}
+                  className="h-20 w-auto md:h-28 object-contain" // Increased height from 16/24 to 20/28
                 />
               </div>
             </SwiperSlide>
