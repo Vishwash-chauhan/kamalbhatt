@@ -63,6 +63,15 @@ export default function Testimonials() {
       rating: 5,
       text: 'Kamal sir has been a great colleague to work with. He has extensive knowledge of his domain & keeps on updating himself with the latest trends. As far as I observed, he has been a self-motivated & resourceful professional.',
     },
+    {
+      id: 7,
+      name: 'Steven Buckley',
+      title: '',
+      company: '',
+      image: 'https://placehold.co/80x80?text=SB',
+      rating: 5,
+      text: 'Working with Meegan Media completely transformed our online presence. Within three months, our website traffic increased by 50%, and our leads have doubled. Their team is incredibly data-driven and responsive.'
+    }
   ];
 
   return (
