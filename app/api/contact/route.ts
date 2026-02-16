@@ -5,8 +5,7 @@ interface ContactFormData {
   email: string;
   phone?: string;
   company?: string;
-  subject: string;
-  message: string;
+  message?: string;
 }
 
 // Validate email format
@@ -29,13 +28,8 @@ function validateContactForm(data: ContactFormData): { valid: boolean; errors: s
     errors.push('Invalid email format');
   }
 
-  if (!data.subject?.trim()) {
-    errors.push('Subject is required');
-  }
-
-  if (!data.message?.trim()) {
-    errors.push('Message is required');
-  } else if (data.message.trim().length < 10) {
+  // message is optional — only validate length when provided
+  if (data.message?.trim() && data.message.trim().length < 10) {
     errors.push('Message must be at least 10 characters');
   }
 
@@ -62,27 +56,50 @@ export async function POST(request: NextRequest) {
       );
     }
 
-    // TODO: Implement your email sending logic here
-    // Options:
-    // 1. SendGrid: npm install @sendgrid/mail
-    // 2. Nodemailer: npm install nodemailer
-    // 3. Resend: npm install resend
-    // 4. Custom backend/webhook
-    
-    // Example with environment variables:
-    // const emailProvider = process.env.EMAIL_PROVIDER;
-    // const apiKey = process.env.EMAIL_API_KEY;
+    const n8nWebhook = process.env.N8N_WEBHOOK_URL;
+
+    if (!n8nWebhook) {
+      console.warn('N8N_WEBHOOK_URL is not configured; contact form will not be forwarded to n8n.');
+    } else {
+      try {
+        const n8nResponse = await fetch(n8nWebhook, {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ ...body, receivedAt: new Date().toISOString() }),
+        });
+
+        if (!n8nResponse.ok) {
+          const text = await n8nResponse.text().catch(() => null);
+          console.error('n8n webhook error:', n8nResponse.status, text);
+          return NextResponse.json(
+            {
+              success: false,
+              message: 'Failed to forward to n8n webhook',
+              errors: [text || `n8n responded with status ${n8nResponse.status}`],
+            },
+            { status: 502 }
+          );
+        }
+      } catch (err) {
+        console.error('Error sending to n8n webhook:', err);
+        return NextResponse.json(
+          {
+            success: false,
+            message: 'Error forwarding to n8n webhook',
+            errors: [String(err)],
+          },
+          { status: 502 }
+        );
+      }
+    }
 
     console.log('Contact form received:', {
       name: body.name,
       email: body.email,
-      subject: body.subject,
       message: body.message,
       timestamp: new Date().toISOString(),
     });
 
-    // Temporary: Just acknowledge receipt
-    // Replace this with actual email sending implementation
     return NextResponse.json(
       {
         success: true,

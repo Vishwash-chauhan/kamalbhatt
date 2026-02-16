@@ -6,9 +6,9 @@ import { Send } from 'lucide-react';
 interface FormData {
   name: string;
   email: string;
-  phone: string;
-  company: string;
-  companyWebsite: string;
+  phone?: string;
+  company?: string;
+  companyWebsite?: string;
   services: string[];
   message: string;
 }
@@ -29,14 +29,26 @@ export default function ContactForm() {
   });
 
   const [errors, setErrors] = useState<FormErrors>({});
+  const [serverErrors, setServerErrors] = useState<string[]>([]);
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitStatus, setSubmitStatus] = useState<'idle' | 'success' | 'error'>('idle');
 
   const validateForm = (): boolean => {
     const newErrors: FormErrors = {};
 
-    if (formData.email.trim() && !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(formData.email)) {
+    if (!formData.name.trim()) {
+      newErrors.name = 'Name is required';
+    }
+
+    if (!formData.email.trim()) {
+      newErrors.email = 'Email is required';
+    } else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(formData.email)) {
       newErrors.email = 'Please enter a valid email address';
+    }
+
+    // message is optional — only validate length when provided
+    if (formData.message.trim() && formData.message.trim().length < 10) {
+      newErrors.message = 'Message must be at least 10 characters';
     }
 
     setErrors(newErrors);
@@ -75,6 +87,9 @@ export default function ContactForm() {
   const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
 
+    // clear previous server errors
+    setServerErrors([]);
+
     if (!validateForm()) {
       return;
     }
@@ -83,7 +98,6 @@ export default function ContactForm() {
     setSubmitStatus('idle');
 
     try {
-      // TODO: Replace with your actual API endpoint
       const response = await fetch('/api/contact', {
         method: 'POST',
         headers: {
@@ -106,11 +120,19 @@ export default function ContactForm() {
         // Reset success message after 5 seconds
         setTimeout(() => setSubmitStatus('idle'), 5000);
       } else {
-        setSubmitStatus('error');
+        const payload = await response.json().catch(() => null);
+        if (payload?.errors && Array.isArray(payload.errors)) {
+          setServerErrors(payload.errors);
+        } else if (payload?.message) {
+          setServerErrors([payload.message]);
+        } else {
+          setSubmitStatus('error');
+        }
       }
     } catch (error) {
       console.error('Form submission error:', error);
       setSubmitStatus('error');
+      setServerErrors(['An unexpected error occurred. Please try again later.']);
     } finally {
       setIsSubmitting(false);
     }
@@ -119,6 +141,16 @@ export default function ContactForm() {
   return (
     <div className="bg-white rounded-lg shadow-lg p-8">
       <h2 className="text-3xl font-bold text-gray-900 mb-8">Send us a Message</h2>
+
+      {serverErrors.length > 0 && (
+        <div className="mb-6 p-4 bg-red-50 border border-red-200 rounded-lg">
+          <ul className="text-red-800 list-disc pl-5">
+            {serverErrors.map((err, i) => (
+              <li key={i} className="font-medium">{err}</li>
+            ))}
+          </ul>
+        </div>
+      )}
 
       {submitStatus === 'success' && (
         <div className="mb-6 p-4 bg-green-50 border border-green-200 rounded-lg">
@@ -174,6 +206,8 @@ export default function ContactForm() {
           />
           {errors.email && <p className="mt-1 text-sm text-red-500">{errors.email}</p>}
         </div>
+
+
 
         {/* Phone and Company Fields (Row) */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
@@ -233,7 +267,7 @@ export default function ContactForm() {
             Services Interested In
           </label>
           <div className="space-y-3">
-            {['SEO Optimisation', 'Paid Ads', 'Social Media Marketing', 'Web Development and Design', 'Digital Marketing Training'].map(
+            {['SEO Optimisation', 'Paid Ads', 'Social Media Marketing', 'Web Development and Design', 'Digital Marketing Training', 'Complete Digital Marketing Package'].map(
               (service) => (
                 <div key={service} className="flex items-center">
                   <input
@@ -257,7 +291,7 @@ export default function ContactForm() {
         {/* Message Field */}
         <div>
           <label htmlFor="message" className="block text-sm font-medium text-gray-700 mb-2">
-            Message
+            Message (optional)
           </label>
           <textarea
             id="message"
