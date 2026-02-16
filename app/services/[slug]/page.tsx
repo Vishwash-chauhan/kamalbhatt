@@ -269,7 +269,7 @@ export default async function ServiceTemplate({ params }: ServicePageProps) {
           description={oneTimeServicesProps.description}
         />
       ) : null}
-      {/* <Clients /> */}
+      <Clients />
       <Testimonials />
       {/* FAQ Section */}
       {service.faqs?.length ? (

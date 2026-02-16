@@ -15,7 +15,7 @@ export default function Home() {
       <ServicesSection />
       <AboutSection />
       <AboutMeeganMedia />
-      {/* <Clients /> */}
+      <Clients />
       <CTA />
       {/* <Blog /> */}
       <Testimonials />

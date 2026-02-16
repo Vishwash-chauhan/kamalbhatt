@@ -3,49 +3,42 @@
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Autoplay } from 'swiper/modules';
 import 'swiper/css';
+import Image from 'next/image';
 
 export default function Clients() {
   const clients = [
-    {
-      id: 1,
-      name: 'Client 1',
-      logo: 'https://via.placeholder.com/200x100?text=Client+1',
-    },
-    {
-      id: 2,
-      name: 'Client 2',
-      logo: 'https://via.placeholder.com/200x100?text=Client+2',
-    },
-    {
-      id: 3,
-      name: 'Client 3',
-      logo: 'https://via.placeholder.com/200x100?text=Client+3',
-    },
-    {
-      id: 4,
-      name: 'Client 4',
-      logo: 'https://via.placeholder.com/200x100?text=Client+4',
-    },
-    {
-      id: 5,
-      name: 'Client 5',
-      logo: 'https://via.placeholder.com/200x100?text=Client+5',
-    },
-    {
-      id: 6,
-      name: 'Client 6',
-      logo: 'https://via.placeholder.com/200x100?text=Client+6',
-    },
-    {
-      id: 7,
-      name: 'Client 7',
-      logo: 'https://via.placeholder.com/200x100?text=Client+7',
-    },
-    {
-      id: 8,
-      name: 'Client 8',
-      logo: 'https://via.placeholder.com/200x100?text=Client+8',
-    },
+    { id: 1, name: 'ACC', logo: '/images/clients/ACC.png' },
+    { id: 2, name: 'Adhiroha', logo: '/images/clients/Adhiroha.png' },
+    { id: 3, name: 'Amogeo Solar', logo: '/images/clients/AMOGEO SOLAR.png' },
+    { id: 4, name: 'Ananta Hills', logo: '/images/clients/Ananta Hills.png' },
+    { id: 5, name: 'Bagwath Katha', logo: '/images/clients/Bagwath Katha.png' },
+    { id: 6, name: 'Brigadier Defence Academy', logo: '/images/clients/Brigadier Defence Academy.png' },
+    { id: 7, name: 'Equation IAS', logo: '/images/clients/Equation IAS.png' },
+    { id: 8, name: 'Foodholic', logo: '/images/clients/FOODHOLIC.png' },
+    { id: 9, name: 'Gamaholic', logo: '/images/clients/Gamaholic.png' },
+    { id: 10, name: 'GEHU', logo: '/images/clients/GEHU.png' },
+    { id: 11, name: 'GEU', logo: '/images/clients/GEU.png' },
+    { id: 12, name: 'IMBA', logo: '/images/clients/IMBA.png' },
+    { id: 13, name: 'Investor Clinic', logo: '/images/clients/Investor Clinic.png' },
+    { id: 14, name: 'Kaylons', logo: '/images/clients/Kaylons.png' },
+    { id: 15, name: 'Kia Ora', logo: '/images/clients/KIA ORA.png' },
+    { id: 16, name: 'KJ Golf Cart', logo: '/images/clients/KJ GOLF CART.png' },
+    { id: 17, name: 'Letsdiskuss', logo: '/images/clients/Letsdiskuss.png' },
+    { id: 18, name: 'Meena Marbles', logo: '/images/clients/Meena Marbles.png' },
+    { id: 19, name: 'MTB Clean', logo: '/images/clients/MTB Clean.png' },
+    { id: 20, name: 'Orane', logo: '/images/clients/ORANE.png' },
+    { id: 21, name: 'PMMITAS Society', logo: '/images/clients/PMMITAS Society.png' },
+    { id: 22, name: 'Prasun Solar', logo: '/images/clients/PRASUN SOLAR.png' },
+    { id: 23, name: 'Realty Bricks', logo: '/images/clients/Realty bricks.png' },
+    { id: 24, name: 'Rentacartci', logo: '/images/clients/Rentacartci.png' },
+    { id: 25, name: 'Sanova Consulting', logo: '/images/clients/SANOVA CONSULTANCY.png' },
+    { id: 26, name: 'Sapphire International School', logo: '/images/clients/Sapphire International School.png' },
+    { id: 27, name: 'SnapShopHub', logo: '/images/clients/SnapShopHub.png' },
+    { id: 28, name: 'Sri Sri Wellbeing', logo: '/images/clients/SRI SRI WELLBEING.png' },
+    { id: 29, name: 'TR Talent Hiring', logo: '/images/clients/TR Talent Hiring.png' },
+    { id: 30, name: 'Udipi', logo: '/images/clients/Udipi.png' },
+    { id: 31, name: 'Vindhya Solar', logo: '/images/clients/Vindhya Solar.png' },
+    { id: 32, name: 'Winni Bakers', logo: '/images/clients/Winni Bakers.png' },
   ];
 
   return (
@@ -88,10 +81,12 @@ export default function Clients() {
           {clients.map((client) => (
             <SwiperSlide key={client.id}>
               <div className="flex items-center justify-center p-6 h-32 bg-white rounded-lg shadow-lg hover:shadow-2xl hover:scale-105 transition duration-300">
-                <img
+                <Image
                   src={client.logo}
                   alt={client.name}
-                  className="max-w-full h-auto max-h-16 object-contain"
+                  width={112}
+                  height={112}
+                  className="w-20 h-20 md:w-24 md:h-24 lg:w-28 lg:h-28 object-contain"
                 />
               </div>
             </SwiperSlide>

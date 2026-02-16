@@ -200,7 +200,7 @@ export default function PaidAdsPage() {
         ]}
       />
 
-      {/* <Clients /> */}
+      <Clients />
       <Testimonials />
       {/* FAQ Section */}
       <FAQSection

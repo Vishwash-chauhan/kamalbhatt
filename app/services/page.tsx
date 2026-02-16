@@ -257,7 +257,7 @@ export default function ServicesPage() {
         title="Launch faster with focused, fixed-scope work"
         description="Ideal for brands that need a quick setup or a strategic reset without a monthly retainer."
       />
-      {/* <Clients /> */}
+      <Clients />
       <Testimonials />
       <CTA />
     </main>

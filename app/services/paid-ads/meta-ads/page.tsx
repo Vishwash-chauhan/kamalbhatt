@@ -361,7 +361,7 @@ export default function MetaAdsPage() {
       <Testimonials />
 
       {/* Clients */}
-      {/* <Clients /> */}
+      <Clients />
 
       {/* CTA */}
       <CTA />
