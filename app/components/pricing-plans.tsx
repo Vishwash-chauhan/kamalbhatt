@@ -46,18 +46,18 @@ export default function PricingPlans({
     <section className="py-20 bg-white dark:bg-gray-950">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <header className="text-center mb-12">
-          <p className="text-sm uppercase tracking-[0.2em] text-secondary font-semibold">
+          {/* <p className="text-sm uppercase tracking-[0.2em] text-secondary font-semibold">
             {eyebrow}
-          </p>
+          </p> */}
           <h2 className="text-4xl md:text-5xl font-bold mt-4 text-gray-900 dark:text-white">
             {title}
           </h2>
           <p className="text-lg text-gray-600 dark:text-gray-400 max-w-2xl mx-auto mt-4">
             {description}
           </p>
-          <p className="mt-2 text-xs text-gray-500 dark:text-gray-400">
+          {/* <p className="mt-2 text-xs text-gray-500 dark:text-gray-400">
             Detected: {countryCode ?? 'unknown'} · {currency.toUpperCase()}
-          </p>
+          </p> */}
           {/* Manual currency toggle (commented out; detection is default)
           <div className="mt-8 inline-flex rounded-full border border-gray-200 dark:border-gray-800 bg-gray-50 dark:bg-gray-900 p-1">
             <button
