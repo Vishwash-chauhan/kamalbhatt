@@ -23,16 +23,6 @@ export default function ContactInfo() {
       details: '+91 95487 65897',
       href: 'tel:+919548765897',
     },
-    {
-      icon: MapPin,
-      title: 'Location',
-      details: 'Dehradun, Uttarakhand',
-    },
-    {
-      icon: Clock,
-      title: 'Business Hours',
-      details: ['Monday - Saturday: 9:00 AM - 5:00 PM'],
-    },
   ];
 
   return (
@@ -76,7 +66,22 @@ export default function ContactInfo() {
         );
       })}
 
-
+      {/* Google Maps Embed */}
+      <div className="mt-12 pt-8 border-t border-gray-200">
+        <h3 className="text-xl font-bold text-gray-900 mb-6">Visit Our Office</h3>
+        <div className="overflow-hidden rounded-lg shadow-lg">
+          <iframe
+            src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d3482.0655963348536!2d79.511217!3d29.221625!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x39a09b8cb6f3c809%3A0xb58b89c7af5d2653!2sMEEGAN%20MEDIA!5e0!3m2!1sen!2sin!4v1771235018831!5m2!1sen!2sin"
+            width="100%"
+            height="450"
+            style={{ border: 0 }}
+            allowFullScreen
+            loading="lazy"
+            referrerPolicy="no-referrer-when-downgrade"
+            className="w-full"
+          ></iframe>
+        </div>
+      </div>
     </div>
   );
 }

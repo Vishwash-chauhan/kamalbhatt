@@ -30,8 +30,8 @@ export default function Testimonials() {
     {
       id: 3,
       name: 'Aneesh Nair',
-      title: 'Senior Manager',
-      company: 'XYZ Company',
+      title: 'Manager',
+      company: 'Art Of Living',
       image: 'https://placehold.co/80x80?text=AN',
       rating: 5,
       text: 'Kamal possesses a deep understanding of performance marketing strategies and consistently delivers outstanding results. His expertise in PPC, conversion rate optimization, attribution modeling etc. has been instrumental in driving ROI for our campaigns.',
@@ -47,12 +47,12 @@ export default function Testimonials() {
     },
     {
       id: 5,
-      name: 'Kajal Rawat',
-      title: 'Executive',
-      company: 'ABC Company',
-      image: 'https://placehold.co/80x80?text=KR',
+      name: 'Dr. Debasis Mitra',
+      title: 'Founder & President',
+      company: 'PMMITAS',
+      image: 'https://placehold.co/80x80?text=DM',
       rating: 5,
-      text: 'I found Kamal Bhatt, a top Digital Marketing Expert. His strategies boosted my online presence and brought in high-quality leads. Kamal is responsive and dedicated. Highly recommend him!',
+      text: 'Outstanding digital marketing service! From SEO to social media, they handle everything. Our coaching institute enrollments went from 50 to 180 per month. If you need reliable digital marketing service, this is the team to hire.',
     },
     {
       id: 6,
@@ -66,11 +66,56 @@ export default function Testimonials() {
     {
       id: 7,
       name: 'Steven Buckley',
-      title: '',
-      company: '',
+      title: 'Owner',
+      company: 'MTB Clean, UK',
       image: 'https://placehold.co/80x80?text=SB',
       rating: 5,
       text: 'Working with Meegan Media completely transformed our online presence. Within three months, our website traffic increased by 50%, and our leads have doubled. Their team is incredibly data-driven and responsive.'
+    },
+    {
+      id: 8,
+      name: 'Himanshi Verma',
+      title: 'Executive',
+      company: 'Graphic Era',
+      image: 'https://placehold.co/80x80?text=HV',
+      rating: 5,
+      text: 'Great experience with this digital marketing firm. Kamal Sir helped me set up and optimize my friends Google Business Profile with complete professionalism. Excellent service and highly recommended'
+    },
+    {
+      id: 9,
+      name: 'Preeti Taneja',
+      title: 'Founder',
+      company: 'Letsdiskuss and SnapShopHub',
+      image: 'https://placehold.co/80x80?text=HV',
+      rating: 5,
+      text: 'You can trust this organisation for the thorough work they do. They give results.'
+    },
+    {
+      id: 10,
+      name: 'Dilip Kumar',
+      title: 'Manager',
+      company: 'Sanjay Ghodawat International School',
+      image: 'https://placehold.co/80x80?text=DK',
+      rating: 5,
+      text: 'Positive experience with this digital marketing agency. Their strategy is clear, execution is timely, and reporting is transparent. The team is responsive and easy to work with. Would definitely recommend.'
+    },
+    {
+      id: 11,
+      name: 'Aishwarya Khilwani',
+      title: 'Owner',
+      company: 'Mohraya',
+      image: 'https://placehold.co/80x80?text=AK',
+      rating: 5,
+      text: 'Reached out to them for a Google-related problem. He solved it in 10 minutes. Thank you for your help.'
+    },
+    {
+      id: 12,
+      name: 'Anchal Rawat',
+      title: 'Manager',
+      company: 'Languafina',
+      image: 'https://placehold.co/80x80?text=AR',
+      rating: 5,
+      text: 'I had a great experience working with Meegan Media as a marketing agency. Their team is creative, professional, and truly understands brand positioning. Communication was smooth, and they delivered quality work on time.'
     }
   ];
 

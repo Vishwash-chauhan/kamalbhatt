@@ -8,7 +8,8 @@ interface FormData {
   email: string;
   phone: string;
   company: string;
-  subject: string;
+  companyWebsite: string;
+  services: string[];
   message: string;
 }
 
@@ -22,7 +23,8 @@ export default function ContactForm() {
     email: '',
     phone: '',
     company: '',
-    subject: '',
+    companyWebsite: '',
+    services: [],
     message: '',
   });
 
@@ -33,24 +35,8 @@ export default function ContactForm() {
   const validateForm = (): boolean => {
     const newErrors: FormErrors = {};
 
-    if (!formData.name.trim()) {
-      newErrors.name = 'Name is required';
-    }
-
-    if (!formData.email.trim()) {
-      newErrors.email = 'Email is required';
-    } else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(formData.email)) {
+    if (formData.email.trim() && !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(formData.email)) {
       newErrors.email = 'Please enter a valid email address';
-    }
-
-    if (!formData.subject.trim()) {
-      newErrors.subject = 'Subject is required';
-    }
-
-    if (!formData.message.trim()) {
-      newErrors.message = 'Message is required';
-    } else if (formData.message.trim().length < 10) {
-      newErrors.message = 'Message must be at least 10 characters long';
     }
 
     setErrors(newErrors);
@@ -60,11 +46,23 @@ export default function ContactForm() {
   const handleChange = (
     e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
   ) => {
-    const { name, value } = e.target;
-    setFormData((prev) => ({
-      ...prev,
-      [name]: value,
-    }));
+    const { name, value, type } = e.target as HTMLInputElement;
+    
+    if (type === 'checkbox') {
+      const service = (e.target as HTMLInputElement).dataset.service || value;
+      setFormData((prev) => ({
+        ...prev,
+        services: (e.target as HTMLInputElement).checked
+          ? [...prev.services, service]
+          : prev.services.filter((s) => s !== service),
+      }));
+    } else {
+      setFormData((prev) => ({
+        ...prev,
+        [name]: value,
+      }));
+    }
+    
     // Clear error for this field when user starts typing
     if (errors[name]) {
       setErrors((prev) => ({
@@ -101,7 +99,8 @@ export default function ContactForm() {
           email: '',
           phone: '',
           company: '',
-          subject: '',
+          companyWebsite: '',
+          services: [],
           message: '',
         });
         // Reset success message after 5 seconds
@@ -141,7 +140,7 @@ export default function ContactForm() {
         {/* Name Field */}
         <div>
           <label htmlFor="name" className="block text-sm font-medium text-gray-700 mb-2">
-            Full Name <span className="text-red-500">*</span>
+            Full Name
           </label>
           <input
             type="text"
@@ -149,9 +148,7 @@ export default function ContactForm() {
             name="name"
             value={formData.name}
             onChange={handleChange}
-            className={`w-full px-4 py-3 border rounded-lg focus:ring-2 focus:ring-secondary focus:border-transparent outline-none transition ${
-              errors.name ? 'border-red-500' : 'border-gray-300'
-            }`}
+            className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-secondary focus:border-transparent outline-none transition"
             placeholder="John Doe"
             disabled={isSubmitting}
           />
@@ -161,7 +158,7 @@ export default function ContactForm() {
         {/* Email Field */}
         <div>
           <label htmlFor="email" className="block text-sm font-medium text-gray-700 mb-2">
-            Email Address <span className="text-red-500">*</span>
+            Email Address
           </label>
           <input
             type="email"
@@ -213,30 +210,54 @@ export default function ContactForm() {
           </div>
         </div>
 
-        {/* Subject Field */}
+        {/* Company Website Field */}
         <div>
-          <label htmlFor="subject" className="block text-sm font-medium text-gray-700 mb-2">
-            Subject <span className="text-red-500">*</span>
+          <label htmlFor="companyWebsite" className="block text-sm font-medium text-gray-700 mb-2">
+            Company Website
           </label>
           <input
-            type="text"
-            id="subject"
-            name="subject"
-            value={formData.subject}
+            type="url"
+            id="companyWebsite"
+            name="companyWebsite"
+            value={formData.companyWebsite}
             onChange={handleChange}
-            className={`w-full px-4 py-3 border rounded-lg focus:ring-2 focus:ring-secondary focus:border-transparent outline-none transition ${
-              errors.subject ? 'border-red-500' : 'border-gray-300'
-            }`}
-            placeholder="How can we help?"
+            className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-secondary focus:border-transparent outline-none transition"
+            placeholder="https://yourcompany.com"
             disabled={isSubmitting}
           />
-          {errors.subject && <p className="mt-1 text-sm text-red-500">{errors.subject}</p>}
+        </div>
+
+        {/* Services Field */}
+        <div>
+          <label className="block text-sm font-medium text-gray-700 mb-4">
+            Services Interested In
+          </label>
+          <div className="space-y-3">
+            {['SEO Optimisation', 'Paid Ads', 'Social Media Marketing', 'Web Development and Design', 'Digital Marketing Training'].map(
+              (service) => (
+                <div key={service} className="flex items-center">
+                  <input
+                    type="checkbox"
+                    id={service}
+                    data-service={service}
+                    checked={formData.services.includes(service)}
+                    onChange={handleChange}
+                    className="h-4 w-4 rounded border-gray-300 text-secondary focus:ring-secondary cursor-pointer"
+                    disabled={isSubmitting}
+                  />
+                  <label htmlFor={service} className="ml-3 text-sm text-gray-700 cursor-pointer">
+                    {service}
+                  </label>
+                </div>
+              )
+            )}
+          </div>
         </div>
 
         {/* Message Field */}
         <div>
           <label htmlFor="message" className="block text-sm font-medium text-gray-700 mb-2">
-            Message <span className="text-red-500">*</span>
+            Message
           </label>
           <textarea
             id="message"
@@ -244,14 +265,11 @@ export default function ContactForm() {
             value={formData.message}
             onChange={handleChange}
             rows={6}
-            className={`w-full px-4 py-3 border rounded-lg focus:ring-2 focus:ring-secondary focus:border-transparent outline-none transition resize-none ${
-              errors.message ? 'border-red-500' : 'border-gray-300'
-            }`}
+            className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-secondary focus:border-transparent outline-none transition resize-none"
             placeholder="Tell us more about your project or inquiry..."
             disabled={isSubmitting}
           />
           {errors.message && <p className="mt-1 text-sm text-red-500">{errors.message}</p>}
-          <p className="mt-1 text-xs text-gray-500">Minimum 10 characters</p>
         </div>
 
         {/* Submit Button */}

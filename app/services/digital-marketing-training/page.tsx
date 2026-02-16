@@ -243,7 +243,7 @@ export default function TrainingPage() {
             <div>
               <div className="rounded-2xl border border-gray-200 dark:border-gray-800 overflow-hidden mb-6">
                 <img
-                  src="https://placehold.co/1280x720"
+                  src="https://res.cloudinary.com/dwffrfajl/image/upload/v1771236368/Digital_Marketing_Course_Image_cfrfur.svg"
                   alt="Digital Marketing Training"
                   className="w-full h-auto"
                 />
