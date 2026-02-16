@@ -54,7 +54,9 @@ export async function GET(request: NextRequest) {
 
     // Use ipapi.co for geolocation (free, no key required)
     const geoUrl = encodedIp ? `https://ipapi.co/${encodedIp}/json/` : 'https://ipapi.co/json/';
-    const geoResponse = await fetch(geoUrl);
+    const geoResponse = await fetch(geoUrl, {
+      headers: { 'User-Agent': 'meegan-media/1.0' },
+    });
 
     if (geoResponse.ok) {
       const geoData = await geoResponse.json();
@@ -65,23 +67,72 @@ export async function GET(request: NextRequest) {
         {
           currency,
           countryCode,
-          ...(debug ? { debug: { source: 'ipapi', ip, countryCode } } : {}),
+          ...(debug
+            ? { debug: { source: 'ipapi', ip, countryCode, status: geoResponse.status } }
+            : {}),
         },
         { headers: { 'Cache-Control': 'no-store, max-age=0' } }
       );
     }
 
+    const ipapiStatus = geoResponse.status;
+
     // Fall back to ipwho.is if ipapi is blocked or rate-limited.
     const fallbackUrl = encodedIp ? `https://ipwho.is/${encodedIp}` : 'https://ipwho.is/';
-    const fallbackResponse = await fetch(fallbackUrl);
+    const fallbackResponse = await fetch(fallbackUrl, {
+      headers: { 'User-Agent': 'meegan-media/1.0' },
+    });
 
     if (!fallbackResponse.ok) {
+      const ipwhoStatus = fallbackResponse.status;
+
+      // Second fallback: ipinfo.io (limited free tier, no key required for basic usage)
+      const ipinfoUrl = encodedIp ? `https://ipinfo.io/${encodedIp}/json` : 'https://ipinfo.io/json';
+      const ipinfoResponse = await fetch(ipinfoUrl, {
+        headers: { 'User-Agent': 'meegan-media/1.0' },
+      });
+
+      if (!ipinfoResponse.ok) {
+        return NextResponse.json(
+          {
+            currency: 'usd',
+            ...(debug
+              ? {
+                  debug: {
+                    source: 'fallback_error',
+                    ip,
+                    ipapiStatus,
+                    ipwhoStatus,
+                    ipinfoStatus: ipinfoResponse.status,
+                  },
+                }
+              : {}),
+          },
+          { status: 200, headers: { 'Cache-Control': 'no-store, max-age=0' } }
+        );
+      }
+
+      const ipinfoData = await ipinfoResponse.json();
+      const ipinfoCountry = ipinfoData.country;
+      const ipinfoCurrency = ipinfoCountry === 'IN' ? 'inr' : 'usd';
+
       return NextResponse.json(
         {
-          currency: 'usd',
-          ...(debug ? { debug: { source: 'fallback_error', ip } } : {}),
+          currency: ipinfoCurrency,
+          countryCode: ipinfoCountry,
+          ...(debug
+            ? {
+                debug: {
+                  source: 'ipinfo',
+                  ip,
+                  countryCode: ipinfoCountry,
+                  ipapiStatus,
+                  ipwhoStatus,
+                },
+              }
+            : {}),
         },
-        { status: 200, headers: { 'Cache-Control': 'no-store, max-age=0' } }
+        { headers: { 'Cache-Control': 'no-store, max-age=0' } }
       );
     }
 
@@ -93,7 +144,17 @@ export async function GET(request: NextRequest) {
       {
         currency: fallbackCurrency,
         countryCode: fallbackCountry,
-        ...(debug ? { debug: { source: 'ipwho', ip, countryCode: fallbackCountry } } : {}),
+        ...(debug
+          ? {
+              debug: {
+                source: 'ipwho',
+                ip,
+                countryCode: fallbackCountry,
+                ipapiStatus,
+                status: fallbackResponse.status,
+              },
+            }
+          : {}),
       },
       { headers: { 'Cache-Control': 'no-store, max-age=0' } }
     );
