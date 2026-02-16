@@ -37,26 +37,40 @@ export async function GET(request: NextRequest) {
     const forwardedFor = request.headers.get('x-forwarded-for');
     const ipFromForwarded = forwardedFor ? forwardedFor.split(',')[0]?.trim() : null;
     const ip = ipFromForwarded || request.headers.get('x-real-ip') || '';
+    const encodedIp = ip ? encodeURIComponent(ip) : '';
 
     // Use ipapi.co for geolocation (free, no key required)
-    const geoUrl = ip ? `https://ipapi.co/${ip}/json/` : 'https://ipapi.co/json/';
+    const geoUrl = encodedIp ? `https://ipapi.co/${encodedIp}/json/` : 'https://ipapi.co/json/';
     const geoResponse = await fetch(geoUrl);
-    
-    if (!geoResponse.ok) {
+
+    if (geoResponse.ok) {
+      const geoData = await geoResponse.json();
+      const countryCode = geoData.country_code;
+      const currency = countryCode === 'IN' ? 'inr' : 'usd';
+
+      return NextResponse.json(
+        { currency, countryCode },
+        { headers: { 'Cache-Control': 'no-store, max-age=0' } }
+      );
+    }
+
+    // Fall back to ipwho.is if ipapi is blocked or rate-limited.
+    const fallbackUrl = encodedIp ? `https://ipwho.is/${encodedIp}` : 'https://ipwho.is/';
+    const fallbackResponse = await fetch(fallbackUrl);
+
+    if (!fallbackResponse.ok) {
       return NextResponse.json(
         { currency: 'usd' },
         { status: 200, headers: { 'Cache-Control': 'no-store, max-age=0' } }
       );
     }
 
-    const geoData = await geoResponse.json();
-    const countryCode = geoData.country_code;
-
-    // Return INR for India, USD for everyone else
-    const currency = countryCode === 'IN' ? 'inr' : 'usd';
+    const fallbackData = await fallbackResponse.json();
+    const fallbackCountry = fallbackData.country_code;
+    const fallbackCurrency = fallbackCountry === 'IN' ? 'inr' : 'usd';
 
     return NextResponse.json(
-      { currency, countryCode },
+      { currency: fallbackCurrency, countryCode: fallbackCountry },
       { headers: { 'Cache-Control': 'no-store, max-age=0' } }
     );
   } catch (error) {
