@@ -83,9 +83,7 @@ export const metadata: Metadata = {
   
   // Icons
   icons: {
-    icon: "/favicon.ico",
-    shortcut: "/favicon-32x32.png",
-    apple: "/apple-touch-icon.png",
+    icon: "/images/Fabicon.PNG",
   },
 };
 
@@ -116,7 +114,7 @@ export default function RootLayout({
         {/* Main content wrapper */}
         <div className="min-h-screen flex flex-col">
           <Header />
-          <main className="flex-grow">
+          <main className="grow">
             {children}
           </main>
           <Footer />
