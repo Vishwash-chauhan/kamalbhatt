@@ -21,8 +21,8 @@ const geistMono = Geist_Mono({
 export const metadata: Metadata = {
   metadataBase: new URL("https://kamalbhatt.com"),
   title: {
-    default: "Kamal Bhatt - Digital Marketing Services in Dehradun",
-    template: "%s | Kamal Bhatt - Digital Marketing Dehradun",
+    default: "Meegan Media - Digital Marketing Services in Dehradun",
+    template: "%s | Meegan Media - Digital Marketing Dehradun",
   },
   description:
     "Expert digital marketing services in Dehradun, Uttarakhand. SEO, social media, content marketing, and brand strategy to grow your business online.",
@@ -46,7 +46,7 @@ export const metadata: Metadata = {
     locale: "en_US",
     url: "https://kamalbhatt.com",
     siteName: "Kamal Bhatt Digital Marketing",
-    title: "Kamal Bhatt - Digital Marketing Services in Dehradun",
+    title: "Meegan Media - Digital Marketing Services in Dehradun",
     description:
       "Expert digital marketing services in Dehradun, Uttarakhand. SEO, social media, content marketing, and brand strategy to grow your business online.",
     images: [
@@ -54,7 +54,7 @@ export const metadata: Metadata = {
         url: "https://kamalbhatt.com/og-image.jpg",
         width: 1200,
         height: 630,
-        alt: "Kamal Bhatt - Digital Marketing Dehradun",
+        alt: "Meegan Media - Digital Marketing Dehradun",
       },
     ],
   },
@@ -62,7 +62,7 @@ export const metadata: Metadata = {
   // Twitter Card
   twitter: {
     card: "summary_large_image",
-    title: "Kamal Bhatt - Digital Marketing Services in Dehradun",
+    title: "Meegan Media - Digital Marketing Services in Dehradun",
     description:
       "Expert digital marketing services in Dehradun, Uttarakhand. SEO, social media, content marketing, and brand strategy.",
     images: ["https://kamalbhatt.com/twitter-image.jpg"],
