@@ -3,6 +3,9 @@ import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import Header from "./components/header";
 import Footer from "./components/footer";
+import Analytics from "./components/Analytics";
+import Script from 'next/script'
+const GA_ID = process.env.NEXT_PUBLIC_GA_ID
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -108,6 +111,22 @@ export default function RootLayout({
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
         <meta name="google-site-verification" content="4AVLFRjOl_GwqUWELsUq9wkgynfMUhrQa1lpapUR3ko" />
+        {process.env.NODE_ENV === 'production' && GA_ID && (
+          <>
+            <Script
+              strategy="afterInteractive"
+              src={`https://www.googletagmanager.com/gtag/js?id=${GA_ID}`}
+            />
+            <Script id="gtag-init" strategy="afterInteractive">
+              {`
+                window.dataLayer = window.dataLayer || [];
+                function gtag(){dataLayer.push(arguments);}
+                gtag('js', new Date());
+                gtag('config', '${GA_ID}', { anonymize_ip: true });
+              `}
+            </Script>
+          </>
+        )}
       </head>
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased bg-white text-gray-900 dark:bg-gray-950 dark:text-gray-50`}
@@ -119,6 +138,7 @@ export default function RootLayout({
             {children}
           </main>
           <Footer />
+          {process.env.NODE_ENV === 'production' && <Analytics />}
         </div>
       </body>
     </html>

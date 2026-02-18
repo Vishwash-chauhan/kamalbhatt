@@ -2,6 +2,7 @@
 
 import { FormEvent, useState } from 'react';
 import { Send } from 'lucide-react';
+import { event } from '../../lib/gtag';
 
 interface FormData {
   name: string;
@@ -90,7 +91,12 @@ export default function ContactForm() {
     // clear previous server errors
     setServerErrors([]);
 
+    // record a submit attempt (no PII)
+    try { event('contact_form_attempt', { origin: 'website' }) } catch {}
+
     if (!validateForm()) {
+      // validation error (no field values / no PII)
+      try { event('contact_form_validation_error', { origin: 'website' }) } catch {}
       return;
     }
 
@@ -108,6 +114,16 @@ export default function ContactForm() {
 
       if (response.ok) {
         setSubmitStatus('success');
+        // success event — DO NOT SEND PII. send non-identifying meta only.
+        try {
+          event('contact_form_submit_success', {
+            services_count: formData.services.length,
+            has_phone: Boolean(formData.phone),
+            message_length: formData.message.trim().length,
+            origin: 'website',
+          })
+        } catch {}
+
         setFormData({
           name: '',
           email: '',
@@ -121,6 +137,14 @@ export default function ContactForm() {
         setTimeout(() => setSubmitStatus('idle'), 5000);
       } else {
         const payload = await response.json().catch(() => null);
+        try {
+          event('contact_form_submit_error', {
+            status: payload?.status ?? 'error',
+            has_payload_message: !!payload?.message,
+            origin: 'website',
+          })
+        } catch {}
+
         if (payload?.errors && Array.isArray(payload.errors)) {
           setServerErrors(payload.errors);
         } else if (payload?.message) {
@@ -131,6 +155,7 @@ export default function ContactForm() {
       }
     } catch (error) {
       console.error('Form submission error:', error);
+      try { event('contact_form_submit_error', { error: 'network', origin: 'website' }) } catch {}
       setSubmitStatus('error');
       setServerErrors(['An unexpected error occurred. Please try again later.']);
     } finally {
@@ -310,6 +335,7 @@ export default function ContactForm() {
         <button
           type="submit"
           disabled={isSubmitting}
+          onClick={() => event('contact_form_click_cta', { origin: 'website' })}
           className="w-full flex items-center justify-center gap-2 bg-secondary hover:bg-secondary/90 disabled:bg-gray-400 text-gray-900 font-bold px-6 py-3 rounded-lg transition duration-300"
         >
           <Send className="w-5 h-5" />
