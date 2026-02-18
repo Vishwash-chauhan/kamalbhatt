@@ -1,3 +1,4 @@
+import React, { Suspense } from 'react'
 import type { Metadata, Viewport } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
@@ -138,7 +139,11 @@ export default function RootLayout({
             {children}
           </main>
           <Footer />
-          {process.env.NODE_ENV === 'production' && <Analytics />}
+          {process.env.NODE_ENV === 'production' && (
+            <Suspense fallback={null}>
+              <Analytics />
+            </Suspense>
+          )}
         </div>
       </body>
     </html>
