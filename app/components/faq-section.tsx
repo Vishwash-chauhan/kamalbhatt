@@ -1,10 +1,11 @@
 'use client';
 
+import React from 'react';
 import { useState } from 'react';
 
 interface FAQ {
   question: string;
-  answer: string;
+  answer: React.ReactNode;
 }
 
 interface FAQSectionProps {
@@ -73,9 +74,9 @@ export default function FAQSection({
                     ? 'bg-gray-50 dark:bg-gray-900'
                     : 'bg-white dark:bg-gray-950'
                 }`}>
-                  <p className="text-gray-600 dark:text-gray-400">
+                  <div className="text-gray-600 dark:text-gray-400">
                     {faq.answer}
-                  </p>
+                  </div>
                 </div>
               )}
             </div>
