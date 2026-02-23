@@ -157,7 +157,7 @@ export default function Header() {
             >
               About
             </Link>
-            {/* <Link 
+            <Link 
               href="/portfolio" 
               className={`transition ${
                 isActive('/portfolio')
@@ -166,7 +166,7 @@ export default function Header() {
               }`}
             >
               Portfolio
-            </Link> */}
+            </Link>
             <Link 
               href="/digital-marketing-playbook" 
               className={`transition ${

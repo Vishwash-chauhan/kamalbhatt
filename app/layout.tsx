@@ -29,15 +29,15 @@ export const metadata: Metadata = {
     template: "%s | Meegan Media - Global Digital Marketing Agency",
   },
   description:
-    "Expert digital marketing services in Dehradun, Uttarakhand. SEO, social media, content marketing, and brand strategy to grow your business online.",
+    "Global Digital Markeiting Agency. SEO, social media, content marketing, and brand strategy to grow your business online.",
   keywords: [
-    "digital marketing dehradun",
-    "seo services dehradun",
-    "social media marketing uttrakhand",
-    "digital marketing uttrakhand",
-    "kamal bhatt digital marketing",
-    "content marketing dehradun",
-    "brand strategy dehradun",
+    "digital marketing",
+    "seo services",
+    "social media marketing",
+    "digital marketing",
+    "meegan media digital marketing",
+    "content marketing",
+    "brand strategy",
     "online marketing consultant",
   ],
   authors: [{ name: "Kamal Bhatt" }],
@@ -52,7 +52,7 @@ export const metadata: Metadata = {
     siteName: "Meegan Media - Global Digital Marketing Agency",
     title: "Meegan Media - Global Digital Marketing Agency",
     description:
-      "Expert digital marketing services in Dehradun, Uttarakhand. SEO, social media, content marketing, and brand strategy to grow your business online.",
+      "Global Digital Marketing Agency. SEO, social media, content marketing, and brand strategy to grow your business online.",
     images: [
       {
         url: "https://meegan-media.com/og-image.jpg",
@@ -68,7 +68,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Meegan Media - Global Digital Marketing Agency",
     description:
-      "Expert digital marketing services in Dehradun, Uttarakhand. SEO, social media, content marketing, and brand strategy.",
+      "Global Digital Marketing Agency. SEO, social media, content marketing, and brand strategy.",
     images: ["https://meegan-media.com/twitter-image.jpg"],
   },
   
