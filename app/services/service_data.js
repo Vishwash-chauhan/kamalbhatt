@@ -1,3 +1,5 @@
+import React from 'react';
+
 export const services = [
   {
     slug: 'seo-optimisation',
@@ -112,47 +114,571 @@ export const services = [
       },
     },
 faqs: [
-  {
-    question: 'What is Answer Engine Optimization (AEO)?',
-    answer:
-      'Answer Engine Optimization (AEO) is the practice of optimizing content to appear in AI-powered search results like ChatGPT, Google AI Overviews, Gemini, and Perplexity. Unlike traditional SEO that focuses on rankings, AEO ensures your content becomes the definitive answer that AI engines cite and display to users. With 60% of Google searches resulting in zero clicks, AEO is critical for 2026 visibility.',
-  },
-  {
-    question: 'How much do SEO services cost?',
-    answer:
-      'Professional SEO services typically cost between $1,000-$5,000 per month depending on project scope, competition, and business size. Pricing includes technical audits, content optimization, link building, and reporting. Small businesses can start with local SEO packages from $800/month, while enterprise SEO for competitive industries ranges $3,000-$10,000/month. Contact me for a customized quote.',
-  },
-  {
-    question: 'How long does it take to see SEO results?',
-    answer:
-      'Initial SEO improvements appear in 3-6 months with consistent effort. Significant ranking gains and traffic increases typically occur at 6-12 months. SEO is a long-term investment—unlike paid ads, organic rankings compound over time. Technical fixes show faster results (1-2 months), while competitive keywords require 6-12+ months of sustained optimization.',
-  },
-  {
-    question: "What's the difference between SEO and AEO?",
-    answer:
-      'Traditional SEO optimizes for ranking in search engine results pages (SERPs) to drive clicks. Answer Engine Optimization (AEO) optimizes for being the direct answer in AI platforms—ChatGPT, Google AI Overviews, voice assistants. AEO requires concise, question-focused content with schema markup and E-E-A-T signals. Both are complementary: strong SEO foundations enable effective AEO.',
-  },
-  {
-    question: 'Do you guarantee #1 rankings on Google?',
-    answer:
-      'No ethical SEO professional can guarantee #1 rankings—Google uses 200+ ranking factors, and results depend on competition, algorithm updates, and content quality. However, I guarantee transparent reporting, white-hat strategies, and measurable improvements in organic traffic, keyword rankings, and domain authority within agreed timelines.',
-  },
-  {
-    question: 'What is E-E-A-T and why does it matter?',
-    answer:
-      "E-E-A-T stands for Experience, Expertise, Authoritativeness, and Trustworthiness—Google's quality signals. Strong E-E-A-T means: demonstrating first-hand experience, showcasing subject expertise, building authoritative citations and backlinks, and establishing trust through transparency. E-E-A-T is critical for YMYL (Your Money Your Life) topics and increasingly important for AI search visibility.",
-  },
-  {
-    question: 'Can you help with local SEO and Google Business Profile?',
-    answer:
-      'Yes! Local SEO services include complete Google Business Profile optimization, local citation building, review generation strategy, "near me" search targeting, and local link building. Local SEO is essential for businesses with physical locations or serving specific geographic areas. Results typically appear faster (2-4 months) than national SEO.',
-  },
-  {
-    question: 'Do you provide SEO for e-commerce websites?',
-    answer:
-      'Absolutely! E-commerce SEO includes product page optimization, category page strategies, technical fixes for large catalogs, schema markup for products, internal linking optimization, and conversion-focused content. I work with Shopify, WooCommerce, Magento, and custom platforms to improve organic visibility and sales.',
-  },
-],
+      {
+        question: 'How long does SEO take to show results?',
+        answer: (
+          <>
+            <p>
+              SEO typically shows initial improvements in <strong>4-8 weeks</strong> with technical fixes appearing fastest. Measurable ranking gains occur at <strong>3-6 months</strong>, and significant traffic increases happen at <strong>6-12 months</strong>. SEO is a long-term investment where results compound over time, unlike paid ads which stop when spending stops.
+            </p>
+
+            <p className="font-semibold mt-4">Timeline Breakdown:</p>
+            <table className="w-full text-sm mt-3 border-collapse">
+              <thead className="bg-gray-100 dark:bg-gray-800">
+                <tr>
+                  <th className="px-3 py-2 text-left text-gray-700 dark:text-gray-300">Phase</th>
+                  <th className="px-3 py-2 text-left text-gray-700 dark:text-gray-300">Timeframe</th>
+                  <th className="px-3 py-2 text-left text-gray-700 dark:text-gray-300">What You See</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr className="border-t">
+                  <td className="px-3 py-2 text-gray-600 dark:text-gray-400">Quick Wins</td>
+                  <td className="px-3 py-2 text-gray-600 dark:text-gray-400">4-8 weeks</td>
+                  <td className="px-3 py-2 text-gray-600 dark:text-gray-400">Technical fixes, faster site speed, initial ranking movement</td>
+                </tr>
+                <tr className="border-t">
+                  <td className="px-3 py-2 text-gray-600 dark:text-gray-400">Growth Phase</td>
+                  <td className="px-3 py-2 text-gray-600 dark:text-gray-400">3-6 months</td>
+                  <td className="px-3 py-2 text-gray-600 dark:text-gray-400">Top 10 rankings for target keywords, traffic increase 50–150%</td>
+                </tr>
+                <tr className="border-t">
+                  <td className="px-3 py-2 text-gray-600 dark:text-gray-400">Maturity Phase</td>
+                  <td className="px-3 py-2 text-gray-600 dark:text-gray-400">6-12 months</td>
+                  <td className="px-3 py-2 text-gray-600 dark:text-gray-400">Top 3 rankings, 200–400% traffic growth, consistent leads</td>
+                </tr>
+                <tr className="border-t">
+                  <td className="px-3 py-2 text-gray-600 dark:text-gray-400">Compound Phase</td>
+                  <td className="px-3 py-2 text-gray-600 dark:text-gray-400">12+ months</td>
+                  <td className="px-3 py-2 text-gray-600 dark:text-gray-400">Market dominance, reduced cost per lead, sustainable growth</td>
+                </tr>
+              </tbody>
+            </table>
+
+            <p className="mt-3">
+              <strong>What Affects Timeline:</strong> industry competition level, current website technical health, content quality and quantity, backlink profile strength, budget and resource allocation.
+            </p>
+            <p className="mt-3">
+              Meegan Media clients typically see first measurable lift in 4-8 weeks, with significant results by month 6. For example, PMMITAS grew enrollments from 50 to 180/month within 6 months of SEO implementation.
+            </p>
+          </>
+        ),
+      },
+      {
+        question: 'How much does SEO cost per month?',
+        answer: (
+          <>
+            <p>
+              Professional SEO services cost <strong>$800-$4,000 per month</strong> depending on scope and competition. Local SEO starts at $800/month for small businesses, growth SEO costs $2,000/month for competitive markets, and enterprise SEO runs $4,000+/month for national campaigns. One-time SEO services range from $400-$1,500 per project.
+            </p>
+
+            <p className="font-semibold mt-4">SEO Pricing Breakdown:</p>
+            <table className="w-full text-sm mt-3 border-collapse">
+              <thead className="bg-gray-100 dark:bg-gray-800">
+                <tr>
+                  <th className="px-3 py-2 text-left text-gray-700 dark:text-gray-300">Package</th>
+                  <th className="px-3 py-2 text-left text-gray-700 dark:text-gray-300">Monthly Cost</th>
+                  <th className="px-3 py-2 text-left text-gray-700 dark:text-gray-300">Best For</th>
+                  <th className="px-3 py-2 text-left text-gray-700 dark:text-gray-300">What’s Included</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr className="border-t">
+                  <td className="px-3 py-2 text-gray-600 dark:text-gray-400">Local SEO</td>
+                  <td className="px-3 py-2 text-gray-600 dark:text-gray-400">$800/month</td>
+                  <td className="px-3 py-2 text-gray-600 dark:text-gray-400">Local businesses, service areas</td>
+                  <td className="px-3 py-2 text-gray-600 dark:text-gray-400">GMB optimization, 10 pages, 15 local citations, ranking tracking</td>
+                </tr>
+                <tr className="border-t">
+                  <td className="px-3 py-2 text-gray-600 dark:text-gray-400">Growth SEO</td>
+                  <td className="px-3 py-2 text-gray-600 dark:text-gray-400">$2,000/month</td>
+                  <td className="px-3 py-2 text-gray-600 dark:text-gray-400">Growing businesses, regional reach</td>
+                  <td className="px-3 py-2 text-gray-600 dark:text-gray-400">25 pages optimized, 10-15 national keywords, technical SEO, 5 backlinks/month, AEO</td>
+                </tr>
+                <tr className="border-t">
+                  <td className="px-3 py-2 text-gray-600 dark:text-gray-400">Enterprise SEO</td>
+                  <td className="px-3 py-2 text-gray-600 dark:text-gray-400">$4,000/month</td>
+                  <td className="px-3 py-2 text-gray-600 dark:text-gray-400">Competitive industries, national scale</td>
+                  <td className="px-3 py-2 text-gray-600 dark:text-gray-400">Unlimited pages, 25+ keywords, 10+ backlinks/month, content creation, dedicated manager</td>
+                </tr>
+              </tbody>
+            </table>
+
+            <p className="mt-3">
+              One-Time SEO Services: SEO Audit $600, Speed Optimization $900, Schema Markup $400, Content SEO Package $1,250, Link Building Campaign $1,500, AEO Implementation $750.
+            </p>
+
+            <p className="mt-3">
+              <strong>What Determines Cost:</strong> number of target keywords, geographic scope (local vs national), industry competition, current website condition, content creation needs.
+            </p>
+
+            <p className="mt-3">Meegan Media offers transparent pricing with no hidden fees. Contact for customized quote based on your specific goals.</p>
+          </>
+        ),
+      },
+      {
+        question: 'What is Answer Engine Optimization (AEO) and why does it matter in 2026?',
+        answer: (
+          <>
+            <p>
+              Answer Engine Optimization (AEO) is optimizing content to appear in AI-powered search results like Google AI Overviews, ChatGPT, Perplexity, and Claude. Unlike traditional SEO focusing on rankings, AEO ensures your content becomes the authoritative answer AI engines cite. Critical because 60% of Google searches now result in zero clicks.
+            </p>
+
+            <p className="font-semibold mt-4">Traditional SEO vs AEO:</p>
+            <table className="w-full text-sm mt-3 border-collapse">
+              <thead className="bg-gray-100 dark:bg-gray-800">
+                <tr>
+                  <th className="px-3 py-2 text-left text-gray-700 dark:text-gray-300">Factor</th>
+                  <th className="px-3 py-2 text-left text-gray-700 dark:text-gray-300">Traditional SEO</th>
+                  <th className="px-3 py-2 text-left text-gray-700 dark:text-gray-300">Answer Engine Optimization (AEO)</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr className="border-t">
+                  <td className="px-3 py-2 text-gray-600 dark:text-gray-400">Goal</td>
+                  <td className="px-3 py-2 text-gray-600 dark:text-gray-400">Rank in top 10 results</td>
+                  <td className="px-3 py-2 text-gray-600 dark:text-gray-400">Be THE cited answer in AI responses</td>
+                </tr>
+                <tr className="border-t">
+                  <td className="px-3 py-2 text-gray-600 dark:text-gray-400">Format</td>
+                  <td className="px-3 py-2 text-gray-600 dark:text-gray-400">Keyword-optimized pages</td>
+                  <td className="px-3 py-2 text-gray-600 dark:text-gray-400">Concise, direct answers (30-50 words)</td>
+                </tr>
+                <tr className="border-t">
+                  <td className="px-3 py-2 text-gray-600 dark:text-gray-400">Platform</td>
+                  <td className="px-3 py-2 text-gray-600 dark:text-gray-400">Google SERPs</td>
+                  <td className="px-3 py-2 text-gray-600 dark:text-gray-400">ChatGPT, Google AI, Perplexity, Claude</td>
+                </tr>
+                <tr className="border-t">
+                  <td className="px-3 py-2 text-gray-600 dark:text-gray-400">Clicks</td>
+                  <td className="px-3 py-2 text-gray-600 dark:text-gray-400">User clicks to visit site</td>
+                  <td className="px-3 py-2 text-gray-600 dark:text-gray-400">AI displays answer directly (zero-click)</td>
+                </tr>
+                <tr className="border-t">
+                  <td className="px-3 py-2 text-gray-600 dark:text-gray-400">Strategy</td>
+                  <td className="px-3 py-2 text-gray-600 dark:text-gray-400">Backlinks, keywords, content depth</td>
+                  <td className="px-3 py-2 text-gray-600 dark:text-gray-400">E-E-A-T, schema markup, FAQ structure</td>
+                </tr>
+              </tbody>
+            </table>
+
+            <p className="mt-3 font-semibold">Why AEO Matters in 2026:</p>
+            <ul className="list-disc list-inside mt-2 text-sm">
+              <li>60% of searches end without clicks (AI gives answer)</li>
+              <li>Google AI Overviews appear in 85%+ of informational queries</li>
+              <li>ChatGPT has 200M+ active users searching for answers</li>
+              <li>Voice search relies entirely on AI-cited sources</li>
+              <li>Perplexity, Claude, Gemini gaining search market share</li>
+            </ul>
+
+            <p className="mt-3 font-semibold">AEO Best Practices:</p>
+            <ul className="list-disc list-inside mt-2 text-sm">
+              <li>Write 30-50 word direct answers to questions</li>
+              <li>Use FAQ schema markup</li>
+              <li>Implement E-E-A-T signals (expertise, authority, trust)</li>
+              <li>Structure content with clear H2/H3 headings</li>
+              <li>Include tables, bullet points for easy parsing</li>
+            </ul>
+
+            <p className="mt-3">Meegan Media includes AEO implementation in Growth and Enterprise SEO packages, ensuring visibility across both traditional search and AI platforms.</p>
+          </>
+        ),
+      },
+      {
+        question: 'What is the difference between local SEO and national SEO?',
+        answer: (
+          <>
+            <p>
+              Local SEO targets customers in specific geographic areas through Google Business Profile optimization, local citations, and “near me” searches. National SEO targets broader audiences across entire countries with competitive keyword strategies and authority building. Local SEO shows faster results (<strong>2-4 months</strong>) while national SEO takes <strong>6-12 months</strong>.
+            </p>
+
+            <p className="font-semibold mt-4">Local SEO vs National SEO:</p>
+            <table className="w-full text-sm mt-3 border-collapse">
+              <thead className="bg-gray-100 dark:bg-gray-800">
+                <tr>
+                  <th className="px-3 py-2 text-left text-gray-700 dark:text-gray-300">Aspect</th>
+                  <th className="px-3 py-2 text-left text-gray-700 dark:text-gray-300">Local SEO</th>
+                  <th className="px-3 py-2 text-left text-gray-700 dark:text-gray-300">National SEO</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr className="border-t"><td className="px-3 py-2 text-gray-600 dark:text-gray-400">Target Audience</td><td className="px-3 py-2 text-gray-600 dark:text-gray-400">City, region, or service area</td><td className="px-3 py-2 text-gray-600 dark:text-gray-400">Entire country or multiple countries</td></tr>
+                <tr className="border-t"><td className="px-3 py-2 text-gray-600 dark:text-gray-400">Keywords</td><td className="px-3 py-2 text-gray-600 dark:text-gray-400">“dentist Haldwani”, “plumber near me”</td><td className="px-3 py-2 text-gray-600 dark:text-gray-400">“best CRM software”, “SEO services”</td></tr>
+                <tr className="border-t"><td className="px-3 py-2 text-gray-600 dark:text-gray-400">Timeline</td><td className="px-3 py-2 text-gray-600 dark:text-gray-400">2-4 months to results</td><td className="px-3 py-2 text-gray-600 dark:text-gray-400">6-12 months to results</td></tr>
+                <tr className="border-t"><td className="px-3 py-2 text-gray-600 dark:text-gray-400">Cost</td><td className="px-3 py-2 text-gray-600 dark:text-gray-400">$800-$1,500/month</td><td className="px-3 py-2 text-gray-600 dark:text-gray-400">$2,000-$5,000/month</td></tr>
+                <tr className="border-t"><td className="px-3 py-2 text-gray-600 dark:text-gray-400">Primary Platform</td><td className="px-3 py-2 text-gray-600 dark:text-gray-400">Google Business Profile, Map Pack</td><td className="px-3 py-2 text-gray-600 dark:text-gray-400">Organic search results</td></tr>
+                <tr className="border-t"><td className="px-3 py-2 text-gray-600 dark:text-gray-400">Competition</td><td className="px-3 py-2 text-gray-600 dark:text-gray-400">Local businesses</td><td className="px-3 py-2 text-gray-600 dark:text-gray-400">National/international companies</td></tr>
+              </tbody>
+            </table>
+
+            <p className="mt-3">Local SEO Strategy:</p>
+            <ul className="list-disc list-inside mt-2 text-sm">
+              <li>Google Business Profile optimization</li>
+              <li>Local citation building (Yelp, Yellow Pages, industry directories)</li>
+              <li>“Near me” keyword targeting</li>
+              <li>Service area pages</li>
+              <li>Local review generation</li>
+              <li>Geographic-specific content</li>
+            </ul>
+            <p className="mt-3">National SEO Strategy:</p>
+            <ul className="list-disc list-inside mt-2 text-sm">
+              <li>High-volume competitive keywords</li>
+              <li>Comprehensive content marketing</li>
+              <li>Authority backlink building</li>
+              <li>Technical SEO excellence</li>
+              <li>National brand awareness</li>
+            </ul>
+            <p className="mt-3 font-semibold">Which Do You Need?</p>
+            <ul className="list-disc list-inside mt-2 text-sm">
+              <li><strong>Choose Local SEO if:</strong> Physical location or service area business; Customers come from specific city/region; Budget under $1,500/month; Need results in 2-4 months</li>
+              <li><strong>Choose National SEO if:</strong> E-commerce or online services; Customers nationwide; Budget $2,000+/month; Building long-term market authority</li>
+            </ul>
+            <p className="mt-3">Meegan Media offers both Local SEO ($800/month) and National Growth SEO ($2,000/month) packages, or combined strategies for businesses expanding from local to national markets.</p>
+          </>
+        ),
+      },
+      {
+        question: 'What is E-E-A-T in SEO and why does Google care about it?',
+        answer: (
+          <>
+            <p>
+              E-E-A-T stands for Experience, Expertise, Authoritativeness, and Trustworthiness — Google’s quality framework for evaluating content credibility. Websites with strong E-E-A-T rank higher because they demonstrate first-hand experience, subject expertise, industry authority through citations and backlinks, and trustworthiness through transparency. Critical for YMYL topics and AI search visibility.
+            </p>
+            <p className="font-semibold mt-4">The Four E-E-A-T Components:</p>
+            <ol className="list-decimal list-inside mt-2 text-sm space-y-1">
+              <li>
+                <strong>Experience (First E)</strong> - Demonstrates actual hands-on experience with the topic - Shows real-world application and results - Includes case studies, client testimonials, portfolio work - Example: “We managed SEO for 100+ clients across 10 industries”
+              </li>
+              <li>
+                <strong>Expertise</strong> - Author credentials and qualifications displayed - Subject matter depth and accuracy - Professional certifications mentioned - Example: “Kamal Bhatt, 10+ years digital marketing, Google Ads certified”
+              </li>
+              <li>
+                <strong>Authoritativeness</strong> - Recognized as a go-to source in the industry - Cited by other authoritative websites - Quality backlinks from trusted domains - Industry awards, speaking engagements, publications - Example: Cited by Search Engine Journal, featured in industry podcasts
+              </li>
+              <li>
+                <strong>Trustworthiness</strong> - Transparent about who runs the site - Contact information clearly visible - Secure website (HTTPS) - Clear privacy policy and terms - Honest about limitations (no “guaranteed #1 rankings”)
+              </li>
+            </ol>
+
+            <p className="font-semibold mt-4">Why E-E-A-T Matters:</p>
+            <table className="w-full text-sm mt-3 border-collapse">
+              <thead className="bg-gray-100 dark:bg-gray-800">
+                <tr>
+                  <th className="px-3 py-2 text-left text-gray-700 dark:text-gray-300">Impact Area</th>
+                  <th className="px-3 py-2 text-left text-gray-700 dark:text-gray-300">How E-E-A-T Affects It</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr className="border-t">
+                  <td className="px-3 py-2 text-gray-600 dark:text-gray-400">Google Rankings</td>
+                  <td className="px-3 py-2 text-gray-600 dark:text-gray-400">Higher E-E-A-T = better rankings, especially for competitive keywords</td>
+                </tr>
+                <tr className="border-t">
+                  <td className="px-3 py-2 text-gray-600 dark:text-gray-400">AI Citations</td>
+                  <td className="px-3 py-2 text-gray-600 dark:text-gray-400">ChatGPT, Perplexity prefer citing high E-E-A-T sources</td>
+                </tr>
+                <tr className="border-t">
+                  <td className="px-3 py-2 text-gray-600 dark:text-gray-400">YMYL Topics</td>
+                  <td className="px-3 py-2 text-gray-600 dark:text-gray-400">Essential for medical, financial, legal content (Your Money Your Life)</td>
+                </tr>
+                <tr className="border-t">
+                  <td className="px-3 py-2 text-gray-600 dark:text-gray-400">Trust & Conversions</td>
+                  <td className="px-3 py-2 text-gray-600 dark:text-gray-400">Users more likely to convert from authoritative sources</td>
+                </tr>
+                <tr className="border-t">
+                  <td className="px-3 py-2 text-gray-600 dark:text-gray-400">Algorithm Updates</td>
+                  <td className="px-3 py-2 text-gray-600 dark:text-gray-400">Google increasingly rewards E-E-A-T in core updates</td>
+                </tr>
+              </tbody>
+            </table>
+
+            <p className="font-semibold mt-4">How to Build E-E-A-T:</p>
+            <ul className="list-disc list-inside mt-2 text-sm">
+              <li>Add detailed author bios with credentials</li>
+              <li>Include real case studies and client results</li>
+              <li>Get backlinks from industry authorities (.edu, news sites, industry publications)</li>
+              <li>Display certifications and awards</li>
+              <li>Show team expertise and experience</li>
+              <li>Include client testimonials with full attribution</li>
+              <li>Be transparent about methods and pricing</li>
+              <li>Publish original research and insights</li>
+            </ul>
+
+            <p className="mt-3">Meegan Media demonstrates E-E-A-T through 100+ client success stories, 10+ years proven experience, and transparency about methods and realistic timelines — no false promises.</p>
+          </>
+        ),
+      },
+      {
+        question: 'Can SEO agencies guarantee #1 rankings on Google?',
+        answer: (
+          <>
+            <p>
+              No ethical SEO agency can guarantee #1 rankings because Google uses 200+ ranking factors, and results depend on competition, algorithm updates, and content quality. Agencies promising guaranteed #1 rankings typically use black-hat techniques that risk Google penalties. Instead, reputable agencies guarantee transparent reporting, white-hat strategies, and measurable improvements in traffic, rankings, and conversions.
+            </p>
+
+            <p className="font-semibold mt-4">Why #1 Rankings Can’t Be Guaranteed:</p>
+            <ol className="list-decimal list-inside mt-2 text-sm space-y-1">
+              <li><strong>Google Controls Rankings (Not SEO Agencies)</strong> - Google uses 200+ ranking signals; algorithm updates change rankings constantly (500+ updates/year); competitors actively improve their SEO too; user behavior affects rankings (CTR, dwell time, bounce rate).</li>
+              <li><strong>Industry Competition Varies</strong> - Low-competition keywords easier to rank; high-competition keywords extremely difficult; local vs national competition differs drastically; new websites need time to build authority.</li>
+              <li><strong>Google Penalties Risk</strong> - Black-hat tactics (keyword stuffing, link schemes) = penalties; guaranteed rankings often mean manipulation tactics; penalties can remove site from Google entirely; recovery from penalties takes 6-12+ months.</li>
+            </ol>
+
+            <p className="font-semibold mt-4">What Ethical SEO Agencies CAN Guarantee:</p>
+            <ul className="list-disc list-inside mt-2 text-sm">
+              <li>✅ Transparent Reporting – Real-time access to ranking data, monthly traffic and conversion reports, clear explanation of work performed</li>
+              <li>✅ White-Hat Strategies – Google-compliant optimization techniques, no spammy link building, quality content creation, technical best practices</li>
+              <li>✅ Measurable Improvements – Traffic growth targets (50-300% in 6-12 months), keyword ranking improvements (top 10, then top 3), domain authority increases, conversion rate optimization</li>
+              <li>✅ Realistic Timelines – 4-8 weeks: Initial improvements; 3-6 months: Significant ranking gains; 6-12 months: Market leadership position; 12+ months: Sustained competitive advantage</li>
+            </ul>
+
+            <p className="font-semibold mt-4">Red Flags to Avoid:</p>
+            <ul className="list-disc list-inside mt-2 text-sm">
+              <li>❌ “Guaranteed #1 rankings in 30 days”</li>
+              <li>❌ “We have a special relationship with Google”</li>
+              <li>❌ “Guaranteed results or your money back” (rankings can’t be guaranteed)</li>
+              <li>❌ Extremely cheap pricing ($100-300/month for full SEO)</li>
+              <li>❌ No transparency about methods used</li>
+            </ul>
+
+            <p className="mt-3">What to Expect Instead: realistic goal setting based on competition analysis, incremental ranking improvements month over month, focus on revenue and conversions, not just rankings, and flexibility to adapt strategy based on results.</p>
+            <p className="mt-3">Meegan Media guarantees transparent reporting, ethical white-hat strategies, and measurable traffic/conversion improvements within agreed timelines — but never guaranteed rankings, because that’s impossible to promise honestly.</p>
+          </>
+        ),
+      },
+      {
+        question: 'What’s included in a professional SEO audit?',
+        answer: (
+          <>
+            <p>
+              A professional SEO audit analyzes 200+ factors across technical health, content quality, backlink profile, and competitive positioning. It identifies all optimization opportunities, prioritizes fixes by impact, and delivers an actionable roadmap. Comprehensive audits cover site speed, mobile usability, indexation, keyword gaps, content weaknesses, and toxic backlinks.
+            </p>
+
+            <p className="font-semibold mt-4">Complete SEO Audit Components:</p>
+            <ul className="list-disc list-inside mt-2 text-sm space-y-1">
+              <li><strong>Technical SEO Analysis:</strong> Site speed and Core Web Vitals scores; mobile responsiveness and usability; crawlability and indexation issues; XML sitemap and robots.txt review; HTTPS security and SSL certificates; duplicate content identification; canonical tag implementation; 404 errors and broken links; site architecture and URL structure.</li>
+              <li><strong>On-Page SEO Evaluation:</strong> Title tag and meta description optimization; header tag (H1, H2, H3) structure; keyword usage and density; content quality and depth; image optimization (ALT tags, file size); internal linking structure; schema markup implementation; page-level optimization opportunities.</li>
+              <li><strong>Off-Page SEO Assessment:</strong> Backlink profile quality analysis; toxic backlink identification; domain authority metrics; competitor backlink comparison; brand mention tracking; link building opportunities; social signal analysis.</li>
+              <li><strong>Content & Keyword Analysis:</strong> Current keyword rankings; keyword gap analysis (vs competitors); content gap identification; content quality scoring; topic cluster opportunities; cannibalization issues; user intent alignment.</li>
+              <li><strong>Competitive Analysis:</strong> Top 3-5 competitor SEO strategies; competitor keyword rankings; competitor backlink profiles; content strategy comparison; market share analysis.</li>
+              <li><strong>AEO &amp; AI Search Readiness:</strong> FAQ schema implementation status; answer-focused content evaluation; E-E-A-T signal assessment; featured snippet opportunities; voice search optimization.</li>
+            </ul>
+
+            <p className="font-semibold mt-4">Audit Deliverables:</p>
+            <table className="w-full text-sm mt-3 border-collapse">
+              <thead className="bg-gray-100 dark:bg-gray-800">
+                <tr>
+                  <th className="px-3 py-2 text-left text-gray-700 dark:text-gray-300">Component</th>
+                  <th className="px-3 py-2 text-left text-gray-700 dark:text-gray-300">What You Get</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr className="border-t">
+                  <td className="px-3 py-2 text-gray-600 dark:text-gray-400">Written Report</td>
+                  <td className="px-3 py-2 text-gray-600 dark:text-gray-400">30-50 page comprehensive analysis</td>
+                </tr>
+                <tr className="border-t">
+                  <td className="px-3 py-2 text-gray-600 dark:text-gray-400">Priority Matrix</td>
+                  <td className="px-3 py-2 text-gray-600 dark:text-gray-400">Issues ranked by impact (high/medium/low)</td>
+                </tr>
+                <tr className="border-t">
+                  <td className="px-3 py-2 text-gray-600 dark:text-gray-400">Action Plan</td>
+                  <td className="px-3 py-2 text-gray-600 dark:text-gray-400">90-day roadmap with specific tasks</td>
+                </tr>
+                <tr className="border-t">
+                  <td className="px-3 py-2 text-gray-600 dark:text-gray-400">Competitor Benchmark</td>
+                  <td className="px-3 py-2 text-gray-600 dark:text-gray-400">How you compare to top 3-5 competitors</td>
+                </tr>
+                <tr className="border-t">
+                  <td className="px-3 py-2 text-gray-600 dark:text-gray-400">Quick Wins List</td>
+                  <td className="px-3 py-2 text-gray-600 dark:text-gray-400">Immediate fixes for fast results</td>
+                </tr>
+                <tr className="border-t">
+                  <td className="px-3 py-2 text-gray-600 dark:text-gray-400">Long-term Strategy</td>
+                  <td className="px-3 py-2 text-gray-600 dark:text-gray-400">6-12 month growth plan</td>
+                </tr>
+              </tbody>
+            </table>
+
+            <p className="mt-4">Timeline: Complete audit delivered in 7-10 business days<br />Cost: Professional SEO audits typically cost $600-$1,500 depending on site size</p>
+
+            <p className="mt-3">Meegan Media’s Complete SEO Audit ($600) covers 200+ optimization factors and delivers a prioritized action plan. Clients use the audit to either implement fixes themselves or engage for ongoing SEO services.</p>
+          </>
+        ),
+      },
+      {
+        question: 'What is local SEO and how does it help my business get more customers?',
+        answer: (
+          <>
+            <p>
+              Local SEO optimizes your online presence to attract customers searching for businesses “near me” or in specific locations. It focuses on Google Business Profile, local citations, location pages, and reviews to rank in the Map Pack (top 3 local results). Effective because 76% of “near me” searchers visit a business within 24 hours.
+            </p>
+
+            <p className="font-semibold mt-4">How Local SEO Drives Customers:</p>
+            <ol className="list-decimal list-inside mt-2 text-sm space-y-1">
+              <li><strong>Google Map Pack Visibility</strong> - Appears above organic results for local searches; shows top 3 businesses with ratings, hours, location; 44% of clicks go to Map Pack results; example: search “dentist Haldwani” → Map Pack shows top 3.</li>
+              <li><strong>“Near Me” Search Dominance</strong> - 46% of all Google searches have local intent; “near me” searches grew 900% in recent years; mobile users rely heavily on local results; voice search often returns local businesses.</li>
+              <li><strong>High-Intent Traffic</strong> - Local searchers have immediate purchase intent; 76% visit a business within 24 hours; 28% of local searches result in purchase; much higher conversion than general traffic.</li>
+            </ol>
+
+            <p className="font-semibold mt-4">Local SEO Components:</p>
+            <table className="w-full text-sm mt-3 border-collapse">
+              <thead className="bg-gray-100 dark:bg-gray-800">
+                <tr>
+                  <th className="px-3 py-2 text-left text-gray-700 dark:text-gray-300">Component</th>
+                  <th className="px-3 py-2 text-left text-gray-700 dark:text-gray-300">What It Does</th>
+                  <th className="px-3 py-2 text-left text-gray-700 dark:text-gray-300">Impact</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr className="border-t">
+                  <td className="px-3 py-2 text-gray-600 dark:text-gray-400">Google Business Profile</td>
+                  <td className="px-3 py-2 text-gray-600 dark:text-gray-400">Your listing in Maps and local results</td>
+                  <td className="px-3 py-2 text-gray-600 dark:text-gray-400">Highest impact - 40% of ranking weight</td>
+                </tr>
+                <tr className="border-t">
+                  <td className="px-3 py-2 text-gray-600 dark:text-gray-400">Local Citations</td>
+                  <td className="px-3 py-2 text-gray-600 dark:text-gray-400">Your business listed on directories (Yelp, Yellow Pages)</td>
+                  <td className="px-3 py-2 text-gray-600 dark:text-gray-400">Builds authority and consistency</td>
+                </tr>
+                <tr className="border-t">
+                  <td className="px-3 py-2 text-gray-600 dark:text-gray-400">Reviews</td>
+                  <td className="px-3 py-2 text-gray-600 dark:text-gray-400">Customer ratings and testimonials</td>
+                  <td className="px-3 py-2 text-gray-600 dark:text-gray-400">Trust factor + ranking signal</td>
+                </tr>
+                <tr className="border-t">
+                  <td className="px-3 py-2 text-gray-600 dark:text-gray-400">Location Pages</td>
+                  <td className="px-3 py-2 text-gray-600 dark:text-gray-400">Service area or multi-location pages</td>
+                  <td className="px-3 py-2 text-gray-600 dark:text-gray-400">Ranks for city/region keywords</td>
+                </tr>
+                <tr className="border-t">
+                  <td className="px-3 py-2 text-gray-600 dark:text-gray-400">Local Backlinks</td>
+                  <td className="px-3 py-2 text-gray-600 dark:text-gray-400">Links from local newspapers, chambers, sponsors</td>
+                  <td className="px-3 py-2 text-gray-600 dark:text-gray-400">Geographic relevance signal</td>
+                </tr>
+              </tbody>
+            </table>
+
+            <p className="font-semibold mt-4">Local SEO Results Timeline:</p>
+            <ul className="list-disc list-inside mt-2 text-sm">
+              <li>Month 1: GMB optimized, citations building started</li>
+              <li>Month 2: Reviews increasing, rankings improving</li>
+              <li>Month 3: Map Pack appearances, traffic growing</li>
+              <li>Month 4-6: Consistent top 3 rankings, lead flow predictable</li>
+            </ul>
+
+            <p className="font-semibold mt-4">Perfect For These Businesses:</p>
+            <ul className="list-disc list-inside mt-2 text-sm space-y-1">
+              <li>Restaurants, cafes, food service</li>
+              <li>Dental, medical, healthcare clinics</li>
+              <li>Law firms, accounting, professional services</li>
+              <li>Salons, spas, beauty services</li>
+              <li>Gyms, fitness studios</li>
+              <li>Plumbers, electricians, home services</li>
+              <li>Retail stores with physical locations</li>
+              <li>Real estate agents</li>
+              <li>Coaching institutes, tutoring centers</li>
+            </ul>
+
+            <p className="font-semibold mt-4">Real Results Example:</p>
+            <p>Business: Dental Clinic, Haldwani<br />Timeline: 6 months<br />Results: Map Pack ranking: Not visible → #1 for “dentist Haldwani”; Patient calls: +380%; Monthly new patients: 25 → 95; Google rating: 4.1 → 4.9 stars (85 reviews)</p>
+
+            <p className="mt-3">Meegan Media’s Local SEO package ($800/month) includes complete GMB optimization, 15 local citations, on-page SEO for 10 pages, and review generation strategy — delivering results in 2-4 months.</p>
+          </>
+        ),
+      },
+      {
+        question: 'Do you provide SEO services for e-commerce websites?',
+        answer: (
+          <>
+            <p>
+              Yes, e-commerce SEO services include product page optimization, category page strategies, technical fixes for large catalogs, product schema markup, internal linking optimization, and conversion-focused content. Services work with Shopify, WooCommerce, Magento, and custom platforms to improve organic rankings, traffic, and online sales.
+            </p>
+
+            <p className="font-semibold mt-4">E-commerce SEO Strategy:</p>
+            <p><strong>Product Page Optimization:</strong> Product title optimization with buying keywords; Detailed, unique product descriptions (not manufacturer text); High-quality product images with ALT tags; Product schema markup (price, availability, reviews); Customer review integration; Related product recommendations.</p>
+            <p><strong>Category Page SEO:</strong> Category descriptions optimized for keywords; Faceted navigation optimization; Breadcrumb navigation; Internal linking to subcategories; Collection page content.</p>
+            <p><strong>Technical E-commerce SEO:</strong> Site speed optimization for large catalogs; Pagination and filtering SEO; Duplicate content prevention (product variants); Image compression and lazy loading; Mobile checkout optimization; Structured data implementation.</p>
+            <p><strong>E-commerce Content Strategy:</strong> Buying guides (“Best X for Y”); Comparison pages (“X vs Y”); How-to content using products; Blog content driving product traffic; User-generated content (reviews, Q&A).</p>
+            <p><strong>E-commerce Link Building:</strong> Product reviews from bloggers/influencers; Industry publication features; Supplier/manufacturer backlinks; Comparison and shopping guides; Digital PR for new products.</p>
+
+            <p className="font-semibold mt-4">E-commerce SEO Results:</p>
+            <table className="w-full text-sm mt-3 border-collapse">
+              <thead className="bg-gray-100 dark:bg-gray-800">
+                <tr>
+                  <th className="px-3 py-2 text-left text-gray-700 dark:text-gray-300">Metric</th>
+                  <th className="px-3 py-2 text-left text-gray-700 dark:text-gray-300">Expected Growth (6 months)</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr className="border-t"><td className="px-3 py-2 text-gray-600 dark:text-gray-400">Organic Traffic</td><td className="px-3 py-2 text-gray-600 dark:text-gray-400">200-400% increase</td></tr>
+                <tr className="border-t"><td className="px-3 py-2 text-gray-600 dark:text-gray-400">Product Page Rankings</td><td className="px-3 py-2 text-gray-600 dark:text-gray-400">50-100 products ranking top 10</td></tr>
+                <tr className="border-t"><td className="px-3 py-2 text-gray-600 dark:text-gray-400">Conversion Rate</td><td className="px-3 py-2 text-gray-600 dark:text-gray-400">15-30% improvement</td></tr>
+                <tr className="border-t"><td className="px-3 py-2 text-gray-600 dark:text-gray-400">Revenue from Organic</td><td className="px-3 py-2 text-gray-600 dark:text-gray-400">3-5X increase</td></tr>
+              </tbody>
+            </table>
+
+            <p className="mt-3">E-commerce Platforms We Work With: Shopify, WooCommerce (WordPress), Magento, BigCommerce, Custom platforms.</p>
+            <p className="mt-3">E-commerce SEO Pricing: Growth SEO package: $2,000/month (25 products optimized); Enterprise SEO: $4,000/month (unlimited products); Custom pricing for large catalogs (1,000+ products).</p>
+
+            <p className="mt-3">Meegan Media has optimized e-commerce stores including SnapShopHub and other online retailers, helping them grow from $2L to $14L+ monthly revenue through organic search.</p>
+          </>
+        ),
+      },
+      {
+        question: 'What’s the difference between SEO and Google Ads for getting website traffic?',
+        answer: (
+          <>
+            <p>
+              SEO builds free organic traffic through rankings over 3-6 months with long-term compounding results. Google Ads delivers instant paid traffic within 24-48 hours but stops when budget stops. SEO has higher long-term ROI but slower start; Google Ads gives immediate leads at ongoing cost. Most businesses benefit from running both simultaneously.
+            </p>
+
+            <p className="font-semibold mt-4">SEO vs Google Ads Comparison:</p>
+            <table className="w-full text-sm mt-3 border-collapse">
+              <thead className="bg-gray-100 dark:bg-gray-800">
+                <tr>
+                  <th className="px-3 py-2 text-left text-gray-700 dark:text-gray-300">Factor</th>
+                  <th className="px-3 py-2 text-left text-gray-700 dark:text-gray-300">SEO (Organic)</th>
+                  <th className="px-3 py-2 text-left text-gray-700 dark:text-gray-300">Google Ads (Paid)</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr className="border-t"><td className="px-3 py-2 text-gray-600 dark:text-gray-400">Speed to Results</td><td className="px-3 py-2 text-gray-600 dark:text-gray-400">3-6 months</td><td className="px-3 py-2 text-gray-600 dark:text-gray-400">24-48 hours</td></tr>
+                <tr className="border-t"><td className="px-3 py-2 text-gray-600 dark:text-gray-400">Cost Structure</td><td className="px-3 py-2 text-gray-600 dark:text-gray-400">Monthly retainer ($800-$4,000)</td><td className="px-3 py-2 text-gray-600 dark:text-gray-400">Per click + management fee</td></tr>
+                <tr className="border-t"><td className="px-3 py-2 text-gray-600 dark:text-gray-400">Traffic Type</td><td className="px-3 py-2 text-gray-600 dark:text-gray-400">Free organic clicks</td><td className="px-3 py-2 text-gray-600 dark:text-gray-400">Paid clicks</td></tr>
+                <tr className="border-t"><td className="px-3 py-2 text-gray-600 dark:text-gray-400">Sustainability</td><td className="px-3 py-2 text-gray-600 dark:text-gray-400">Compounds over time</td><td className="px-3 py-2 text-gray-600 dark:text-gray-400">Stops when spending stops</td></tr>
+                <tr className="border-t"><td className="px-3 py-2 text-gray-600 dark:text-gray-400">Click-Through Rate</td><td className="px-3 py-2 text-gray-600 dark:text-gray-400">Higher CTR (organic trusted more)</td><td className="px-3 py-2 text-gray-600 dark:text-gray-400">Lower CTR (users know it’s ads)</td></tr>
+                <tr className="border-t"><td className="px-3 py-2 text-gray-600 dark:text-gray-400">Cost Per Click</td><td className="px-3 py-2 text-gray-600 dark:text-gray-400">$0 (after ranking)</td><td className="px-3 py-2 text-gray-600 dark:text-gray-400">$1-$50+ per click</td></tr>
+                <tr className="border-t"><td className="px-3 py-2 text-gray-600 dark:text-gray-400">Long-term ROI</td><td className="px-3 py-2 text-gray-600 dark:text-gray-400">Very high (free traffic)</td><td className="px-3 py-2 text-gray-600 dark:text-gray-400">Medium (ongoing cost)</td></tr>
+                <tr className="border-t"><td className="px-3 py-2 text-gray-600 dark:text-gray-400">Credibility</td><td className="px-3 py-2 text-gray-600 dark:text-gray-400">High (earned rankings)</td><td className="px-3 py-2 text-gray-600 dark:text-gray-400">Lower (paid placement)</td></tr>
+              </tbody>
+            </table>
+
+            <p className="font-semibold mt-4">When to Use Each:</p>
+            <ul className="list-disc list-inside mt-2 text-sm">
+              <li><strong>Choose SEO When:</strong> Building long-term sustainable traffic; Budget for 6-12 month investment; Want to reduce dependence on paid ads; Targeting informational keywords; Building brand authority; Lower cost per lead over time.</li>
+              <li><strong>Choose Google Ads When:</strong> Need leads immediately (this week); Testing new markets or products; Seasonal campaigns or promotions; High-value services (leads worth $1,000+); Competitive keywords too hard for SEO; Retargeting website visitors.</li>
+            </ul>
+
+            <p className="font-semibold mt-4">The Winning Strategy - Run Both:</p>
+            <ul className="list-disc list-inside mt-2 text-sm">
+              <li>Month 1-3: Google Ads 90% / SEO 10%</li>
+              <li>Month 4-6: Google Ads 70% / SEO 30%</li>
+              <li>Month 7-12: Google Ads 40% / SEO 60%</li>
+              <li>Month 12+: Reduce Ads budget 30-50%, SEO provides majority of leads, use ads for promotions, maintain total leads.</li>
+            </ul>
+
+            <p className="mt-4"><strong>Combined Example: Business: Professional Services, Haldwani</strong></p>
+            <p>Month 1: SEO 5 leads ($2,000) + Ads 25 leads ($2,500+500 mgmt) = 30 leads @ $5,000</p>
+            <p>Month 6: SEO 30 leads ($2,000) + Ads 20 leads ($2,000+500 mgmt) = 50 leads @ $4,500</p>
+            <p>Month 12: SEO 60 leads ($2,000) + Ads 15 leads ($1,500+500 mgmt) = 75 leads @ $4,000 (2.5x leads, lower cost)</p>
+
+            <p className="mt-3">Meegan Media recommends combining SEO and Google Ads for maximum growth. Start with ads for immediate leads while SEO builds, then reduce ad spend as organic traffic dominates.</p>
+          </>
+        ),
+      },
+
+
+    ],
     cta: {
       label: 'Book an SEO Strategy Call',
       href: '/contact',
