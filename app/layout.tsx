@@ -23,10 +23,10 @@ const geistMono = Geist_Mono({
 
 // SEO Metadata
 export const metadata: Metadata = {
-  metadataBase: new URL("https://kamalbhatt.com"),
+  metadataBase: new URL("https://meegan-media.com"),
   title: {
-    default: "Meegan Media - Digital Marketing Services in Dehradun",
-    template: "%s | Meegan Media - Digital Marketing Dehradun",
+    default: "Meegan Media - Global Digital Marketing Agency",
+    template: "%s | Meegan Media - Global Digital Marketing Agency",
   },
   description:
     "Expert digital marketing services in Dehradun, Uttarakhand. SEO, social media, content marketing, and brand strategy to grow your business online.",
@@ -48,17 +48,17 @@ export const metadata: Metadata = {
   openGraph: {
     type: "website",
     locale: "en_US",
-    url: "https://kamalbhatt.com",
-    siteName: "Kamal Bhatt Digital Marketing",
-    title: "Meegan Media - Digital Marketing Services in Dehradun",
+    url: "https://meegan-media.com",
+    siteName: "Meegan Media - Global Digital Marketing Agency",
+    title: "Meegan Media - Global Digital Marketing Agency",
     description:
       "Expert digital marketing services in Dehradun, Uttarakhand. SEO, social media, content marketing, and brand strategy to grow your business online.",
     images: [
       {
-        url: "https://kamalbhatt.com/og-image.jpg",
+        url: "https://meegan-media.com/og-image.jpg",
         width: 1200,
         height: 630,
-        alt: "Meegan Media - Digital Marketing Dehradun",
+        alt: "Meegan Media - Global Digital Marketing Agency",
       },
     ],
   },
@@ -66,10 +66,10 @@ export const metadata: Metadata = {
   // Twitter Card
   twitter: {
     card: "summary_large_image",
-    title: "Meegan Media - Digital Marketing Services in Dehradun",
+    title: "Meegan Media - Global Digital Marketing Agency",
     description:
       "Expert digital marketing services in Dehradun, Uttarakhand. SEO, social media, content marketing, and brand strategy.",
-    images: ["https://kamalbhatt.com/twitter-image.jpg"],
+    images: ["https://meegan-media.com/twitter-image.jpg"],
   },
   
   // Additional SEO settings
