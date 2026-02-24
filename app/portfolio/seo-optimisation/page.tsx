@@ -245,11 +245,11 @@ export default function SeoOptimisationPage() {
     <main className="bg-white dark:bg-gray-900 py-12">
       <div className="max-w-5xl mx-auto px-4">
         {/* breadcrumb/back link */}
-        <div className="mb-6 flex items-center justify-between">
+        <div className="mb-6 flex flex-col sm:flex-row items-start sm:items-center justify-between">
           <Link href="/services/seo-optimisation" className="text-primary hover:underline text-sm">
             ← Potrfolio
           </Link>
-          <div className="flex flex-wrap gap-2">
+          <div className="flex flex-wrap gap-2 mt-2 sm:mt-0">
             {slugs.map((s, idx) => {
               const labelMap: Record<string, string> = {
                 'seo-education': 'Graphic Era University',

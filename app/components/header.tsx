@@ -148,16 +148,6 @@ export default function Header() {
               )}
             </div>
 
-            <Link 
-              href="/about" 
-              className={`transition ${
-                isActive('/about')
-                  ? 'text-primary dark:text-secondary font-semibold border-b-2 border-primary dark:border-secondary pb-1'
-                  : 'text-gray-700 dark:text-gray-300 hover:text-primary dark:hover:text-secondary'
-              }`}
-            >
-              About
-            </Link>
             {/* Portfolio Dropdown */}
             <div 
               className="relative group"
@@ -215,6 +205,9 @@ export default function Header() {
                 </div>
               )}
             </div>
+
+
+
             <Link 
               href="/digital-marketing-playbook" 
               className={`transition ${
@@ -225,6 +218,18 @@ export default function Header() {
             >
               Book
             </Link>
+
+            <Link 
+              href="/about" 
+              className={`transition ${
+                isActive('/about')
+                  ? 'text-primary dark:text-secondary font-semibold border-b-2 border-primary dark:border-secondary pb-1'
+                  : 'text-gray-700 dark:text-gray-300 hover:text-primary dark:hover:text-secondary'
+              }`}
+            >
+              About
+            </Link>
+
             <Link 
               href="/contact" 
               className={`transition ${

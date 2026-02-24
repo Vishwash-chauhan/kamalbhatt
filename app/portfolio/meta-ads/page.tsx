@@ -277,11 +277,11 @@ export default function MetaAdsPage() {
     <main className="bg-white dark:bg-gray-900 py-12">
       <div className="max-w-5xl mx-auto px-4">
         {/* breadcrumb/back link */}
-        <div className="mb-6 flex items-center justify-between">
+        <div className="mb-6 flex flex-col sm:flex-row items-start sm:items-center justify-between">
           <Link href="/portfolio" className="text-primary hover:underline text-sm">
             ← Back to portfolio
           </Link>
-          <div>
+          <div className="flex flex-wrap gap-2 mt-2 sm:mt-0">
             {slugs.map((s, idx) => {
               const labelMap: Record<string, string> = {
                 'meta-ads-higher-education': 'Graphic Era University',
@@ -297,7 +297,7 @@ export default function MetaAdsPage() {
                     setIndex(idx);
                     scrollToTop();
                   }}
-                  className={`px-2 py-1 mx-1 rounded-full text-sm ${idx === index ? 'bg-primary text-white' : 'bg-gray-200 dark:bg-gray-700'}`}
+                  className={`px-2 py-1 rounded-full text-sm ${idx === index ? 'bg-primary text-white' : 'bg-gray-200 dark:bg-gray-700'}`}
                 >
                   {labelMap[s] || s}
                 </button>
