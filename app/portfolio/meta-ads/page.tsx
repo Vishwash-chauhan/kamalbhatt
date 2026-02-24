@@ -103,15 +103,61 @@ const caseStudyData: Record<string, CaseStudyData> = {
       'Total of 1,407 leads generated in the 30-day period across all active ad sets',
     ],
   },
+  'meta-ads-dwarka': {
+    title: '190% Lead Growth for Orane Dwarka — Beating Every Competitor',
+    subtitle: '',
+    intro: `Following Meta's Andromeda algorithm update, most beauty institutes in Dwarka saw their Meta ad performance collapse. Orane Dwarka's Combined Beauty Course campaign, managed by Meegan Media, did the opposite — leads grew by 190% in 30 days while competitors struggled. This was a direct result of proactive creative and audience strategy adaptation within 72 hours of the update rolling out.`,
+    stats: [
+      { label: 'Lead Growth (30 days)', value: '+190%' },
+      { label: 'Leads (Jan 2026)', value: '206' },
+      { label: 'Leads Previous Period', value: '71' },
+      { label: 'Cost Per Lead', value: '₹85.09' },
+    ],
+    challenge: [
+      'Meta Andromeda update hit local beauty institute campaigns particularly hard — smaller budgets have less algorithmic data to recover',
+      'Orane Dwarka competes directly with Lakme Academy, VLCC, and multiple local institutes all running Meta ads',
+      'Dwarka is a high-competition Delhi locality — audience sizes are limited and ad fatigue sets in faster',
+      'Cost per lead increased by ₹21.70 post-update — needed to contain the rise while aggressively growing volume',
+    ],
+    actions: [
+      'Refreshed all ad creatives within 72 hours of Andromeda rollout — new hooks, new visuals, new CTAs',
+      "Switched primary format to Reels and short video — these gained preferential reach in Meta's post-Andromeda ranking",
+      'Rebuilt audiences using engagement-based custom audiences rather than interest-only targeting',
+      'Introduced combined beauty course messaging (hair + skin + makeup together) to maximise appeal per impression',
+      'Expanded geographic radius to capture students from adjoining Dwarka sectors previously excluded',
+      'Rapid daily monitoring and optimisation during the first 2 weeks post-update — zero passive management',
+    ],
+    performanceTable: {
+      headers: ['Before leads', 'After leads', 'Growth'],
+      rows: [
+        ['71', '206', '+190%'],
+      ],
+    },
+    keyResults: [
+      'Leads grew from 71 to 206 in just 30 days — a 190.14% increase while competitors declined',
+      'Became the only Orane location to outperform pre-Andromeda benchmarks within the same period',
+      'Cost per lead at ₹85.09 remains commercially viable for beauty course admissions in Delhi',
+      'Result demonstrates our ability to respond rapidly to platform algorithm changes and maintain client performance',
+      'Strategy learnings from Dwarka immediately applied to other Orane locations — Noida benefited from same playbook',
+    ],
+    notes: (
+      <div className="mt-8">
+        <img
+          src="https://res.cloudinary.com/dwffrfajl/image/upload/v1771928110/Orane_Dwarka_Meta_ads_after_andromeda_update_vsoyds.jpg"
+          alt="Orane Dwarka Growth"
+          className="w-full rounded-lg shadow-md"
+        />
+      </div>
+    ),
+  },
 };
-
+// ...existing code...
 
 export default function MetaAdsPage() {
   const slugs = Object.keys(caseStudyData);
   const [index, setIndex] = useState(0);
   const slug = slugs[index];
   const data = caseStudyData[slug];
-
   function goNext() {
     setIndex((i) => (i + 1 < slugs.length ? i + 1 : i));
   }
@@ -132,9 +178,7 @@ export default function MetaAdsPage() {
               <button
                 key={s}
                 onClick={() => setIndex(idx)}
-                className={`px-2 py-1 mx-1 rounded-full text-sm ${
-                  idx === index ? 'bg-primary text-white' : 'bg-gray-200 dark:bg-gray-700'
-                }`}
+                className={`px-2 py-1 mx-1 rounded-full text-sm ${idx === index ? 'bg-primary text-white' : 'bg-gray-200 dark:bg-gray-700'}`}
               >
                 {s.replace('meta-ads-', '').replace(/-/g, ' ')}
               </button>
@@ -163,12 +207,16 @@ export default function MetaAdsPage() {
                 src={
                   slug === 'meta-ads-beauty'
                     ? 'https://res.cloudinary.com/dwffrfajl/image/upload/v1771927893/Meta_ads_for_Online_Nutrition_Leads_vkmifi.jpg'
-                    : 'https://res.cloudinary.com/dwffrfajl/image/upload/v1771927698/GEU_Meta_ads_y0r8sx.jpg'
+                    : slug === 'meta-ads-dwarka'
+                      ? 'https://res.cloudinary.com/dwffrfajl/image/upload/v1771928110/Orane_Dwarka_Meta_ads_after_andromeda_update_vsoyds.jpg'
+                      : 'https://res.cloudinary.com/dwffrfajl/image/upload/v1771927698/GEU_Meta_ads_y0r8sx.jpg'
                 }
                 alt={
                   slug === 'meta-ads-beauty'
                     ? 'Orane Dwarka SEO'
-                    : 'Search Console Report'
+                    : slug === 'meta-ads-dwarka'
+                      ? 'Orane Dwarka Growth'
+                      : 'Search Console Report'
                 }
                 className="w-full rounded-lg shadow-md"
               />
@@ -271,7 +319,7 @@ export default function MetaAdsPage() {
             </section>
           )}
 
-          {data.notes && <div className="mt-8">{data.notes}</div>}
+          {/* Remove extra notes/image at the bottom */}
 
           {/* next/prev controls */}
           <div className="mt-10 flex justify-between">
