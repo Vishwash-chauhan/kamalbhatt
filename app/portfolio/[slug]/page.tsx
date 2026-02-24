@@ -102,6 +102,56 @@ const caseStudyData: Record<string, CaseStudyData> = {
     actions: [],
     keyResults: [],
   },
+  'meta-ads-beauty': {
+    title: 'META ADS — BEAUTY EDUCATION (ONLINE)',
+    subtitle: '98% Lead Growth After Andromeda Update — Orane Online Nutrition Course',
+    intro: `Orane International's online nutrition and beauty courses faced a significant challenge when Meta's Andromeda algorithm update disrupted campaign performance industry-wide. Meegan Media rapidly adapted the campaign strategy — restructuring ad sets, refreshing creatives, and re-optimising targeting — resulting in a 98% jump in leads and an 18.66% reduction in cost per lead in just 30 days.`,
+    stats: [
+      { label: 'Lead Growth (30 days)', value: '+98%' },
+      { label: 'Leads in Jan 2026', value: '773' },
+      { label: 'Cost Per Lead', value: '₹51.90' },
+      { label: 'CPL Reduction Post-Update', value: '-18.7%' },
+    ],
+    notes: (
+      <div className="mt-8 space-y-6">
+        <img
+          src="https://res.cloudinary.com/dwffrfajl/image/upload/v1771922050/Orane_Noida_Ranking_kcducs.png"
+          alt="Orane Noida Ranking"
+          className="w-full rounded-lg shadow-md"
+        />
+      </div>
+    ),
+    challenge: [
+      "Meta's Andromeda algorithm update caused widespread campaign disruption — leads dropped and costs spiked for most advertisers",
+      'Online beauty and nutrition courses face unique trust barriers — students are sceptical of online certifications',
+      'Multiple ad sets competing in the same account required clear audience segmentation to avoid overlap',
+      'Needed to recover and outperform previous campaign benchmarks within a short timeframe',
+    ],
+    actions: [
+      'Immediately diagnosed the impact of the Andromeda update — identified which ad sets were penalised and which were benefiting',
+      'Restructured all ad sets with fresh audiences, removing fatigued segments that had been over-served',
+      'Relaunched with new creative formats — Reels-style vertical videos outperformed static images post-update',
+      'Introduced the Bridal Lead Campaign targeting a high-intent adjacent audience (bridal makeup seekers interested in professional training)',
+      'Ran Webinar-based lead ads as an alternative funnel — lower friction entry point building course credibility',
+      "Tightened daily budget allocation to top-performing ad sets — concentrated spend where Meta's algorithm was rewarding the account",
+    ],
+    performanceTable: {
+      headers: ['Ad Set', 'Leads', 'Cost / Lead', 'Amount Spent'],
+      rows: [
+        ['Nutrition Course — Diploma', '773', '₹51.90', '₹40,115'],
+        ['Bridal Lead Campaign 25K', '316', '₹38.56', '₹12,186'],
+        ['Online Courses — Kamal Reel', '201', '₹64.14', '₹12,893'],
+        ['Nutrition Course — Webinar', '117', '₹60.86', '₹7,121'],
+      ],
+    },
+    keyResults: [
+      'Leads jumped from 390 to 773 in 30 days — a 98.21% increase post Andromeda update adaptation',
+      'Cost per lead dropped from ₹63.80 to ₹51.90 — an 18.66% improvement in efficiency',
+      'Bridal Lead Campaign delivered 316 leads at just ₹38.56 — the lowest cost per lead in the account',
+      'Reel-format creative delivered 201 leads at ₹64.14 — confirming video-first creative strategy post-Andromeda',
+      'Total of 1,407 leads generated in the 30-day period across all active ad sets',
+    ],
+  },
 };
 
 export async function generateMetadata({ params }: { params: { slug: string } }) {
@@ -122,6 +172,11 @@ export default async function CategoryPage({ params }: { params: { slug: string 
     title: 'Category placeholder',
     intro: 'Content will go here.',
   };
+  // maintain order of case studies for navigation
+  const order = ['seo-optimisation', 'meta-ads-beauty'];
+  const currentIndex = order.indexOf(slug);
+  const nextSlug = currentIndex >= 0 && currentIndex < order.length - 1 ? order[currentIndex + 1] : null;
+  const prevSlug = currentIndex > 0 ? order[currentIndex - 1] : null;
 
   return (
     <main className="bg-white dark:bg-gray-900 py-12">
@@ -144,11 +199,15 @@ export default async function CategoryPage({ params }: { params: { slug: string 
             </h2>
           )}
           {data.intro && <p className="mt-4 text-gray-700 dark:text-gray-300">{data.intro}</p>}
-          {/* featured image */}
+          {/* featured image: switch depending on slug */}
           <div className="mt-8">
             <img
-              src="https://res.cloudinary.com/dwffrfajl/image/upload/v1771921648/Search_Console_GEU_ewoxzf.jpg"
-              alt="Search Console Report"
+              src={
+                slug === 'meta-ads-beauty'
+                  ? 'https://res.cloudinary.com/dwffrfajl/image/upload/v1771922049/Orane_Dwarka_SEO_dvi1qz.jpg'
+                  : 'https://res.cloudinary.com/dwffrfajl/image/upload/v1771921648/Search_Console_GEU_ewoxzf.jpg'
+              }
+              alt={slug === 'meta-ads-beauty' ? 'Orane Dwarka SEO' : 'Search Console Report'}
               className="w-full rounded-lg shadow-md"
             />
           </div>
@@ -246,6 +305,28 @@ export default async function CategoryPage({ params }: { params: { slug: string 
       )}
 
       {data.notes && <div className="mt-8">{data.notes}</div>}
+
+      {/* navigation buttons */}
+      {(prevSlug || nextSlug) && (
+        <div className="mt-12 flex justify-between">
+          {prevSlug && (
+            <Link
+              href={`/portfolio/${prevSlug}`}
+              className="inline-block bg-secondary text-white px-6 py-3 rounded-md hover:bg-secondary/90 transition"
+            >
+              ← Previous case study
+            </Link>
+          )}
+          {nextSlug && (
+            <Link
+              href={`/portfolio/${nextSlug}`}
+              className="inline-block bg-primary text-white px-6 py-3 rounded-md hover:bg-primary/90 transition ml-auto"
+            >
+              Next case study →
+            </Link>
+          )}
+        </div>
+      )}
       </div>
     </main>
   );
