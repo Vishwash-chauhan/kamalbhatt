@@ -102,15 +102,6 @@ const caseStudyData: Record<string, CaseStudyData> = {
       'Reel-format creative delivered 201 leads at ₹64.14 — confirming video-first creative strategy post-Andromeda',
       'Total of 1,407 leads generated in the 30-day period across all active ad sets',
     ],
-    notes: (
-      <div className="mt-8 space-y-6">
-        <img
-          src="https://res.cloudinary.com/dwffrfajl/image/upload/v1771922050/Orane_Noida_Ranking_kcducs.png"
-          alt="Orane Noida Ranking"
-          className="w-full rounded-lg shadow-md"
-        />
-      </div>
-    ),
   },
 };
 
@@ -171,8 +162,8 @@ export default function MetaAdsPage() {
               <img
                 src={
                   slug === 'meta-ads-beauty'
-                    ? 'https://res.cloudinary.com/dwffrfajl/image/upload/v1771922049/Orane_Dwarka_SEO_dvi1qz.jpg'
-                    : 'https://res.cloudinary.com/dwffrfajl/image/upload/v1771921648/Search_Console_GEU_ewoxzf.jpg'
+                    ? 'https://res.cloudinary.com/dwffrfajl/image/upload/v1771927893/Meta_ads_for_Online_Nutrition_Leads_vkmifi.jpg'
+                    : 'https://res.cloudinary.com/dwffrfajl/image/upload/v1771927698/GEU_Meta_ads_y0r8sx.jpg'
                 }
                 alt={
                   slug === 'meta-ads-beauty'

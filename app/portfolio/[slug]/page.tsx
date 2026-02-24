@@ -205,7 +205,7 @@ export default async function CategoryPage({ params }: { params: { slug: string 
               src={
                 slug === 'meta-ads-beauty'
                   ? 'https://res.cloudinary.com/dwffrfajl/image/upload/v1771922049/Orane_Dwarka_SEO_dvi1qz.jpg'
-                  : 'https://res.cloudinary.com/dwffrfajl/image/upload/v1771921648/Search_Console_GEU_ewoxzf.jpg'
+                  : 'https://res.cloudinary.com/dwffrfajl/image/upload/v1771927698/GEU_Meta_ads_y0r8sx.jpg'
               }
               alt={slug === 'meta-ads-beauty' ? 'Orane Dwarka SEO' : 'Search Console Report'}
               className="w-full rounded-lg shadow-md"
