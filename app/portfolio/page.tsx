@@ -50,7 +50,15 @@ export default function PortfolioPage() {
               >
                 <div className="h-48 w-full bg-gray-200 dark:bg-gray-800">
                   <img
-                    src={`https://placehold.co/600x400?text=${encodeURIComponent(cat.name)}`}
+                    src={
+                      cat.slug === 'meta-ads'
+                        ? 'https://res.cloudinary.com/dwffrfajl/image/upload/v1771937336/2_i1cz6n.svg'
+                        : cat.slug === 'google-ads'
+                        ? 'https://res.cloudinary.com/dwffrfajl/image/upload/v1771937369/3_zwqs8o.svg'
+                        : cat.slug === 'seo-optimisation'
+                        ? 'https://res.cloudinary.com/dwffrfajl/image/upload/v1771937304/1_zgc37c.svg'
+                        : `https://placehold.co/600x400?text=${encodeURIComponent(cat.name)}`
+                    }
                     alt={cat.name}
                     className="h-full w-full object-cover"
                   />

@@ -10,6 +10,7 @@ export default function Header() {
   const [isOpen, setIsOpen] = useState(false);
   const [isServicesDropdownOpen, setIsServicesDropdownOpen] = useState(false);
   const [isPaidAdsSubmenuOpen, setIsPaidAdsSubmenuOpen] = useState(false);
+  const [isPortfolioDropdownOpen, setIsPortfolioDropdownOpen] = useState(false);
   const pathname = usePathname();
 
   const services = [
@@ -157,16 +158,63 @@ export default function Header() {
             >
               About
             </Link>
-            <Link 
-              href="/portfolio" 
-              className={`transition ${
-                isActive('/portfolio')
-                  ? 'text-primary dark:text-secondary font-semibold border-b-2 border-primary dark:border-secondary pb-1'
-                  : 'text-gray-700 dark:text-gray-300 hover:text-primary dark:hover:text-secondary'
-              }`}
+            {/* Portfolio Dropdown */}
+            <div 
+              className="relative group"
+              onMouseEnter={() => setIsPortfolioDropdownOpen(true)}
+              onMouseLeave={() => setIsPortfolioDropdownOpen(false)}
             >
-              Portfolio
-            </Link>
+              <Link 
+                href="/portfolio"
+                className={`flex items-center gap-1 transition ${
+                  isActive('/portfolio')
+                    ? 'text-primary dark:text-secondary font-semibold border-b-2 border-primary dark:border-secondary pb-1'
+                    : 'text-gray-700 dark:text-gray-300 hover:text-primary dark:hover:text-secondary'
+                }`}
+              >
+                Portfolio
+                <ChevronDown 
+                  className={`w-4 h-4 transition-transform ${
+                    isPortfolioDropdownOpen ? 'rotate-180' : ''
+                  }`} 
+                />
+              </Link>
+              {/* Dropdown Menu */}
+              {isPortfolioDropdownOpen && (
+                <div className="absolute left-0 mt-0 w-48 bg-white dark:bg-gray-900 rounded-lg shadow-xl border border-gray-200 dark:border-gray-800 py-2 z-50">
+                  <Link
+                    href="/portfolio/seo-optimisation"
+                    className={`block px-4 py-3 transition ${
+                      isActive('/portfolio/seo-optimisation')
+                        ? 'bg-primary/10 text-primary dark:text-secondary dark:bg-secondary/10 border-l-4 border-primary dark:border-secondary'
+                        : 'text-gray-700 dark:text-gray-300 hover:text-primary dark:hover:text-secondary hover:bg-gray-50 dark:hover:bg-gray-800'
+                    }`}
+                  >
+                    SEO Optimisation
+                  </Link>
+                  <Link
+                    href="/portfolio/meta-ads"
+                    className={`block px-4 py-3 transition ${
+                      isActive('/portfolio/meta-ads')
+                        ? 'bg-primary/10 text-primary dark:text-secondary dark:bg-secondary/10 border-l-4 border-primary dark:border-secondary'
+                        : 'text-gray-700 dark:text-gray-300 hover:text-primary dark:hover:text-secondary hover:bg-gray-50 dark:hover:bg-gray-800'
+                    }`}
+                  >
+                    Meta Ads
+                  </Link>
+                  <Link
+                    href="/portfolio/google-ads"
+                    className={`block px-4 py-3 transition ${
+                      isActive('/portfolio/google-ads')
+                        ? 'bg-primary/10 text-primary dark:text-secondary dark:bg-secondary/10 border-l-4 border-primary dark:border-secondary'
+                        : 'text-gray-700 dark:text-gray-300 hover:text-primary dark:hover:text-secondary hover:bg-gray-50 dark:hover:bg-gray-800'
+                    }`}
+                  >
+                    Google Ads
+                  </Link>
+                </div>
+              )}
+            </div>
             <Link 
               href="/digital-marketing-playbook" 
               className={`transition ${
@@ -334,17 +382,69 @@ export default function Header() {
             >
               About
             </Link>
-            {/* <Link
-              href="/portfolio"
-              onClick={closeMobileNav}
-              className={`block px-4 py-2 rounded transition ${
-                isActive('/portfolio')
-                  ? 'text-primary dark:text-secondary bg-primary/10 dark:bg-secondary/10 font-semibold'
-                  : 'text-gray-700 dark:text-gray-300 hover:text-primary dark:hover:text-secondary'
-              }`}
-            >
-              Portfolio
-            </Link> */}
+            {/* Mobile Portfolio Dropdown */}
+            <div>
+              <div className="flex items-center justify-between">
+                <Link
+                  href="/portfolio"
+                  onClick={closeMobileNav}
+                  className={`flex-1 px-4 py-2 rounded transition ${
+                    isActive('/portfolio')
+                      ? 'text-primary dark:text-secondary bg-primary/10 dark:bg-secondary/10 font-semibold'
+                      : 'text-gray-700 dark:text-gray-300 hover:text-primary dark:hover:text-secondary'
+                  }`}
+                >
+                  Portfolio
+                </Link>
+                <button
+                  onClick={() => setIsPortfolioDropdownOpen(!isPortfolioDropdownOpen)}
+                  className="pr-4 py-2"
+                >
+                  <ChevronDown 
+                    className={`w-4 h-4 transition-transform text-primary dark:text-secondary ${
+                      isPortfolioDropdownOpen ? 'rotate-180' : ''
+                    }`} 
+                  />
+                </button>
+              </div>
+              {isPortfolioDropdownOpen && (
+                <div className="mt-1 ml-4 space-y-1 border-l-2 border-primary dark:border-secondary">
+                  <Link
+                    href="/portfolio/seo-optimisation"
+                    onClick={closeMobileNav}
+                    className={`block px-4 py-2 text-sm rounded transition ${
+                      isActive('/portfolio/seo-optimisation')
+                        ? 'text-primary dark:text-secondary bg-primary/10 dark:bg-secondary/10'
+                        : 'text-gray-700 dark:text-gray-300 hover:text-primary dark:hover:text-secondary'
+                    }`}
+                  >
+                    SEO Optimisation
+                  </Link>
+                  <Link
+                    href="/portfolio/meta-ads"
+                    onClick={closeMobileNav}
+                    className={`block px-4 py-2 text-sm rounded transition ${
+                      isActive('/portfolio/meta-ads')
+                        ? 'text-primary dark:text-secondary bg-primary/10 dark:bg-secondary/10'
+                        : 'text-gray-700 dark:text-gray-300 hover:text-primary dark:hover:text-secondary'
+                    }`}
+                  >
+                    Meta Ads
+                  </Link>
+                  <Link
+                    href="/portfolio/google-ads"
+                    onClick={closeMobileNav}
+                    className={`block px-4 py-2 text-sm rounded transition ${
+                      isActive('/portfolio/google-ads')
+                        ? 'text-primary dark:text-secondary bg-primary/10 dark:bg-secondary/10'
+                        : 'text-gray-700 dark:text-gray-300 hover:text-primary dark:hover:text-secondary'
+                    }`}
+                  >
+                    Google Ads
+                  </Link>
+                </div>
+              )}
+            </div>
             <Link
               href="/digital-marketing-playbook"
               onClick={closeMobileNav}

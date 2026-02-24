@@ -214,7 +214,7 @@ export default function GoogleAdsPage() {
         {/* breadcrumb/back link */}
         <div className="mb-6 flex items-center justify-between">
           <Link href="/services/google-ads" className="text-primary hover:underline text-sm">
-            ← Back to Google Ads
+            ← Back to portfolio
           </Link>
           <div>
             {slugs.map((s, idx) => {
