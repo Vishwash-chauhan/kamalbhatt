@@ -14,8 +14,8 @@ export default function ContactInfo() {
     {
       icon: Mail,
       title: 'Email',
-      details: 'kamalbhattts@gmail.com',
-      href: 'mailto:kamalbhattts@gmail.com',
+      details: 'ceo@meegan-media.com',
+      href: 'mailto:ceo@meegan-media.com',
     },
     {
       icon: Phone,

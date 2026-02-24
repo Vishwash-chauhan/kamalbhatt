@@ -9,12 +9,14 @@ export default function Footer() {
         {/* Footer Grid */}
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8 mb-8">
           {/* Brand Section */}
-          <div className="col-span-1">
-            <h3 className="text-2xl font-bold text-white mb-4">
-              Kamal Bhatt
+          <div className="col-span-1 flex flex-col items-start">
+            <h3 className="text-2xl font-bold text-white mb-2">
+              MEEGAN MEDIA
             </h3>
-            <p className="text-sm text-white">
-              Expert digital marketing services for businesses in Dehradun, Uttarakhand.
+            <p className="text-sm text-white leading-relaxed">
+              Global Digital Marketing Agency | Based in Uttarakhand, India<br />
+              Grow Your Business Online Today<br />
+              Professional digital marketing services for businesses worldwide. Expert SEO, Google Ads, Social Media Marketing, and Web Development delivering 7X average ROAS. Trusted by 100+ International Clients.
             </p>
           </div>
 
@@ -81,7 +83,7 @@ export default function Footer() {
           <div>
             <h4 className="font-semibold text-white mb-4">Contact</h4>
             <ul className="space-y-2 text-sm text-white">
-              <li>Email: kamalbhattts@gmail.com</li>
+              <li>Email: ceo@meegan-media.com</li>
               <li>Phone: +91 95487 65897</li>
               <li>Location: Dehradun, Uttarakhand</li>
             </ul>

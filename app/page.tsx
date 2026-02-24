@@ -228,7 +228,7 @@ export default function Home() {
           },
 
           {
-            question: 'Is digital marketing a good career in India in 2025–2026?',
+            question: 'Is digital marketing a good career in India in 2026–2027?',
             answer: (
               <>
                 <p>
