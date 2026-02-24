@@ -19,6 +19,46 @@ interface CaseStudyData {
 }
 
 const caseStudyData: Record<string, CaseStudyData> = {
+    'meta-ads-bricks-realty': {
+      title: 'META ADS — Bricks Realty',
+      subtitle: '437 Property Leads for Bricks Realty — Haridwar Projects',
+      intro: `Bricks Realty needed Meta lead generation for two Haridwar-based residential projects — Shyam Sundar and Nirvaana Greens. Real estate is one of the most competitive Meta advertising categories with notoriously high cost-per-lead. Meegan Media delivered 437 combined leads across both projects at commercially viable per-lead costs for the Haridwar real estate market.`,
+      stats: [
+        { label: 'Total Property Leads', value: '437' },
+        { label: 'Best Cost Per Lead', value: '₹102' },
+        { label: 'Projects Managed', value: '2' },
+        { label: 'Total Impressions', value: '404K+' },
+      ],
+      challenge: [
+        'Real estate leads on Meta are expensive — average CPL in Indian real estate Meta ads ranges from ₹150 to ₹500+',
+        'Haridwar is a tier-2 market — smaller addressable audience compared to metro cities',
+        'Two separate projects (Shyam Sundar and Nirvaana Greens) required distinct messaging and audience targeting',
+        'Property buyers have long decision cycles — lead quality and nurturing is as important as volume',
+      ],
+      actions: [
+        'Created project-specific ad sets for Shyam Sundar and Nirvaana Greens with distinct value propositions and visuals',
+        'Targeted spiritually-inclined and religiously motivated audiences seeking Haridwar property — a unique but effective angle for this market',
+        'Used carousel ads to showcase multiple plot/unit options — allowing prospects to self-select their interest',
+        'Implemented Meta Lead Forms with qualifying questions (budget range, timeline) to improve lead quality',
+        'Ran WhatsApp-connected lead ads — directing high-intent leads straight to a WhatsApp conversation',
+        'A/B tested project imagery: aerial views vs lifestyle photography — identified best-performing creative per project',
+      ],
+      performanceTable: {
+        headers: ['Project / Ad Set', 'Leads', 'Amount Spent', 'Impressions', 'Cost / Lead'],
+        rows: [
+          ['Shyam Sundar Haridwar — Copy', '197', '₹20,095', '143,828', '₹102.01'],
+          ['Nirvaana Greens Haridwar', '162', '₹33,833', '146,706', '₹208.85'],
+          ['Shyam Sundar Haridwar', '78', '₹20,953', '113,847', '₹268.64'],
+        ],
+      },
+      keyResults: [
+        '437 total property leads generated across both Haridwar projects',
+        'Shyam Sundar (optimised ad set) achieved ₹102 per lead — significantly below industry benchmarks',
+        'Nirvaana Greens delivered 162 leads at ₹208.85 — competitive for a premium residential project in a tier-2 city',
+        'Total impressions of 404,000+ created strong brand awareness for Bricks Realty in the Haridwar market',
+        'Multi-project management from a single account demonstrates scalable real estate campaign expertise',
+      ],
+    },
   'meta-ads-higher-education': {
     title: 'META ADS — HIGHER EDUCATION',
     subtitle: '27,057 Leads Across 6 Regions — Graphic Era University',
@@ -104,8 +144,8 @@ const caseStudyData: Record<string, CaseStudyData> = {
     ],
   },
   'meta-ads-dwarka': {
-    title: '190% Lead Growth for Orane Dwarka — Beating Every Competitor',
-    subtitle: '',
+    title: 'META ADS — Orane Dwarka',
+    subtitle: '190% Lead Growth for Orane Dwarka — Beating Every Competitor',
     intro: `Following Meta's Andromeda algorithm update, most beauty institutes in Dwarka saw their Meta ad performance collapse. Orane Dwarka's Combined Beauty Course campaign, managed by Meegan Media, did the opposite — leads grew by 190% in 30 days while competitors struggled. This was a direct result of proactive creative and audience strategy adaptation within 72 hours of the update rolling out.`,
     stats: [
       { label: 'Lead Growth (30 days)', value: '+190%' },
@@ -154,15 +194,40 @@ const caseStudyData: Record<string, CaseStudyData> = {
 // ...existing code...
 
 export default function MetaAdsPage() {
+    const imageMap: Record<string, string> = {
+      'meta-ads-beauty': 'https://res.cloudinary.com/dwffrfajl/image/upload/v1771927893/Meta_ads_for_Online_Nutrition_Leads_vkmifi.jpg',
+      'meta-ads-dwarka': 'https://res.cloudinary.com/dwffrfajl/image/upload/v1771928110/Orane_Dwarka_Meta_ads_after_andromeda_update_vsoyds.jpg',
+      'meta-ads-higher-education': 'https://res.cloudinary.com/dwffrfajl/image/upload/v1771927698/GEU_Meta_ads_y0r8sx.jpg',
+      'meta-ads-bricks-realty': 'https://res.cloudinary.com/dwffrfajl/image/upload/v1771930577/Meta_ads_Real_Estate_bks3qk.jpg',
+    };
+    const altMap: Record<string, string> = {
+      'meta-ads-beauty': 'Orane Beauty SEO',
+      'meta-ads-dwarka': 'Orane Dwarka Growth',
+      'meta-ads-higher-education': 'Graphic Era University Meta Ads',
+      'meta-ads-bricks-realty': 'Bricks Realty Haridwar Projects Meta Ads',
+    };
   const slugs = Object.keys(caseStudyData);
   const [index, setIndex] = useState(0);
   const slug = slugs[index];
   const data = caseStudyData[slug];
+  function scrollToTop() {
+    if (typeof window !== 'undefined') {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+  }
   function goNext() {
-    setIndex((i) => (i + 1 < slugs.length ? i + 1 : i));
+    setIndex((i) => {
+      const newIndex = i + 1 < slugs.length ? i + 1 : i;
+      scrollToTop();
+      return newIndex;
+    });
   }
   function goPrev() {
-    setIndex((i) => (i - 1 >= 0 ? i - 1 : i));
+    setIndex((i) => {
+      const newIndex = i - 1 >= 0 ? i - 1 : i;
+      scrollToTop();
+      return newIndex;
+    });
   }
 
   return (
@@ -174,15 +239,26 @@ export default function MetaAdsPage() {
             ← Back to portfolio
           </Link>
           <div>
-            {slugs.map((s, idx) => (
-              <button
-                key={s}
-                onClick={() => setIndex(idx)}
-                className={`px-2 py-1 mx-1 rounded-full text-sm ${idx === index ? 'bg-primary text-white' : 'bg-gray-200 dark:bg-gray-700'}`}
-              >
-                {s.replace('meta-ads-', '').replace(/-/g, ' ')}
-              </button>
-            ))}
+            {slugs.map((s, idx) => {
+              const labelMap: Record<string, string> = {
+                'meta-ads-higher-education': 'Graphic Era University',
+                'meta-ads-beauty': 'Orane Online',
+                'meta-ads-dwarka': 'Orane Dwarka',
+                'meta-ads-bricks-realty': 'Bricks Realty Haridwar',
+              };
+              return (
+                <button
+                  key={s}
+                  onClick={() => {
+                    setIndex(idx);
+                    scrollToTop();
+                  }}
+                  className={`px-2 py-1 mx-1 rounded-full text-sm ${idx === index ? 'bg-primary text-white' : 'bg-gray-200 dark:bg-gray-700'}`}
+                >
+                  {labelMap[s] || s}
+                </button>
+              );
+            })}
           </div>
         </div>
 
@@ -204,25 +280,15 @@ export default function MetaAdsPage() {
             )}
             <div className="mt-8">
               <img
-                src={
-                  slug === 'meta-ads-beauty'
-                    ? 'https://res.cloudinary.com/dwffrfajl/image/upload/v1771927893/Meta_ads_for_Online_Nutrition_Leads_vkmifi.jpg'
-                    : slug === 'meta-ads-dwarka'
-                      ? 'https://res.cloudinary.com/dwffrfajl/image/upload/v1771928110/Orane_Dwarka_Meta_ads_after_andromeda_update_vsoyds.jpg'
-                      : 'https://res.cloudinary.com/dwffrfajl/image/upload/v1771927698/GEU_Meta_ads_y0r8sx.jpg'
-                }
-                alt={
-                  slug === 'meta-ads-beauty'
-                    ? 'Orane Dwarka SEO'
-                    : slug === 'meta-ads-dwarka'
-                      ? 'Orane Dwarka Growth'
-                      : 'Search Console Report'
-                }
+                src={imageMap[slug] || imageMap['meta-ads-higher-education']}
+                alt={altMap[slug] || 'Meta Ads Case Study'}
                 className="w-full rounded-lg shadow-md"
               />
             </div>
           </header>
 
+
+          {/* Render all sections for every case study, including Orane Dwarka */}
           {data.stats && (
             <section className="mt-12">
               <h3 className="text-2xl font-semibold mb-4 text-primary">
