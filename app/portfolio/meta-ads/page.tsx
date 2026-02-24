@@ -19,8 +19,49 @@ interface CaseStudyData {
 }
 
 const caseStudyData: Record<string, CaseStudyData> = {
+      'meta-ads-solar-energy': {
+        title: 'META ADS — SOLAR ENERGY',
+        subtitle: '7,524 Solar Leads Including WhatsApp Campaign — Prasun Energy',
+        intro: `Prasun Energy (Prasun Solar) needed Meta lead generation across both Facebook Lead Forms and WhatsApp-connected campaigns for residential and commercial solar installations. Meegan Media scaled the account from test campaigns to delivering 7,524 leads — including a WhatsApp campaign at just ₹21.69 per messaging conversion, one of the lowest WhatsApp CPLs in the solar energy vertical.`,
+        stats: [
+          { label: 'Total Leads Generated', value: '7,524+' },
+          { label: 'WhatsApp Cost Per Conv.', value: '₹21.69' },
+          { label: 'Lowest Form CPL', value: '₹32.31' },
+          { label: 'Total Impressions', value: '15M+' },
+        ],
+        challenge: [
+          'Solar energy is a high-consideration purchase — customers need multiple touchpoints before expressing interest',
+          'Large geographic targeting area required — solar buyers spread across multiple districts and cities',
+          'WhatsApp campaigns require a different creative and messaging strategy compared to standard lead form ads',
+          'Scaling from test budget to large-volume campaigns while keeping cost per lead stable',
+        ],
+        actions: [
+          'Ran parallel campaign types — Facebook Lead Form ads for volume and WhatsApp campaigns for high-quality warm conversations',
+          'Created Solar 16-03 campaign as the primary volume driver — optimised aggressively over time to hit ₹32.31–₹69 CPL range',
+          'Designed WhatsApp campaign (WACampaign_18Oct) with a direct conversation opener about solar savings calculations',
+          'Used Video ads showing solar installation case studies — real homes, real savings — to build credibility and generate interest',
+          "Targeted homeowners and business owners through Meta's detailed targeting: home ownership signals, small business interest, electricity bill concern",
+          'Continuously refreshed creatives across all campaigns to combat ad fatigue across the large targeting audience',
+        ],
+        performanceTable: {
+          headers: ['Campaign', 'Leads', 'Amount Spent', 'Impressions', 'Cost / Lead'],
+          rows: [
+            ['Leads Campaign Solar 16-03', '4,649', '₹3,21,203', '9,625,338', '₹69.09'],
+            ['Leads Campaign Solar 5 Oct', '2,641', '₹1,31,717', '5,262,231', '₹49.87'],
+            ['Leads Campaign Solar 21 Sept', '158', '₹5,105', '118,478', '₹32.31'],
+            ['WA Campaign 18 Oct (WhatsApp)', '76', '₹1,648', '50,503', '₹21.69'],
+          ],
+        },
+        keyResults: [
+          '7,524+ total leads generated across all Prasun Solar campaigns — substantial pipeline for a solar business',
+          'Solar 16-03 campaign alone delivered 4,649 leads — the highest volume campaign at ₹69/lead',
+          'WhatsApp campaign achieved ₹21.69 per messaging conversion — exceptional for warm sales conversations',
+          'Solar 21 Sept campaign hit ₹32.31 per lead — among the lowest solar CPLs achievable on Meta',
+          '15M+ total impressions built Prasun Solar into a recognised brand in their target geographies',
+        ],
+      },
     'meta-ads-bricks-realty': {
-      title: 'META ADS — Bricks Realty',
+      title: 'META ADS — REAL ESTATE',
       subtitle: '437 Property Leads for Bricks Realty — Haridwar Projects',
       intro: `Bricks Realty needed Meta lead generation for two Haridwar-based residential projects — Shyam Sundar and Nirvaana Greens. Real estate is one of the most competitive Meta advertising categories with notoriously high cost-per-lead. Meegan Media delivered 437 combined leads across both projects at commercially viable per-lead costs for the Haridwar real estate market.`,
       stats: [
@@ -199,12 +240,14 @@ export default function MetaAdsPage() {
       'meta-ads-dwarka': 'https://res.cloudinary.com/dwffrfajl/image/upload/v1771928110/Orane_Dwarka_Meta_ads_after_andromeda_update_vsoyds.jpg',
       'meta-ads-higher-education': 'https://res.cloudinary.com/dwffrfajl/image/upload/v1771927698/GEU_Meta_ads_y0r8sx.jpg',
       'meta-ads-bricks-realty': 'https://res.cloudinary.com/dwffrfajl/image/upload/v1771930577/Meta_ads_Real_Estate_bks3qk.jpg',
+      'meta-ads-solar-energy': 'https://res.cloudinary.com/dwffrfajl/image/upload/v1771931085/Meta_ads_for_Solar_energy_hq56ni.jpg',
     };
     const altMap: Record<string, string> = {
       'meta-ads-beauty': 'Orane Beauty SEO',
       'meta-ads-dwarka': 'Orane Dwarka Growth',
       'meta-ads-higher-education': 'Graphic Era University Meta Ads',
       'meta-ads-bricks-realty': 'Bricks Realty Haridwar Projects Meta Ads',
+      'meta-ads-solar-energy': 'Prasun Solar Energy Meta Ads',
     };
   const slugs = Object.keys(caseStudyData);
   const [index, setIndex] = useState(0);
@@ -245,6 +288,7 @@ export default function MetaAdsPage() {
                 'meta-ads-beauty': 'Orane Online',
                 'meta-ads-dwarka': 'Orane Dwarka',
                 'meta-ads-bricks-realty': 'Bricks Realty Haridwar',
+                'meta-ads-solar-energy': 'Prasun Solar',
               };
               return (
                 <button
