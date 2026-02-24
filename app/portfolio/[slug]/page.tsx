@@ -27,7 +27,7 @@ interface CaseStudyData {
 }
 
 const caseStudyData: Record<string, CaseStudyData> = {
-  'seo-optimisation': {
+  'meta-ads': {
     title: 'META ADS — HIGHER EDUCATION',
     subtitle: '27,057 Leads Across 6 Regions — Graphic Era University',
     intro: `Graphic Era University runs a massive Meta lead generation operation targeting students across all major Indian geographies. Meegan Media managed multi-city campaigns across UK (NRI students), UP, North East, Delhi NCR, Madhya Pradesh, and other states — delivering 27,000+ leads at tightly controlled cost-per-lead figures across every region.`,
@@ -72,7 +72,7 @@ const caseStudyData: Record<string, CaseStudyData> = {
   },
   // additional slugs can be added here. you can copy the structure above
   // and replace the text with the appropriate case study data.
-  'meta-ads': {
+  'meta-adsa': {
     title: 'META ADS — CATEGORY NAME',
     subtitle: 'Short descriptive subtitle',
     intro: 'Introductory paragraph describing the client and campaign overview.',
@@ -173,7 +173,7 @@ export default async function CategoryPage({ params }: { params: { slug: string 
     intro: 'Content will go here.',
   };
   // maintain order of case studies for navigation
-  const order = ['seo-optimisation', 'meta-ads-beauty'];
+  const order = ['meta-ads'];
   const currentIndex = order.indexOf(slug);
   const nextSlug = currentIndex >= 0 && currentIndex < order.length - 1 ? order[currentIndex + 1] : null;
   const prevSlug = currentIndex > 0 ? order[currentIndex - 1] : null;
