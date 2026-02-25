@@ -218,8 +218,20 @@ const altMap: Record<string, string> = {
 
 export default function SeoOptimisationPage() {
   const slugs = Object.keys(caseStudyData);
+  // custom order as per user request:
+  // 1. IMBA, 2. Graphic Era, 3. Clover HR, 4. Kaylons, 5. Orane
+  const manualOrder = [
+    'seo-maritime-education', // IMBA
+    'seo-education',         // Graphic Era
+    'international-seo',     // Clover HR
+    'local-seo-gmb',         // Kaylons
+    'local-seo-multi-location', // Orane
+  ];
+  const orderedSlugs = manualOrder.filter((s) => slugs.includes(s)).concat(
+    slugs.filter((s) => !manualOrder.includes(s))
+  );
   const [index, setIndex] = useState(0);
-  const slug = slugs[index];
+  const slug = orderedSlugs[index];
   const data = caseStudyData[slug];
   function scrollToTop() {
     if (typeof window !== 'undefined') {
@@ -228,7 +240,7 @@ export default function SeoOptimisationPage() {
   }
   function goNext() {
     setIndex((i) => {
-      const newIndex = i + 1 < slugs.length ? i + 1 : i;
+      const newIndex = i + 1 < orderedSlugs.length ? i + 1 : i;
       scrollToTop();
       return newIndex;
     });
@@ -246,16 +258,16 @@ export default function SeoOptimisationPage() {
       <div className="max-w-5xl mx-auto px-4">
         {/* breadcrumb/back link */}
         <div className="mb-6 flex flex-col sm:flex-row items-start sm:items-center justify-between">
-          <Link href="/services/seo-optimisation" className="text-primary hover:underline text-sm">
-            ← Potrfolio
+          <Link href="/portfolio" className="text-primary hover:underline text-sm whitespace-nowrap">
+            ← Back to potrfolio
           </Link>
-          <div className="flex flex-wrap gap-2 mt-2 sm:mt-0">
-            {slugs.map((s, idx) => {
+          <div className="flex flex-wrap gap-2 mt-2 sm:mt-0 md:justify-end">
+            {orderedSlugs.map((s, idx) => {
               const labelMap: Record<string, string> = {
-                'seo-education': 'Graphic Era University',
-                'seo-maritime-education': 'IMBA Maritime Academy',
+                'seo-education': 'Education- Graphic Era University',
+                'seo-maritime-education': 'Offline Education- International Maritime Business Academy',
                 'local-seo-gmb': 'Kaylons School of Beauty',
-                'local-seo-multi-location': 'Orane Intl School of Beauty',
+                'local-seo-multi-location': 'Offline Education- Orane School Dwarka',
                 'international-seo': 'Clover HR Birmingham',
               };
               return (
@@ -275,7 +287,7 @@ export default function SeoOptimisationPage() {
         </div>
 
         {/* render current case study */}
-        {slugs.length > 0 && data && (
+        {orderedSlugs.length > 0 && data && (
           <section className="mb-20">
             <header className="bg-gray-50 dark:bg-gray-800 p-8 rounded-lg">
               <h1 className="text-4xl font-extrabold text-gray-900 dark:text-white">
@@ -407,7 +419,7 @@ export default function SeoOptimisationPage() {
               </button>
               <button
                 onClick={goNext}
-                disabled={index === slugs.length - 1}
+                disabled={index === orderedSlugs.length - 1}
                 className="px-4 py-2 bg-primary text-white rounded disabled:opacity-50"
               >
                 Next →

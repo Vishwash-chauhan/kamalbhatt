@@ -185,8 +185,18 @@ const altMap: Record<string, string> = {
 
 export default function GoogleAdsPage() {
   const slugs = Object.keys(caseStudyData);
+  // arrange case studies in requested sequence
+  const manualOrder = [
+    'google-ads-growth-campaign',      // Offline Education- Orane School Dwarka
+    'google-ads-higher-education',     // Education- Graphic Era University
+    'google-ads-beauty-education',     // Offline Education- Orane School Noida
+    'google-ads-maritime-education',   // Offline Education- International Maritime Business Academy
+  ];
+  const orderedSlugs = manualOrder.filter((s) => slugs.includes(s)).concat(
+    slugs.filter((s) => !manualOrder.includes(s))
+  );
   const [index, setIndex] = useState(0);
-  const slug = slugs[index];
+  const slug = orderedSlugs[index];
   const data = caseStudyData[slug];
   function scrollToTop() {
     if (typeof window !== 'undefined') {
@@ -195,7 +205,7 @@ export default function GoogleAdsPage() {
   }
   function goNext() {
     setIndex((i) => {
-      const newIndex = i + 1 < slugs.length ? i + 1 : i;
+      const newIndex = i + 1 < orderedSlugs.length ? i + 1 : i;
       scrollToTop();
       return newIndex;
     });
@@ -213,16 +223,16 @@ export default function GoogleAdsPage() {
       <div className="max-w-5xl mx-auto px-4">
         {/* breadcrumb/back link */}
         <div className="mb-6 flex flex-col sm:flex-row items-start sm:items-center justify-between">
-          <Link href="/services/google-ads" className="text-primary hover:underline text-sm">
-            ← Back to portfolio
+          <Link href="/portfolio" className="text-primary hover:underline text-sm whitespace-nowrap">
+            ← Back to portfolio 
           </Link>
-          <div className="flex flex-wrap gap-2 mt-2 sm:mt-0">
-            {slugs.map((s, idx) => {
+          <div className="flex flex-wrap gap-2 mt-2 sm:mt-0 md:justify-end">
+            {orderedSlugs.map((s, idx) => {
               const labelMap: Record<string, string> = {
-                'google-ads-maritime-education': 'IMBA Maritime Academy',
-                'google-ads-higher-education': 'Graphic Era University',
-                'google-ads-beauty-education': 'Orane Noida',
-                'google-ads-growth-campaign': 'Orane Dwarka',
+                'google-ads-maritime-education': 'Offline Education- International Maritime Business Academy',
+                'google-ads-higher-education': 'Education- Graphic Era University',
+                'google-ads-beauty-education': 'Offline Education- Orane School Noida',
+                'google-ads-growth-campaign': 'Offline Education- Orane School Dwarka ',
               };
               return (
                 <button
@@ -372,7 +382,7 @@ export default function GoogleAdsPage() {
             </button>
             <button
               onClick={goNext}
-              disabled={index === slugs.length - 1}
+              disabled={index === orderedSlugs.length - 1}
               className="px-4 py-2 bg-primary text-white rounded disabled:opacity-50"
             >
               Next →

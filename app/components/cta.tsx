@@ -34,7 +34,7 @@ export default function CTA() {
                 <Phone className="w-6 h-6 text-secondary" />
               </div>
               <div>
-                <p className="text-white font-semibold text-lg">+91 95487 65897</p>
+                <p className="text-white font-semibold text-lg">+91 86792 65897</p>
               </div>
             </div>
           </div>

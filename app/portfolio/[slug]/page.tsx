@@ -184,7 +184,7 @@ export default async function CategoryPage({ params }: { params: { slug: string 
         {/* breadcrumb/back link */}
         <div className="mb-6">
           <Link href="/portfolio" className="text-primary hover:underline text-sm">
-            ← Back to portfolio
+            ← Portfolio
           </Link>
         </div>
 

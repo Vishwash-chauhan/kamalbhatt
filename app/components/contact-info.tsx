@@ -20,8 +20,8 @@ export default function ContactInfo() {
     {
       icon: Phone,
       title: 'Phone',
-      details: '+91 95487 65897',
-      href: 'tel:+919548765897',
+      details: '+91 8679265897',
+      href: 'tel:+918679265897',
     },
   ];
 

@@ -10,12 +10,15 @@ export default function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8 mb-8">
           {/* Brand Section */}
           <div className="col-span-1 flex flex-col items-start">
-            <h3 className="text-2xl font-bold text-white mb-2">
-              MEEGAN MEDIA
-            </h3>
-            <p className="text-sm text-white leading-relaxed">
-              Global Digital Marketing Agency | Based in Uttarakhand, India<br />
-              Grow Your Business Online Today<br />
+            <Link href="/" className="mb-2">
+              <img
+                src="https://res.cloudinary.com/dwffrfajl/image/upload/v1771999257/Meegan_Media_vmh9fj.png"
+                alt="Meegan Media logo"
+                className="h-10 w-auto"
+              />
+            </Link>
+            <p className="text-sm text-white leading-loose">
+              Global Digital Marketing Agency | Based in Uttarakhand, India
               Professional digital marketing services for businesses worldwide. Expert SEO, Google Ads, Social Media Marketing, and Web Development delivering 7X average ROAS. Trusted by 100+ International Clients.
             </p>
           </div>
@@ -84,7 +87,7 @@ export default function Footer() {
             <h4 className="font-semibold text-white mb-4">Contact</h4>
             <ul className="space-y-2 text-sm text-white">
               <li>Email: ceo@meegan-media.com</li>
-              <li>Phone: +91 95487 65897</li>
+              <li>Phone: +91 8679265897</li>
               <li>Location: Dehradun, Uttarakhand</li>
             </ul>
           </div>
